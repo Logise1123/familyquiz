@@ -1,897 +1,815 @@
 [
   {
-    "question": "¿Qué principio de la física establece que un aumento en la velocidad de un fluido ocurre simultáneamente con una disminución en la presión?",
-    "options": ["Principio de Arquímedes", "Ley de la Gravitación Universal", "Principio de Bernoulli", "Efecto Doppler"],
-    "answer": "Principio de Bernoulli"
+    "question": "¿Qué principio de la física explica por qué los aviones vuelan, relacionando la velocidad del aire con su presión?",
+    "options": ["Principio de Arquímedes", "Ley de la Gravedad", "Principio de Bernoulli", "Efecto Doppler"],
+    "answer": "Principio de Bernoulli",
+    "difficulty": "Media",
+    "topic": "Ciencia"
   },
   {
-    "question": "En informática, ¿qué significa el acrónimo 'API'?",
-    "options": ["Interfaz de Programación de Aplicaciones", "Archivo de Procesamiento Avanzado", "Protocolo de Internet Alternativo", "Interfaz de Plataforma Autónoma"],
-    "answer": "Interfaz de Programación de Aplicaciones"
+    "question": "En informática, una 'API' permite que dos aplicaciones de software se comuniquen entre sí. ¿Qué significa 'API'?",
+    "options": ["Interfaz de Programación de Aplicaciones", "Archivo de Procesamiento Automático", "Protocolo de Internet Avanzado", "Interfaz de Plataforma Autónoma"],
+    "answer": "Interfaz de Programación de Aplicaciones",
+    "difficulty": "Media",
+    "topic": "Tecnología"
   },
   {
-    "question": "¿Cuál es el nombre del proceso por el cual una célula se divide para formar dos células hijas genéticamente idénticas?",
+    "question": "¿Cuál es el nombre del proceso por el cual una célula se divide para crear dos células hijas idénticas?",
     "options": ["Meiosis", "Mitosis", "Fagocitosis", "Ósmosis"],
-    "answer": "Mitosis"
+    "answer": "Mitosis",
+    "difficulty": "Fácil",
+    "topic": "Ciencia"
   },
   {
-    "question": "El 'Gato de Schrödinger' es un experimento mental que ilustra un principio de qué campo de la física?",
-    "options": ["Termodinámica", "Mecánica Clásica", "Óptica", "Mecánica Cuántica"],
-    "answer": "Mecánica Cuántica"
+    "question": "El 'Gato de Schrödinger' es un famoso experimento mental que explora las extrañas reglas de qué campo de la física?",
+    "options": ["Termodinámica", "Mecánica Clásica", "Astrofísica", "Mecánica Cuántica"],
+    "answer": "Mecánica Cuántica",
+    "difficulty": "Difícil",
+    "topic": "Ciencia"
   },
   {
-    "question": "¿Qué gas, liberado por las plantas durante la fotosíntesis, es esencial para la respiración de la mayoría de los seres vivos?",
+    "question": "¿Qué gas, esencial para nuestra respiración, liberan las plantas durante la fotosíntesis?",
     "options": ["Nitrógeno", "Dióxido de Carbono", "Oxígeno", "Hidrógeno"],
-    "answer": "Oxígeno"
+    "answer": "Oxígeno",
+    "difficulty": "Fácil",
+    "topic": "Ciencia"
   },
   {
-    "question": "En la escala de dureza de Mohs, ¿cuál es el mineral más duro?",
+    "question": "En la escala de dureza de Mohs, que va del 1 (talco) al 10, ¿cuál es el mineral más duro?",
     "options": ["Cuarzo", "Topacio", "Diamante", "Corindón"],
-    "answer": "Diamante"
+    "answer": "Diamante",
+    "difficulty": "Media",
+    "topic": "Ciencia"
   },
   {
-    "question": "¿Qué filósofo griego es famoso por su alegoría de la caverna?",
+    "question": "¿Qué filósofo de la Antigua Grecia describió una sociedad ideal en su libro 'La República'?",
     "options": ["Aristóteles", "Sócrates", "Platón", "Diógenes"],
-    "answer": "Platón"
+    "answer": "Platón",
+    "difficulty": "Difícil",
+    "topic": "Cultura General"
   },
   {
-    "question": "En el modelo de color RGB, ¿qué color se obtiene al mezclar rojo y verde en su máxima intensidad?",
+    "question": "En el modelo de color de las pantallas (RGB), si mezclas luz roja y verde a máxima intensidad, ¿qué color aparece?",
     "options": ["Cian", "Magenta", "Blanco", "Amarillo"],
-    "answer": "Amarillo"
+    "answer": "Amarillo",
+    "difficulty": "Media",
+    "topic": "Tecnología"
   },
   {
-    "question": "¿Cuál de estos números es un número primo?",
-    "options": ["51", "87", "91", "97"],
-    "answer": "97"
+    "question": "Un número primo es aquel que solo puede dividirse por sí mismo y por 1. ¿Cuál de estos es un número primo?",
+    "options": ["51 (3x17)", "87 (3x29)", "91 (7x13)", "97"],
+    "answer": "97",
+    "difficulty": "Media",
+    "topic": "Lógica y Matemáticas"
   },
   {
-    "question": "¿Qué estructura del ADN es responsable de llevar la información genética?",
-    "options": ["El esqueleto de fosfato", "Los puentes de hidrógeno", "La secuencia de nucleótidos", "La doble hélice"],
-    "answer": "La secuencia de nucleótidos"
+    "question": "La información genética de un ser vivo está codificada en la secuencia de cuatro 'letras' o bases en su ADN. ¿Qué estructura es esta?",
+    "options": ["El esqueleto de azúcar-fosfato", "Los puentes de hidrógeno", "La secuencia de nucleótidos", "La forma de doble hélice"],
+    "answer": "La secuencia de nucleótidos",
+    "difficulty": "Media",
+    "topic": "Ciencia"
   },
   {
-    "question": "¿Qué autor escribió la novela 'Cien años de soledad'?",
+    "question": "¿Qué escritor colombiano, ganador del Premio Nobel, es el autor de 'Cien años de soledad'?",
     "options": ["Julio Cortázar", "Mario Vargas Llosa", "Gabriel García Márquez", "Jorge Luis Borges"],
-    "answer": "Gabriel García Márquez"
+    "answer": "Gabriel García Márquez",
+    "difficulty": "Fácil",
+    "topic": "Arte y Literatura"
   },
   {
-    "question": "¿Cuál es el planeta más grande del Sistema Solar?",
+    "question": "Con un diámetro de casi 140,000 km, ¿cuál es el planeta más grande de nuestro Sistema Solar?",
     "options": ["Saturno", "Neptuno", "Júpiter", "Urano"],
-    "answer": "Júpiter"
+    "answer": "Júpiter",
+    "difficulty": "Fácil",
+    "topic": "Ciencia"
   },
   {
-    "question": "En química, ¿qué mide la escala de pH?",
-    "options": ["La densidad de un líquido", "La acidez o alcalinidad de una disolución", "La temperatura de ebullición", "La masa atómica"],
-    "answer": "La acidez o alcalinidad de una disolución"
+    "question": "En química, la escala de pH mide la acidez o alcalinidad de una sustancia. Un pH de 7 se considera...",
+    "options": ["Muy ácido", "Ligeramente alcalino", "Neutro", "Muy alcalino"],
+    "answer": "Neutro",
+    "difficulty": "Fácil",
+    "topic": "Ciencia"
   },
   {
-    "question": "¿Qué parte del cerebro es crucial para la formación de nuevos recuerdos?",
+    "question": "¿Qué parte del cerebro, con forma de caballito de mar, juega un papel crucial en la formación de nuevos recuerdos?",
     "options": ["Cerebelo", "Corteza prefrontal", "Hipocampo", "Amígdala"],
-    "answer": "Hipocampo"
+    "answer": "Hipocampo",
+    "difficulty": "Media",
+    "topic": "Ciencia"
   },
   {
-    "question": "¿Cuál es la velocidad de la luz en el vacío, aproximadamente?",
-    "options": ["300,000 km/h", "300,000 km/s", "150,000 km/s", "3,000,000 km/s"],
-    "answer": "300,000 km/s"
+    "question": "¿Cuál es la velocidad de la luz en el vacío, la máxima velocidad posible en el universo?",
+    "options": ["300,000 km por hora", "300,000 km por segundo", "150,000 km por segundo", "30,000 km por segundo"],
+    "answer": "300,000 km por segundo",
+    "difficulty": "Fácil",
+    "topic": "Ciencia"
   },
   {
-    "question": "El efecto invernadero es causado principalmente por la acumulación de ¿qué gas en la atmósfera?",
+    "question": "El calentamiento global es causado en gran parte por el 'efecto invernadero'. ¿Qué gas es el principal responsable?",
     "options": ["Oxígeno", "Nitrógeno", "Dióxido de Carbono", "Argón"],
-    "answer": "Dióxido de Carbono"
+    "answer": "Dióxido de Carbono",
+    "difficulty": "Fácil",
+    "topic": "Ciencia"
   },
   {
-    "question": "¿Qué es la 'materia oscura' en cosmología?",
-    "options": ["Nubes de polvo interestelar", "Agujeros negros", "Un tipo de materia que no emite luz", "La energía de las estrellas muertas"],
-    "answer": "Un tipo de materia que no emite luz"
+    "question": "En cosmología, se cree que la mayor parte de la materia del universo es 'materia oscura'. ¿Por qué se llama así?",
+    "options": ["Porque está hecha de roca negra", "Porque absorbe toda la luz", "Porque no emite ni refleja luz y es invisible", "Porque anula la energía de las estrellas"],
+    "answer": "Porque no emite ni refleja luz y es invisible",
+    "difficulty": "Difícil",
+    "topic": "Ciencia"
   },
   {
-    "question": "Si un triángulo tiene lados de longitud 3, 4 y 5 unidades, ¿qué tipo de triángulo es?",
-    "options": ["Equilátero", "Isósceles", "Rectángulo", "Obtusángulo"],
-    "answer": "Rectángulo"
+    "question": "Según el Teorema de Pitágoras, si un triángulo rectángulo tiene catetos de 3 y 4 cm, ¿cuánto mide su hipotenusa?",
+    "options": ["6 cm", "7 cm", "5 cm", "8 cm"],
+    "answer": "5 cm",
+    "difficulty": "Fácil",
+    "topic": "Lógica y Matemáticas"
   },
   {
-    "question": "¿Qué movimiento artístico se caracteriza por el uso de formas geométricas y colores puros, liderado por Picasso y Braque?",
+    "question": "¿Qué movimiento artístico, liderado por Picasso, representaba objetos desde múltiples puntos de vista a la vez usando formas geométricas?",
     "options": ["Surrealismo", "Impresionismo", "Cubismo", "Expresionismo"],
-    "answer": "Cubismo"
+    "answer": "Cubismo",
+    "difficulty": "Media",
+    "topic": "Arte y Literatura"
   },
   {
-    "question": "¿Cuál es la unidad básica de la vida?",
+    "question": "Tanto una bacteria como una ballena azul están compuestas por la misma unidad básica de la vida. ¿Cuál es?",
     "options": ["El átomo", "La molécula", "La célula", "El tejido"],
-    "answer": "La célula"
+    "answer": "La célula",
+    "difficulty": "Fácil",
+    "topic": "Ciencia"
   },
   {
-    "question": "¿Qué autor de ciencia ficción escribió la serie 'Fundación'?",
-    "options": ["Philip K. Dick", "Arthur C. Clarke", "Isaac Asimov", "Robert Heinlein"],
-    "answer": "Isaac Asimov"
+    "question": "¿Qué visionario autor de ciencia ficción escribió las 'Tres Leyes de la Robótica' en sus relatos?",
+    "options": ["Philip K. Dick", "Arthur C. Clarke", "Isaac Asimov", "Julio Verne"],
+    "answer": "Isaac Asimov",
+    "difficulty": "Media",
+    "topic": "Arte y Literatura"
   },
   {
-    "question": "¿Qué es un 'año luz'?",
-    "options": ["Una unidad de tiempo", "La distancia que la luz viaja en un año", "La velocidad a la que viaja un cohete", "El tiempo que tarda el Sol en girar"],
-    "answer": "La distancia que la luz viaja en un año"
+    "question": "Un 'año luz' no es una medida de tiempo, sino de distancia. ¿A qué distancia equivale?",
+    "options": ["La distancia de la Tierra al Sol", "La distancia que la luz viaja en un año", "Un billón de kilómetros", "La distancia para salir de la Vía Láctea"],
+    "answer": "La distancia que la luz viaja en un año",
+    "difficulty": "Fácil",
+    "topic": "Ciencia"
   },
   {
-    "question": "La penicilina, el primer antibiótico, fue descubierta por...",
+    "question": "¿Qué científico descubrió accidentalmente la penicilina, el primer antibiótico, a partir de un moho?",
     "options": ["Marie Curie", "Louis Pasteur", "Alexander Fleming", "Robert Koch"],
-    "answer": "Alexander Fleming"
+    "answer": "Alexander Fleming",
+    "difficulty": "Fácil",
+    "topic": "Ciencia"
   },
   {
-    "question": "¿Qué cordillera montañosa separa Europa de Asia?",
-    "options": ["Los Alpes", "Los Urales", "El Himalaya", "Los Andes"],
-    "answer": "Los Urales"
+    "question": "¿Qué cordillera montañosa, rica en recursos naturales, se considera tradicionalmente la frontera entre Europa y Asia?",
+    "options": ["Los Alpes", "Los Montes Urales", "El Himalaya", "Los Andes"],
+    "answer": "Los Montes Urales",
+    "difficulty": "Media",
+    "topic": "Cultura General"
   },
   {
-    "question": "En la mitología griega, ¿quién era el dios del mar?",
+    "question": "En la mitología griega, ¿qué dios gobernaba los mares y los océanos con su tridente?",
     "options": ["Zeus", "Hades", "Poseidón", "Apolo"],
-    "answer": "Poseidón"
+    "answer": "Poseidón",
+    "difficulty": "Fácil",
+    "topic": "Cultura General"
   },
   {
-    "question": "¿Cuál es el océano más grande y profundo del mundo?",
-    "options": ["Atlántico", "Índico", "Ártico", "Pacífico"],
-    "answer": "Pacífico"
+    "question": "¿Qué océano, que cubre casi un tercio de la superficie del planeta, es el más grande y profundo del mundo?",
+    "options": ["Océano Atlántico", "Océano Índico", "Océano Ártico", "Océano Pacífico"],
+    "answer": "Océano Pacífico",
+    "difficulty": "Fácil",
+    "topic": "Cultura General"
   },
   {
-    "question": "¿Qué significa la 'entropía' en el contexto de la termodinámica?",
-    "options": ["Una medida de la energía total de un sistema", "Una medida del desorden de un sistema", "La temperatura a la que un sistema se congela", "La presión ejercida por un gas"],
-    "answer": "Una medida del desorden de un sistema"
+    "question": "La 'entropía' es un concepto en física que se refiere a la tendencia natural de un sistema a evolucionar hacia un estado de...",
+    "options": ["Mayor energía", "Mayor orden", "Mayor desorden", "Equilibrio perfecto"],
+    "answer": "Mayor desorden",
+    "difficulty": "Difícil",
+    "topic": "Ciencia"
   },
   {
-    "question": "En ajedrez, ¿qué pieza solo puede moverse en diagonal?",
-    "options": ["La torre", "El caballo", "El alfil", "El peón"],
-    "answer": "El alfil"
+    "question": "En ajedrez, ¿qué pieza tiene un movimiento único que combina horizontal y vertical, a menudo descrito como una 'L'?",
+    "options": ["La torre", "El caballo", "El alfil", "La reina"],
+    "answer": "El caballo",
+    "difficulty": "Fácil",
+    "topic": "Cultura General"
   },
   {
-    "question": "¿Qué lenguaje de programación se utiliza principalmente para el desarrollo de aplicaciones para iOS?",
-    "options": ["Java", "Kotlin", "Swift", "C#"],
-    "answer": "Swift"
+    "question": "El lenguaje de programación 'Swift' es el estándar para desarrollar aplicaciones en los sistemas operativos de qué compañía?",
+    "options": ["Google (Android)", "Microsoft (Windows)", "Apple (iOS, macOS)", "Linux"],
+    "answer": "Apple (iOS, macOS)",
+    "difficulty": "Media",
+    "topic": "Tecnología"
   },
   {
-    "question": "¿Qué fenómeno óptico es responsable de la formación de los arcoíris?",
-    "options": ["Reflexión", "Refracción y dispersión de la luz", "Difracción", "Interferencia"],
-    "answer": "Refracción y dispersión de la luz"
+    "question": "¿Qué fenómeno óptico, que descompone la luz solar en sus colores, es responsable de la formación de los arcoíris?",
+    "options": ["Reflexión", "Refracción", "Difracción", "Interferencia"],
+    "answer": "Refracción",
+    "difficulty": "Fácil",
+    "topic": "Ciencia"
   },
   {
-    "question": "¿Cuál es el metal más abundante en la corteza terrestre?",
-    "options": ["Hierro", "Cobre", "Aluminio", "Silicio"],
-    "answer": "Aluminio"
+    "question": "¿Cuál es el metal más abundante en la corteza terrestre, utilizado en todo, desde latas de refresco hasta aviones?",
+    "options": ["Hierro", "Cobre", "Aluminio", "Plata"],
+    "answer": "Aluminio",
+    "difficulty": "Media",
+    "topic": "Ciencia"
   },
   {
-    "question": "La Teoría de la Relatividad fue propuesta por...",
-    "options": ["Isaac Newton", "Galileo Galilei", "Albert Einstein", "Stephen Hawking"],
-    "answer": "Albert Einstein"
+    "question": "La famosa ecuación E=mc² de Albert Einstein es la base de su Teoría de la...",
+    "options": ["Gravedad Cuántica", "Relatividad Especial", "Termodinámica", "Evolución"],
+    "answer": "Relatividad Especial",
+    "difficulty": "Media",
+    "topic": "Ciencia"
   },
   {
-    "question": "¿Qué estructura en el oído humano es fundamental para el equilibrio?",
-    "options": ["El tímpano", "La cóclea", "Los canales semicirculares", "El martillo"],
-    "answer": "Los canales semicirculares"
+    "question": "¿Qué estructura en nuestro oído interno, llena de líquido, es fundamental para mantener el equilibrio?",
+    "options": ["El tímpano", "La cóclea", "Los canales semicirculares", "El yunque"],
+    "answer": "Los canales semicirculares",
+    "difficulty": "Media",
+    "topic": "Ciencia"
   },
   {
-    "question": "Un 'palíndromo' es una palabra o frase que...",
-    "options": ["Tiene cinco vocales", "Se lee igual hacia adelante que hacia atrás", "Es un sinónimo de otra palabra", "No tiene letras repetidas"],
-    "answer": "Se lee igual hacia adelante que hacia atrás"
+    "question": "Un 'palíndromo' es una palabra o frase que se lee igual en ambos sentidos. ¿Cuál de las siguientes palabras es un palíndromo?",
+    "options": ["Amor", "Roma", "Radar", "Sonar"],
+    "answer": "Radar",
+    "difficulty": "Fácil",
+    "topic": "Cultura General"
   },
   {
-    "question": "En música, ¿qué significa el término 'crescendo'?",
-    "options": ["Disminuir gradualmente el volumen", "Aumentar gradualmente el volumen", "Tocar a un ritmo más rápido", "Una pausa en la música"],
-    "answer": "Aumentar gradualmente el volumen"
+    "question": "En una partitura musical, ¿qué indicación le pide al músico que aumente gradualmente el volumen?",
+    "options": ["Decrescendo", "Forte", "Crescendo", "Piano"],
+    "answer": "Crescendo",
+    "difficulty": "Fácil",
+    "topic": "Arte y Literatura"
   },
   {
-    "question": "¿Cuál de estos no es un lenguaje de programación?",
-    "options": ["Python", "HTML", "Java", "C++"],
-    "answer": "HTML"
+    "question": "Aunque es fundamental para crear páginas web, 'HTML' no es un lenguaje de programación porque no puede realizar cálculos. ¿Qué es?",
+    "options": ["Un lenguaje de consulta", "Un lenguaje de marcado", "Un sistema operativo", "Un compilador"],
+    "answer": "Un lenguaje de marcado",
+    "difficulty": "Fácil",
+    "topic": "Tecnología"
   },
   {
-    "question": "¿Qué es la 'Falla de San Andrés'?",
-    "options": ["Un cañón submarino", "Un límite de placas tectónicas en California", "Un cráter de meteorito", "Una cadena de volcanes"],
-    "answer": "Un límite de placas tectónicas en California"
+    "question": "La Falla de San Andrés, en California, es una famosa fractura en la corteza terrestre donde dos placas tectónicas se deslizan una junto a la otra. ¿Qué provoca esto?",
+    "options": ["Volcanes", "Tsunamis", "Terremotos", "Huracanes"],
+    "answer": "Terremotos",
+    "difficulty": "Fácil",
+    "topic": "Ciencia"
   },
   {
-    "question": "La secuencia de Fibonacci comienza con 0 y 1, ¿cuál es el siguiente número?",
-    "options": ["1", "2", "3", "0"],
-    "answer": "1"
+    "question": "La secuencia de Fibonacci (0, 1, 1, 2, 3, 5, 8...) aparece a menudo en la naturaleza. ¿Cuál es el siguiente número?",
+    "options": ["11", "12", "13", "15"],
+    "answer": "13",
+    "difficulty": "Fácil",
+    "topic": "Lógica y Matemáticas"
   },
   {
-    "question": "¿Qué tipo de estrella es nuestro Sol?",
+    "question": "¿Qué tipo de estrella de tamaño mediano es nuestro Sol, que fusiona hidrógeno para producir helio en su núcleo?",
     "options": ["Gigante roja", "Enana blanca", "Enana amarilla", "Supernova"],
-    "answer": "Enana amarilla"
+    "answer": "Enana amarilla",
+    "difficulty": "Fácil",
+    "topic": "Ciencia"
   },
   {
-    "question": "¿Qué gas es el más abundante en la atmósfera de la Tierra?",
+    "question": "Aproximadamente el 78% de la atmósfera de la Tierra está compuesta por este gas, que es relativamente inerte.",
     "options": ["Oxígeno", "Argón", "Nitrógeno", "Dióxido de Carbono"],
-    "answer": "Nitrógeno"
+    "answer": "Nitrógeno",
+    "difficulty": "Fácil",
+    "topic": "Ciencia"
   },
   {
-    "question": "La 'Mona Lisa' de Leonardo da Vinci se exhibe en qué museo?",
-    "options": ["El Prado, Madrid", "El Museo Británico, Londres", "El Louvre, París", "El MoMA, Nueva York"],
-    "answer": "El Louvre, París"
+    "question": "La 'Mona Lisa', quizás la pintura más famosa del mundo, se encuentra en el Museo del Louvre. ¿En qué ciudad está?",
+    "options": ["Roma", "Londres", "París", "Madrid"],
+    "answer": "París",
+    "difficulty": "Fácil",
+    "topic": "Arte y Literatura"
   },
   {
-    "question": "¿Qué es un 'agujero negro'?",
-    "options": ["Una estrella sin luz", "Una región del espacio con una gravedad tan fuerte que nada puede escapar", "Un planeta hecho de gas oscuro", "Un portal a otra dimensión"],
-    "answer": "Una región del espacio con una gravedad tan fuerte que nada puede escapar"
+    "question": "Un 'agujero negro' es una región del espacio con una gravedad tan inmensa que ni siquiera la luz puede escapar. ¿Qué causa esta gravedad?",
+    "options": ["Una gran cantidad de materia comprimida en un espacio muy pequeño", "Un campo magnético muy fuerte", "Una reacción química", "Una estrella oscura"],
+    "answer": "Una gran cantidad de materia comprimida en un espacio muy pequeño",
+    "difficulty": "Media",
+    "topic": "Ciencia"
   },
   {
-    "question": "¿Cuál de estas no es una de las cuatro bases nitrogenadas del ADN?",
-    "options": ["Adenina", "Guanina", "Citosina", "Uracilo"],
-    "answer": "Uracilo"
+    "question": "El ADN tiene cuatro bases: Adenina (A), Guanina (G), Citosina (C) y Timina (T). En el ARN, la Timina es reemplazada por...",
+    "options": ["Arginina", "Alanina", "Uracilo", "Triptófano"],
+    "answer": "Uracilo",
+    "difficulty": "Media",
+    "topic": "Ciencia"
   },
   {
-    "question": "¿Qué estudia la 'criptografía'?",
-    "options": ["El estudio de los fósiles", "El arte de escribir y descifrar códigos", "El estudio de las cuevas", "La creación de mapas"],
-    "answer": "El arte de escribir y descifrar códigos"
+    "question": "¿Qué estudia la criptografía, una disciplina clave para la seguridad en Internet?",
+    "options": ["Fósiles antiguos", "El arte de escribir y descifrar códigos secretos", "Mapas estelares", "La estructura de los cristales"],
+    "answer": "El arte de escribir y descifrar códigos secretos",
+    "difficulty": "Media",
+    "topic": "Tecnología"
   },
   {
-    "question": "¿Qué es el 'bosón de Higgs'?",
-    "options": ["Una partícula que explica el origen del universo", "Una partícula elemental que da masa a otras partículas", "Un tipo de quark", "Una partícula de antimateria"],
-    "answer": "Una partícula elemental que da masa a otras partículas"
+    "question": "El bosón de Higgs, descubierto en el CERN en 2012, es una partícula que se cree que da a otras partículas su...",
+    "options": ["Carga eléctrica", "Velocidad", "Masa", "Color"],
+    "answer": "Masa",
+    "difficulty": "Difícil",
+    "topic": "Ciencia"
   },
   {
-    "question": "El número pi (π) es la relación entre la circunferencia de un círculo y su...",
-    "options": ["Radio", "Diámetro", "Área", "Tangente"],
-    "answer": "Diámetro"
+    "question": "El número pi (π) es fundamental en matemáticas. Es la relación constante entre la circunferencia de un círculo y su...",
+    "options": ["Radio", "Diámetro", "Área", "Arco"],
+    "answer": "Diámetro",
+    "difficulty": "Fácil",
+    "topic": "Lógica y Matemáticas"
   },
   {
-    "question": "¿Cuál es la función principal de los glóbulos rojos en la sangre?",
-    "options": ["Combatir infecciones", "Transportar oxígeno", "Coagular la sangre", "Producir anticuerpos"],
-    "answer": "Transportar oxígeno"
+    "question": "¿Cuál es la función principal de los glóbulos rojos, que dan a la sangre su color característico?",
+    "options": ["Combatir infecciones", "Transportar oxígeno desde los pulmones al resto del cuerpo", "Ayudar a la coagulación", "Crear anticuerpos"],
+    "answer": "Transportar oxígeno desde los pulmones al resto del cuerpo",
+    "difficulty": "Fácil",
+    "topic": "Ciencia"
   },
   {
-    "question": "¿Qué pintor es famoso por su obra 'La noche estrellada'?",
+    "question": "¿Qué pintor postimpresionista neerlandés es famoso por su obra 'La noche estrellada', pintada desde un sanatorio?",
     "options": ["Claude Monet", "Salvador Dalí", "Vincent van Gogh", "Pablo Picasso"],
-    "answer": "Vincent van Gogh"
+    "answer": "Vincent van Gogh",
+    "difficulty": "Fácil",
+    "topic": "Arte y Literatura"
   },
   {
-    "question": "En el contexto de Internet, ¿qué significa 'DNS'?",
-    "options": ["Servidor de Nombre de Dominio", "Red de Seguridad Digital", "Señal de Navegación Directa", "Sistema de Nodos Distribuidos"],
-    "answer": "Servidor de Nombre de Dominio"
+    "question": "Cuando escribes 'google.com' en tu navegador, el 'DNS' actúa como una agenda telefónica de Internet para encontrar la dirección IP del servidor. ¿Qué significa DNS?",
+    "options": ["Sistema de Nombre de Dominio", "Red de Seguridad Digital", "Servidor de Navegación Directa", "Sistema de Nodos Distribuidos"],
+    "answer": "Sistema de Nombre de Dominio",
+    "difficulty": "Media",
+    "topic": "Tecnología"
   },
   {
-    "question": "¿Qué es la 'fisión nuclear'?",
-    "options": ["La unión de dos núcleos atómicos ligeros", "La división de un núcleo atómico pesado", "La emisión de partículas desde un núcleo", "La conversión de un protón en un neutrón"],
-    "answer": "La división de un núcleo atómico pesado"
+    "question": "Las centrales nucleares generan electricidad mediante la 'fisión nuclear'. ¿En qué consiste este proceso?",
+    "options": ["Unir dos núcleos atómicos ligeros", "Dividir un núcleo atómico pesado en dos más pequeños", "Quemar combustible nuclear", "Usar la energía del vapor"],
+    "answer": "Dividir un núcleo atómico pesado en dos más pequeños",
+    "difficulty": "Media",
+    "topic": "Ciencia"
   },
   {
-    "question": "¿Qué es un 'isótopo'?",
-    "options": ["Un átomo con diferente número de protones", "Un átomo con diferente número de electrones", "Un átomo con diferente número de neutrones", "Una molécula con la misma fórmula pero diferente estructura"],
-    "answer": "Un átomo con diferente número de neutrones"
+    "question": "Un 'isótopo' es una versión de un elemento con el mismo número de protones pero diferente número de...",
+    "options": ["Electrones", "Quarks", "Neutrones", "Positrones"],
+    "answer": "Neutrones",
+    "difficulty": "Media",
+    "topic": "Ciencia"
   },
   {
-    "question": "La 'sonata' es una composición musical típicamente para...",
-    "options": ["Una orquesta completa", "Un coro", "Un instrumento solista o un pequeño conjunto", "Una banda de jazz"],
-    "answer": "Un instrumento solista o un pequeño conjunto"
+    "question": "Una 'sonata' es una composición musical clásica escrita para uno o dos instrumentos. ¿Quién fue un famoso compositor de sonatas para piano?",
+    "options": ["Vivaldi", "Wagner", "Beethoven", "Stravinsky"],
+    "answer": "Beethoven",
+    "difficulty": "Media",
+    "topic": "Arte y Literatura"
   },
   {
-    "question": "Si algo tiene un pH de 2, se considera...",
+    "question": "El zumo de limón es ácido, mientras que el bicarbonato es alcalino. Si algo tiene un pH de 2, se considera...",
     "options": ["Fuertemente ácido", "Ligeramente ácido", "Neutro", "Fuertemente alcalino"],
-    "answer": "Fuertemente ácido"
+    "answer": "Fuertemente ácido",
+    "difficulty": "Fácil",
+    "topic": "Ciencia"
   },
   {
-    "question": "¿Qué campo de las matemáticas se ocupa del estudio de las formas, tamaños y propiedades del espacio?",
+    "question": "¿Qué campo de las matemáticas se ocupa del estudio de las formas, los tamaños, las posiciones de las figuras y las propiedades del espacio?",
     "options": ["Álgebra", "Cálculo", "Geometría", "Estadística"],
-    "answer": "Geometría"
+    "answer": "Geometría",
+    "difficulty": "Fácil",
+    "topic": "Lógica y Matemáticas"
   },
   {
-    "question": "¿Qué es el 'genoma'?",
-    "options": ["Un tipo de proteína", "El conjunto completo de material genético de un organismo", "La unidad básica de la herencia", "Una mutación en el ADN"],
-    "answer": "El conjunto completo de material genético de un organismo"
+    "question": "El 'genoma' de un organismo es como su libro de instrucciones completo. ¿Qué contiene?",
+    "options": ["Todas sus proteínas", "El conjunto completo de su material genético (ADN)", "Sus células madre", "Su tipo de sangre"],
+    "answer": "El conjunto completo de su material genético (ADN)",
+    "difficulty": "Media",
+    "topic": "Ciencia"
   },
   {
-    "question": "El 'origami' es el arte japonés de...",
-    "options": ["Pintura con tinta", "Arreglo floral", "Plegado de papel", "Caligrafía"],
-    "answer": "Plegado de papel"
+    "question": "El 'origami', el arte japonés de doblar papel para crear figuras, tradicionalmente no permite el uso de...",
+    "options": ["Papel de colores", "Doblado en diagonal", "Tijeras ni pegamento", "Manos"],
+    "answer": "Tijeras ni pegamento",
+    "difficulty": "Fácil",
+    "topic": "Arte y Literatura"
   },
   {
-    "question": "¿Qué planeta es conocido como el 'Planeta Rojo'?",
+    "question": "¿Qué planeta de nuestro sistema solar es conocido como el 'Planeta Rojo' debido a su superficie rica en óxido de hierro?",
     "options": ["Venus", "Marte", "Júpiter", "Saturno"],
-    "answer": "Marte"
+    "answer": "Marte",
+    "difficulty": "Fácil",
+    "topic": "Ciencia"
   },
   {
-    "question": "¿Qué ley de la termodinámica afirma que el calor nunca fluye espontáneamente de un objeto más frío a uno más caliente?",
-    "options": ["Primera Ley", "Segunda Ley", "Tercera Ley", "Ley Cero"],
-    "answer": "Segunda Ley"
+    "question": "La segunda ley de la termodinámica explica por qué el calor siempre fluye de un objeto más caliente a uno más frío y no al revés. ¿Qué concepto introduce?",
+    "options": ["Energía cinética", "Entropía (desorden)", "Fusión nuclear", "Relatividad"],
+    "answer": "Entropía (desorden)",
+    "difficulty": "Difícil",
+    "topic": "Ciencia"
   },
   {
-    "question": "¿Qué autor escribió la obra de teatro 'Hamlet'?",
-    "options": ["Christopher Marlowe", "Ben Jonson", "William Shakespeare", "John Donne"],
-    "answer": "William Shakespeare"
+    "question": "¿Qué dramaturgo inglés escribió la famosa tragedia de 'Hamlet', príncipe de Dinamarca?",
+    "options": ["Oscar Wilde", "George Bernard Shaw", "William Shakespeare", "Charles Dickens"],
+    "answer": "William Shakespeare",
+    "difficulty": "Media",
+    "topic": "Arte y Literatura"
   },
   {
-    "question": "¿Qué es la 'ósmosis'?",
-    "options": ["El movimiento de partículas de una zona de alta a baja concentración", "El movimiento de agua a través de una membrana semipermeable", "La digestión de nutrientes por una célula", "La producción de energía en la mitocondria"],
-    "answer": "El movimiento de agua a través de una membrana semipermeable"
+    "question": "¿Qué es la 'ósmosis', un proceso vital para las células vegetales y animales?",
+    "options": ["La producción de energía en la célula", "El movimiento de agua a través de una membrana semipermeable", "La división celular", "La digestión de alimentos"],
+    "answer": "El movimiento de agua a través de una membrana semipermeable",
+    "difficulty": "Media",
+    "topic": "Ciencia"
   },
   {
-    "question": "La unidad de medida de la frecuencia se llama...",
-    "options": ["Vatio", "Hercio (Hertz)", "Newton", "Julio"],
-    "answer": "Hercio (Hertz)"
+    "question": "La unidad de medida de la frecuencia de una onda (como el sonido o la luz) se llama Hercio (Hz). ¿Qué representa 1 Hz?",
+    "options": ["Un ciclo por segundo", "Mil ciclos por segundo", "Un metro por segundo", "Diez decibelios"],
+    "answer": "Un ciclo por segundo",
+    "difficulty": "Fácil",
+    "topic": "Ciencia"
   },
   {
-    "question": "¿Cuál es la capital de Australia?",
+    "question": "Aunque Sídney es la ciudad más grande y famosa de Australia, ¿cuál es su capital?",
     "options": ["Sídney", "Melbourne", "Canberra", "Perth"],
-    "answer": "Canberra"
+    "answer": "Canberra",
+    "difficulty": "Fácil",
+    "topic": "Cultura General"
   },
   {
-    "question": "¿Cuál de estas no es una de las lunas galileanas de Júpiter?",
-    "options": ["Ío", "Europa", "Ganimedes", "Titán"],
-    "answer": "Titán"
+    "question": "Galileo Galilei descubrió cuatro grandes lunas orbitando Júpiter. ¿Cuál de las siguientes NO es una de ellas?",
+    "options": ["Ío", "Europa", "Ganimedes", "Titán (luna de Saturno)"],
+    "answer": "Titán (luna de Saturno)",
+    "difficulty": "Media",
+    "topic": "Ciencia"
   },
   {
-    "question": "¿Qué es un 'algoritmo' en programación?",
-    "options": ["Un error en el código", "Un conjunto de instrucciones para resolver un problema", "El lenguaje que entiende un ordenador", "Un tipo de variable"],
-    "answer": "Un conjunto de instrucciones para resolver un problema"
+    "question": "En programación, un 'algoritmo' es esencialmente...",
+    "options": ["Un error en el código", "Una receta o un conjunto de instrucciones paso a paso para resolver un problema", "El lenguaje que entiende un ordenador", "El hardware del ordenador"],
+    "answer": "Una receta o un conjunto de instrucciones paso a paso para resolver un problema",
+    "difficulty": "Fácil",
+    "topic": "Tecnología"
   },
   {
-    "question": "En poesía, un 'soneto' tradicionalmente tiene ¿cuántos versos?",
+    "question": "Un 'soneto' es una forma poética muy popular en la literatura. ¿Cuántos versos tiene tradicionalmente?",
     "options": ["10", "12", "14", "16"],
-    "answer": "14"
+    "answer": "14",
+    "difficulty": "Media",
+    "topic": "Arte y Literatura"
   },
   {
-    "question": "¿Qué elemento es esencial para toda la vida orgánica y es la base de la química orgánica?",
+    "question": "¿Qué elemento, con el número atómico 6, es la base de toda la vida orgánica en la Tierra?",
     "options": ["Hidrógeno", "Oxígeno", "Carbono", "Nitrógeno"],
-    "answer": "Carbono"
+    "answer": "Carbono",
+    "difficulty": "Fácil",
+    "topic": "Ciencia"
   },
   {
-    "question": "El 'efecto Coriolis' es responsable de...",
-    "options": ["Las mareas", "La rotación de los huracanes", "Las estaciones del año", "Los eclipses solares"],
-    "answer": "La rotación de los huracanes"
+    "question": "El 'efecto Coriolis', debido a la rotación de la Tierra, influye en los patrones de viento y es responsable de...",
+    "options": ["Las mareas", "La dirección en que giran los huracanes", "Las estaciones del año", "Los eclipses solares"],
+    "answer": "La dirección en que giran los huracanes",
+    "difficulty": "Media",
+    "topic": "Ciencia"
   },
   {
-    "question": "El punto de ebullición del agua a nivel del mar es de 100 grados...",
+    "question": "El punto de ebullición del agua a nivel del mar es de 100 grados en la escala...",
     "options": ["Fahrenheit", "Kelvin", "Celsius", "Rankine"],
-    "answer": "Celsius"
+    "answer": "Celsius",
+    "difficulty": "Fácil",
+    "topic": "Ciencia"
   },
   {
-    "question": "¿Qué animal es un mamífero pero pone huevos?",
-    "options": ["El pingüino", "El ornitorrinco", "El murciélago", "El delfín"],
-    "answer": "El ornitorrinco"
+    "question": "¿Qué animal australiano, junto con el equidna, es uno de los pocos mamíferos que ponen huevos?",
+    "options": ["El koala", "El ornitorrinco", "El canguro", "El demonio de Tasmania"],
+    "answer": "El ornitorrinco",
+    "difficulty": "Fácil",
+    "topic": "Cultura General"
   },
   {
-    "question": "¿Qué compositor es famoso por sus 'Cuatro Estaciones'?",
+    "question": "¿Qué compositor barroco italiano es famoso por su vibrante conjunto de conciertos para violín conocido como 'Las Cuatro Estaciones'?",
     "options": ["Bach", "Mozart", "Beethoven", "Vivaldi"],
-    "answer": "Vivaldi"
+    "answer": "Vivaldi",
+    "difficulty": "Fácil",
+    "topic": "Arte y Literatura"
   },
   {
-    "question": "Un 'byte' en informática está compuesto por ¿cuántos bits?",
+    "question": "Un 'byte' es una unidad fundamental de información en computación. ¿Cuántos 'bits' lo componen?",
     "options": ["4", "8", "16", "32"],
-    "answer": "8"
+    "answer": "8",
+    "difficulty": "Fácil",
+    "topic": "Tecnología"
   },
   {
-    "question": "¿Qué es la 'litosfera'?",
-    "options": ["La capa de gases que rodea la Tierra", "La capa sólida y rígida más externa de la Tierra", "Toda el agua de la Tierra", "La capa donde se encuentra la capa de ozono"],
-    "answer": "La capa sólida y rígida más externa de la Tierra"
+    "question": "La 'litosfera' es la capa rocosa y rígida más externa de la Tierra, que comprende la corteza y la parte superior del manto. ¿Qué forma?",
+    "options": ["La atmósfera", "Los océanos", "Las placas tectónicas", "El núcleo terrestre"],
+    "answer": "Las placas tectónicas",
+    "difficulty": "Media",
+    "topic": "Ciencia"
   },
   {
-    "question": "¿Cuál de estos colores tiene la longitud de onda más larga en el espectro visible?",
+    "question": "En el espectro de luz visible, ¿qué color tiene la longitud de onda más larga y, por tanto, la menor energía?",
     "options": ["Violeta", "Azul", "Verde", "Rojo"],
-    "answer": "Rojo"
+    "answer": "Rojo",
+    "difficulty": "Fácil",
+    "topic": "Ciencia"
   },
   {
-    "question": "¿Qué es un 'fractal'?",
-    "options": ["Una ecuación sin solución", "Un objeto geométrico cuya estructura se repite a diferentes escalas", "Un tipo de polígono de 100 lados", "Un número que no puede ser expresado como fracción"],
-    "answer": "Un objeto geométrico cuya estructura se repite a diferentes escalas"
+    "question": "Un 'fractal' es un objeto matemático fascinante. ¿Cuál es su característica principal?",
+    "options": ["Es perfectamente simétrico", "Su patrón se repite a diferentes escalas (autosemejanza)", "No tiene área", "Es imposible de dibujar"],
+    "answer": "Su patrón se repite a diferentes escalas (autosemejanza)",
+    "difficulty": "Difícil",
+    "topic": "Lógica y Matemáticas"
   },
   {
-    "question": "¿Cuál es la función del 'cerebelo' en el cerebro?",
-    "options": ["Procesar emociones", "Controlar la memoria a largo plazo", "Coordinar el movimiento y el equilibrio", "Regular la respiración y el ritmo cardíaco"],
-    "answer": "Coordinar el movimiento y el equilibrio"
+    "question": "¿Qué parte del cerebro, situada en la parte posterior, es esencial para coordinar el movimiento, la postura y el equilibrio?",
+    "options": ["Lóbulo frontal", "Hipocampo", "Cerebelo", "Tronco encefálico"],
+    "answer": "Cerebelo",
+    "difficulty": "Media",
+    "topic": "Ciencia"
   },
   {
-    "question": "¿Qué es el 'dopaje' en el contexto de los semiconductores?",
-    "options": ["Limpiar el material de impurezas", "Añadir impurezas intencionadamente para cambiar sus propiedades eléctricas", "Enfriar el material a temperaturas criogénicas", "Exponer el material a la luz ultravioleta"],
-    "answer": "Añadir impurezas intencionadamente para cambiar sus propiedades eléctricas"
+    "question": "En tecnología, 'dopar' un semiconductor como el silicio significa añadirle impurezas para...",
+    "options": ["Limpiarlo", "Hacerlo más resistente", "Cambiar sus propiedades eléctricas", "Hacerlo transparente"],
+    "answer": "Cambiar sus propiedades eléctricas",
+    "difficulty": "Difícil",
+    "topic": "Tecnología"
   },
   {
-    "question": "Si mezclas luz azul y luz amarilla, ¿qué color obtienes?",
-    "options": ["Verde", "Blanco", "Magenta", "Cian"],
-    "answer": "Blanco"
+    "question": "La 'taiga', también conocida como bosque boreal, es el bioma terrestre más grande del mundo. ¿Qué tipo de árboles predominan allí?",
+    "options": ["Árboles de hoja ancha", "Coníferas (pinos, abetos)", "Selva tropical", "Palmeras"],
+    "answer": "Coníferas (pinos, abetos)",
+    "difficulty": "Media",
+    "topic": "Cultura General"
   },
   {
-    "question": "La 'taiga' es un bioma caracterizado por sus bosques de...",
-    "options": ["Árboles de hoja caduca", "Coníferas", "Selva tropical", "Cactus y suculentas"],
-    "answer": "Coníferas"
-  },
-  {
-    "question": "¿Quién es considerado el 'padre de la computación' por su concepto de la máquina analítica?",
+    "question": "¿Quién es considerado el 'padre de la computación' por diseñar la 'máquina analítica', el primer concepto de un ordenador programable?",
     "options": ["Alan Turing", "Charles Babbage", "John von Neumann", "Blaise Pascal"],
-    "answer": "Charles Babbage"
+    "answer": "Charles Babbage",
+    "difficulty": "Media",
+    "topic": "Tecnología"
   },
   {
-    "question": "¿Qué tipo de enlace químico implica el compartir de pares de electrones entre átomos?",
-    "options": ["Enlace iónico", "Enlace metálico", "Enlace covalente", "Puente de hidrógeno"],
-    "answer": "Enlace covalente"
+    "question": "El agua (H₂O) está formada por enlaces covalentes, en los que los átomos de hidrógeno y oxígeno...",
+    "options": ["Se transfieren electrones", "Comparten electrones", "Se repelen mutuamente", "Se fusionan"],
+    "answer": "Comparten electrones",
+    "difficulty": "Fácil",
+    "topic": "Ciencia"
   },
   {
-    "question": "¿Qué mide la 'escala de Richter'?",
-    "options": ["La velocidad del viento en un huracán", "La intensidad de un tornado", "La magnitud de un terremoto", "La profundidad de un océano"],
-    "answer": "La magnitud de un terremoto"
+    "question": "La escala de Richter y la escala de magnitud de momento se utilizan para medir la energía liberada por...",
+    "options": ["Un huracán", "Un volcán", "Un terremoto", "Un tsunami"],
+    "answer": "Un terremoto",
+    "difficulty": "Fácil",
+    "topic": "Ciencia"
   },
   {
-    "question": "En la expresión 'E=mc²', ¿qué representa la 'c'?",
-    "options": ["La masa de un objeto", "La energía", "La velocidad de la luz", "Una constante de proporcionalidad"],
-    "answer": "La velocidad de la luz"
+    "question": "En la famosa ecuación E=mc², ¿qué representa la 'c'?",
+    "options": ["La cantidad de carbono", "La energía", "La velocidad de la luz", "Una constante matemática"],
+    "answer": "La velocidad de la luz",
+    "difficulty": "Fácil",
+    "topic": "Ciencia"
   },
   {
-    "question": "¿Cuál es la lengua más hablada en el mundo por número de hablantes nativos?",
+    "question": "Con más de mil millones de hablantes nativos, ¿cuál es la lengua más hablada en el mundo?",
     "options": ["Inglés", "Español", "Chino mandarín", "Hindi"],
-    "answer": "Chino mandarín"
+    "answer": "Chino mandarín",
+    "difficulty": "Fácil",
+    "topic": "Cultura General"
   },
   {
-    "question": "El proceso de convertir un sólido directamente en un gas se llama...",
+    "question": "El hielo seco no se derrite, sino que pasa directamente de estado sólido a gaseoso. ¿Cómo se llama este proceso?",
     "options": ["Evaporación", "Condensación", "Sublimación", "Fusión"],
-    "answer": "Sublimación"
+    "answer": "Sublimación",
+    "difficulty": "Fácil",
+    "topic": "Ciencia"
   },
   {
-    "question": "¿Qué es la 'Estación Espacial Internacional' (EEI)?",
-    "options": ["Un satélite de comunicaciones", "Un telescopio en órbita", "Un laboratorio de investigación en órbita terrestre baja", "Una base lunar"],
-    "answer": "Un laboratorio de investigación en órbita terrestre baja"
+    "question": "¿Qué es la Estación Espacial Internacional (EEI)?",
+    "options": ["Un satélite de comunicaciones", "Un telescopio en órbita", "Un laboratorio de investigación habitado que orbita la Tierra", "Una futura base en Marte"],
+    "answer": "Un laboratorio de investigación habitado que orbita la Tierra",
+    "difficulty": "Fácil",
+    "topic": "Tecnología"
   },
   {
-    "question": "¿Qué gas noble se utiliza comúnmente para llenar globos que flotan?",
+    "question": "¿Qué gas noble, más ligero que el aire, se utiliza comúnmente para inflar globos y dirigibles?",
     "options": ["Neón", "Argón", "Helio", "Kriptón"],
-    "answer": "Helio"
+    "answer": "Helio",
+    "difficulty": "Fácil",
+    "topic": "Ciencia"
   },
   {
-    "question": "En una reacción de oxidación-reducción (redox), la oxidación es la...",
-    "options": ["Pérdida de electrones", "Ganancia de electrones", "Pérdida de protones", "Ganancia de neutrones"],
-    "answer": "Pérdida de electrones"
+    "question": "En una reacción química, la oxidación es la pérdida de electrones. ¿Cómo se llama el proceso complementario de ganancia de electrones?",
+    "options": ["Reducción", "Precipitación", "Neutralización", "Hidrólisis"],
+    "answer": "Reducción",
+    "difficulty": "Media",
+    "topic": "Ciencia"
   },
   {
-    "question": "¿Cuál de estos no es un estado de la materia?",
-    "options": ["Sólido", "Líquido", "Plasma", "Vacío"],
-    "answer": "Vacío"
+    "question": "El 'número áureo' (phi ≈ 1.618) se encuentra en el arte, la arquitectura y la naturaleza. ¿Qué lo hace especial?",
+    "options": ["Es un número entero", "Es estéticamente agradable a la vista", "Es el número más grande que existe", "Es un número primo"],
+    "answer": "Es estéticamente agradable a la vista",
+    "difficulty": "Media",
+    "topic": "Lógica y Matemáticas"
   },
   {
-    "question": "El 'número áureo' (phi) es un número irracional aproximadamente igual a...",
-    "options": ["3.141", "2.718", "1.618", "1.414"],
-    "answer": "1.618"
-  },
-  {
-    "question": "¿Qué instrumento se utiliza para medir la presión atmosférica?",
+    "question": "¿Qué instrumento meteorológico se utiliza para medir la presión atmosférica y predecir cambios en el tiempo?",
     "options": ["Termómetro", "Anemómetro", "Barómetro", "Higrómetro"],
-    "answer": "Barómetro"
+    "answer": "Barómetro",
+    "difficulty": "Fácil",
+    "topic": "Ciencia"
   },
   {
-    "question": "¿Qué le pasaría a una persona en el espacio sin traje espacial?",
-    "options": ["Se congelaría instantáneamente", "Explotaría por la presión", "Se asfixiaría por la falta de oxígeno", "Se quemaría por la radiación solar"],
-    "answer": "Se asfixiaría por la falta de oxígeno"
+    "question": "El mito de la 'Caja de Pandora' explica cómo se liberaron todos los males en el mundo. ¿Qué fue lo único que quedó dentro de la caja?",
+    "options": ["La valentía", "La sabiduría", "La esperanza", "La fuerza"],
+    "answer": "La esperanza",
+    "difficulty": "Fácil",
+    "topic": "Cultura General"
   },
   {
-    "question": "La 'Caja de Pandora' es un mito que explica...",
-    "options": ["El origen del fuego", "La creación de la mujer", "La liberación de los males en el mundo", "El cambio de las estaciones"],
-    "answer": "La liberación de los males en el mundo"
+    "question": "La transferencia de calor por el movimiento de un fluido (líquido o gas), como el agua hirviendo en una olla, se llama...",
+    "options": ["Radiación", "Conducción", "Convección", "Fricción"],
+    "answer": "Convección",
+    "difficulty": "Media",
+    "topic": "Ciencia"
   },
   {
-    "question": "¿Qué es la 'convección'?",
-    "options": ["Transferencia de calor por ondas electromagnéticas", "Transferencia de calor por contacto directo", "Transferencia de calor por el movimiento de un fluido", "La resistencia al flujo de calor"],
-    "answer": "Transferencia de calor por el movimiento de un fluido"
-  },
-  {
-    "question": "¿Qué es un 'prion'?",
-    "options": ["Un tipo de bacteria", "Un virus que infecta plantas", "Una proteína mal plegada que puede causar enfermedades", "Un orgánulo celular"],
-    "answer": "Una proteína mal plegada que puede causar enfermedades"
-  },
-  {
-    "question": "El río más largo del mundo es el...",
+    "question": "El río más caudaloso del mundo, que transporta más agua que cualquier otro, es el...",
     "options": ["Nilo", "Amazonas", "Yangtsé", "Misisipi"],
-    "answer": "Amazonas"
+    "answer": "Amazonas",
+    "difficulty": "Fácil",
+    "topic": "Cultura General"
   },
   {
     "question": "La 'tasa de refresco' de un monitor, medida en hercios (Hz), se refiere a...",
-    "options": ["El número de colores que puede mostrar", "La velocidad a la que se actualiza la imagen en la pantalla", "El consumo de energía del monitor", "El tamaño de los píxeles"],
-    "answer": "La velocidad a la que se actualiza la imagen en la pantalla"
+    "options": ["El número de colores que puede mostrar", "Cuántas veces por segundo se actualiza la imagen en la pantalla", "El consumo de energía", "El tamaño de los píxeles"],
+    "answer": "Cuántas veces por segundo se actualiza la imagen en la pantalla",
+    "difficulty": "Fácil",
+    "topic": "Tecnología"
   },
   {
-    "question": "¿Qué es la 'elasticidad' en economía?",
-    "options": ["La capacidad de un mercado para recuperarse de una crisis", "La medida de la respuesta de la demanda a un cambio en el precio", "La flexibilidad de los tipos de interés", "La cantidad de dinero en circulación"],
-    "answer": "La medida de la respuesta de la demanda a un cambio en el precio"
+    "question": "En psicología, el 'condicionamiento clásico' fue demostrado por Ivan Pavlov con su famoso experimento sobre la salivación de...",
+    "options": ["Gatos", "Perros", "Ratas", "Monos"],
+    "answer": "Perros",
+    "difficulty": "Media",
+    "topic": "Ciencia"
   },
   {
-    "question": "En psicología, el 'condicionamiento clásico' fue estudiado extensamente por...",
-    "options": ["Sigmund Freud", "B.F. Skinner", "Ivan Pavlov", "Carl Jung"],
-    "answer": "Ivan Pavlov"
-  },
-  {
-    "question": "¿Cuál es la fórmula química del agua oxigenada?",
+    "question": "La fórmula química del peróxido de hidrógeno, comúnmente conocido como agua oxigenada, es...",
     "options": ["H2O", "CO2", "H2O2", "O3"],
-    "answer": "H2O2"
+    "answer": "H2O2",
+    "difficulty": "Media",
+    "topic": "Ciencia"
   },
   {
-    "question": "Un 'tsunami' es una serie de olas gigantes causadas generalmente por...",
-    "options": ["Fuertes vientos", "La atracción gravitatoria de la Luna", "Terremotos o erupciones volcánicas submarinas", "El derretimiento de los glaciares"],
-    "answer": "Terremotos o erupciones volcánicas submarinas"
+    "question": "Un 'tsunami' es una serie de olas oceánicas gigantes causadas principalmente por...",
+    "options": ["Fuertes vientos de huracán", "La atracción de la Luna", "Terremotos o volcanes submarinos", "El derretimiento de los polos"],
+    "answer": "Terremotos o volcanes submarinos",
+    "difficulty": "Fácil",
+    "topic": "Ciencia"
   },
   {
-    "question": "¿Qué es la 'seda de araña' en términos de material?",
-    "options": ["Un tipo de celulosa", "Una fibra de proteína", "Un polímero sintético", "Un compuesto de carbono"],
-    "answer": "Una fibra de proteína"
+    "question": "El Teorema de Pitágoras (a² + b² = c²) se aplica a qué tipo de triángulos?",
+    "options": ["Cualquier triángulo", "Triángulos isósceles", "Triángulos equiláteros", "Triángulos rectángulos"],
+    "answer": "Triángulos rectángulos",
+    "difficulty": "Fácil",
+    "topic": "Lógica y Matemáticas"
   },
   {
-    "question": "El 'teorema de Pitágoras' se aplica a qué tipo de triángulos?",
-    "options": ["Todos los triángulos", "Triángulos isósceles", "Triángulos equiláteros", "Triángulos rectángulos"],
-    "answer": "Triángulos rectángulos"
+    "question": "Un 'catalizador' es una sustancia que acelera una reacción química sin...",
+    "options": ["Aportar energía", "Ser consumida en el proceso", "Cambiar de temperatura", "Mojarse"],
+    "answer": "Ser consumida en el proceso",
+    "difficulty": "Media",
+    "topic": "Ciencia"
   },
   {
-    "question": "¿Qué es un 'catalizador' en una reacción química?",
-    "options": ["Una sustancia que se consume en la reacción", "Una sustancia que aumenta la velocidad de una reacción sin consumirse", "El producto final de una reacción", "Un indicador del pH"],
-    "answer": "Una sustancia que aumenta la velocidad de una reacción sin consumirse"
-  },
-  {
-    "question": "¿Qué planeta tarda más en completar una órbita alrededor del Sol?",
+    "question": "¿Qué planeta de nuestro sistema solar, el más alejado del Sol, tarda aproximadamente 165 años terrestres en completar una órbita?",
     "options": ["Júpiter", "Saturno", "Urano", "Neptuno"],
-    "answer": "Neptuno"
+    "answer": "Neptuno",
+    "difficulty": "Media",
+    "topic": "Ciencia"
   },
   {
-    "question": "La 'aurora boreal' es causada por partículas cargadas del Sol que interactúan con...",
-    "options": ["La atmósfera de la Luna", "El campo magnético de la Tierra", "Las nubes de la troposfera", "La capa de ozono"],
-    "answer": "El campo magnético de la Tierra"
+    "question": "La 'aurora boreal' (luces del norte) es un espectáculo de luz natural causado por partículas solares que chocan con...",
+    "options": ["La superficie de la Luna", "El campo magnético de la Tierra", "Las nubes de lluvia", "La Estación Espacial Internacional"],
+    "answer": "El campo magnético de la Tierra",
+    "difficulty": "Fácil",
+    "topic": "Ciencia"
   },
   {
-    "question": "¿Qué es la 'mitocondria'?",
-    "options": ["El 'cerebro' de la célula", "La 'central energética' de la célula", "La estructura que da forma a la célula", "El centro de reciclaje de la célula"],
-    "answer": "La 'central energética' de la célula"
+    "question": "¿Qué orgánulo celular, conocido como la 'central energética', convierte los nutrientes en energía (ATP)?",
+    "options": ["El núcleo", "La mitocondria", "El ribosoma", "El lisosoma"],
+    "answer": "La mitocondria",
+    "difficulty": "Fácil",
+    "topic": "Ciencia"
   },
   {
-    "question": "En la teoría musical, ¿qué es una 'octava'?",
-    "options": ["Un acorde de tres notas", "El intervalo entre una nota y otra con la mitad o el doble de su frecuencia", "La escala de cinco notas", "El tempo de una pieza"],
-    "answer": "El intervalo entre una nota y otra con la mitad o el doble de su frecuencia"
+    "question": "En música, una 'octava' es el intervalo entre una nota musical y otra con...",
+    "options": ["El mismo nombre", "El doble o la mitad de su frecuencia", "Un sonido similar", "Tres tonos de diferencia"],
+    "answer": "El doble o la mitad de su frecuencia",
+    "difficulty": "Media",
+    "topic": "Arte y Literatura"
   },
   {
-    "question": "¿Cuál es el componente principal del gas natural?",
-    "options": ["Butano", "Propano", "Etano", "Metano"],
-    "answer": "Metano"
+    "question": "El 'dilema del prisionero' es un famoso ejemplo de la teoría de juegos que demuestra que dos individuos pueden no cooperar incluso si les conviene. ¿Por qué?",
+    "options": ["Porque son irracionales", "Porque no confían el uno en el otro", "Porque no se comunican", "Todas las anteriores"],
+    "answer": "Todas las anteriores",
+    "difficulty": "Difícil",
+    "topic": "Lógica y Matemáticas"
   },
   {
-    "question": "El 'dilema del prisionero' es un ejemplo canónico de un problema analizado en...",
-    "options": ["Teoría del caos", "Teoría de juegos", "Cálculo", "Álgebra lineal"],
-    "answer": "Teoría de juegos"
+    "question": "La memoria 'RAM' de un ordenador es un tipo de memoria volátil. ¿Qué significa esto?",
+    "options": ["Almacena datos permanentemente", "Sus datos se borran cuando se apaga el ordenador", "Es muy lenta", "Es indestructible"],
+    "answer": "Sus datos se borran cuando se apaga el ordenador",
+    "difficulty": "Fácil",
+    "topic": "Tecnología"
   },
   {
-    "question": "¿Qué es la 'memoria RAM' en un ordenador?",
-    "options": ["Almacenamiento permanente de datos", "Memoria de acceso aleatorio para almacenamiento temporal", "La unidad central de procesamiento", "La tarjeta gráfica"],
-    "answer": "Memoria de acceso aleatorio para almacenamiento temporal"
+    "question": "El punto más profundo de todos los océanos de la Tierra, con casi 11,000 metros de profundidad, es la...",
+    "options": ["Fosa de Perú-Chile", "Fosa de las Marianas", "Fosa de Puerto Rico", "Fosa de Tonga"],
+    "answer": "Fosa de las Marianas",
+    "difficulty": "Media",
+    "topic": "Cultura General"
   },
   {
-    "question": "¿Cuál es el punto más profundo de los océanos?",
-    "options": ["La Fosa de Tonga", "La Fosa de las Marianas", "La Fosa de Puerto Rico", "La Fosa de Java"],
-    "answer": "La Fosa de las Marianas"
+    "question": "'Terraformar' un planeta, un concepto popular en ciencia ficción, significa...",
+    "options": ["Estudiar su geología", "Modificar su atmósfera, temperatura y ecología para hacerlo similar a la Tierra", "Crear mapas detallados de su superficie", "Extraer sus recursos minerales"],
+    "answer": "Modificar su atmósfera, temperatura y ecología para hacerlo similar a la Tierra",
+    "difficulty": "Media",
+    "topic": "Ciencia"
   },
   {
-    "question": "¿Qué es la 'hipótesis de Riemann', uno de los problemas no resueltos más famosos de las matemáticas?",
-    "options": ["Una conjetura sobre la existencia de infinitos números primos gemelos", "Una conjetura sobre la distribución de los números primos", "Un problema sobre la curvatura del espacio-tiempo", "Una pregunta sobre la naturaleza de la infinidad"],
-    "answer": "Una conjetura sobre la distribución de los números primos"
+    "question": "CRISPR-Cas9 es una tecnología revolucionaria que permite a los científicos...",
+    "options": ["Observar galaxias lejanas", "Editar genes con gran precisión", "Comprimir datos de forma eficiente", "Crear nuevos elementos químicos"],
+    "answer": "Editar genes con gran precisión",
+    "difficulty": "Difícil",
+    "topic": "Ciencia"
   },
   {
-    "question": "¿Qué significa 'terraforming'?",
-    "options": ["Estudiar la geología de la Tierra", "Modificar la atmósfera de otro planeta para hacerlo habitable", "Crear mapas tridimensionales de un terreno", "Extraer recursos de asteroides"],
-    "answer": "Modificar la atmósfera de otro planeta para hacerlo habitable"
-  },
-  {
-    "question": "¿Cuál de estos no es un principio de la 'Gestalt' en psicología de la percepción?",
-    "options": ["Proximidad", "Semejanza", "Cierre", "Complejidad"],
-    "answer": "Complejidad"
-  },
-  {
-    "question": "La 'constante de Planck' es fundamental en qué teoría física?",
-    "options": ["La mecánica clásica", "La relatividad general", "La mecánica cuántica", "La termodinámica"],
-    "answer": "La mecánica cuántica"
-  },
-  {
-    "question": "¿Qué es el 'crispr' (CRISPR-Cas9)?",
-    "options": ["Un tipo de telescopio espacial", "Una técnica de edición de genes", "Un algoritmo de compresión de datos", "Un nuevo elemento químico"],
-    "answer": "Una técnica de edición de genes"
-  },
-  {
-    "question": "Un 'googol' es el número 1 seguido de...",
-    "options": ["Cien ceros", "Mil ceros", "Un millón de ceros", "Nueve ceros"],
-    "answer": "Cien ceros"
-  },
-  {
-    "question": "¿Qué tipo de radiación electromagnética tiene la energía más alta?",
+    "question": "¿Qué tipo de radiación electromagnética, con la longitud de onda más corta y la mayor energía, es también la más peligrosa?",
     "options": ["Ondas de radio", "Luz visible", "Rayos X", "Rayos gamma"],
-    "answer": "Rayos gamma"
+    "answer": "Rayos gamma",
+    "difficulty": "Media",
+    "topic": "Ciencia"
   },
   {
-    "question": "¿Qué es la 'disonancia cognitiva'?",
-    "options": ["Un trastorno auditivo", "La incomodidad mental al tener dos creencias contradictorias", "Una técnica de composición musical", "Un error de lógica en un argumento"],
-    "answer": "La incomodidad mental al tener dos creencias contradictorias"
+    "question": "La 'disonancia cognitiva' es la incomodidad mental que sentimos cuando...",
+    "options": ["No entendemos un problema", "Tenemos dos ideas o creencias contradictorias al mismo tiempo", "Escuchamos música que no nos gusta", "Aprendemos algo nuevo"],
+    "answer": "Tenemos dos ideas o creencias contradictorias al mismo tiempo",
+    "difficulty": "Difícil",
+    "topic": "Cultura General"
   },
   {
-    "question": "¿Cuál de los siguientes es un ejemplo de un 'coloide'?",
-    "options": ["Agua salada", "Aire", "Leche", "Aceite puro"],
-    "answer": "Leche"
+    "question": "¿Qué es el 'efecto placebo' en medicina?",
+    "options": ["Una reacción alérgica a un medicamento", "Un efecto secundario negativo", "Una mejora de los síntomas basada en la creencia de haber recibido un tratamiento, aunque este no tenga efecto real", "La dosis recomendada de un fármaco"],
+    "answer": "Una mejora de los síntomas basada en la creencia de haber recibido un tratamiento, aunque este no tenga efecto real",
+    "difficulty": "Fácil",
+    "topic": "Ciencia"
   },
   {
-    "question": "¿Qué es el 'efecto placebo'?",
-    "options": ["Una reacción alérgica a un medicamento", "Un efecto secundario de un tratamiento", "Una mejora en la salud por la creencia en un tratamiento ineficaz", "La dosis correcta de un fármaco"],
-    "answer": "Una mejora en la salud por la creencia en un tratamiento ineficaz"
+    "question": "La diferencia fundamental entre 'masa' y 'peso' es que el peso depende de...",
+    "options": ["La temperatura", "La velocidad", "La fuerza de la gravedad", "El volumen"],
+    "answer": "La fuerza de la gravedad",
+    "difficulty": "Fácil",
+    "topic": "Ciencia"
   },
   {
-    "question": "En un motor de combustión interna, ¿cuál es la función de la bujía?",
-    "options": ["Mezclar aire y combustible", "Expulsar los gases de escape", "Iniciar la combustión de la mezcla de aire y combustible", "Lubricar el pistón"],
-    "answer": "Iniciar la combustión de la mezcla de aire y combustible"
+    "question": "¿Cuál es la función del diafragma en nuestro cuerpo?",
+    "options": ["Bombear la sangre", "Digestar los alimentos", "Es el principal músculo implicado en la respiración", "Filtrar las toxinas"],
+    "answer": "Es el principal músculo implicado en la respiración",
+    "difficulty": "Fácil",
+    "topic": "Ciencia"
   },
   {
-    "question": "¿Qué es la 'luz sincrotrón'?",
-    "options": ["La luz emitida por las luciérnagas", "Radiación electromagnética intensa producida por partículas cargadas que se mueven a velocidades relativistas", "Un tipo de láser utilizado en cirugía", "La luz reflejada por la Luna"],
-    "answer": "Radiación electromagnética intensa producida por partículas cargadas que se mueven a velocidades relativistas"
+    "question": "La 'Ley de Moore' predijo que el número de transistores en un microchip se duplicaría cada dos años. ¿Qué ha permitido esto?",
+    "options": ["Que los ordenadores sean más lentos", "Que los ordenadores sean exponencialmente más potentes y pequeños", "Que los ordenadores consuman más energía", "Que Internet sea más lento"],
+    "answer": "Que los ordenadores sean exponencialmente más potentes y pequeños",
+    "difficulty": "Media",
+    "topic": "Tecnología"
   },
   {
-    "question": "¿Cuál es la diferencia entre 'masa' y 'peso'?",
-    "options": ["Son lo mismo", "La masa es la cantidad de materia y el peso es la fuerza de la gravedad sobre esa masa", "El peso es la cantidad de materia y la masa es la fuerza de la gravedad", "La masa se mide en Newtons y el peso en kilogramos"],
-    "answer": "La masa es la cantidad de materia y el peso es la fuerza de la gravedad sobre esa masa"
+    "question": "El 'efecto mariposa', una idea central de la Teoría del Caos, sugiere que...",
+    "options": ["Las mariposas pueden predecir el futuro", "Pequeñas acciones pueden tener consecuencias enormes e impredecibles", "Todos los eventos están predeterminados", "El tiempo es cíclico"],
+    "answer": "Pequeñas acciones pueden tener consecuencias enormes e impredecibles",
+    "difficulty": "Media",
+    "topic": "Lógica y Matemáticas"
   },
   {
-    "question": "El 'Bosón de Higgs' es a menudo apodado...",
-    "options": ["La partícula fantasma", "La partícula de Dios", "La partícula elemental", "La partícula omega"],
-    "answer": "La partícula de Dios"
+    "question": "Un 'anagrama' es una palabra o frase formada al reordenar las letras de otra. ¿'Amor' es un anagrama de qué ciudad europea?",
+    "options": ["París", "Oslo", "Roma", "León"],
+    "answer": "Roma",
+    "difficulty": "Fácil",
+    "topic": "Cultura General"
   },
   {
-    "question": "¿Cuál es la función del 'diafragma' en el cuerpo humano?",
-    "options": ["Bombear sangre al corazón", "Separar el corazón de los pulmones", "Es el principal músculo de la respiración", "Ayudar en la digestión de los alimentos"],
-    "answer": "Es el principal músculo de la respiración"
+    "question": "¿Cuál es el componente principal del 'blockchain', la tecnología detrás de las criptomonedas como Bitcoin?",
+    "options": ["Un único servidor central", "Un registro de transacciones distribuido y enlazado criptográficamente", "Un algoritmo de inteligencia artificial", "Un sistema de correo electrónico seguro"],
+    "answer": "Un registro de transacciones distribuido y enlazado criptográficamente",
+    "difficulty": "Difícil",
+    "topic": "Tecnología"
   },
   {
-    "question": "¿Qué mide la 'ley de Moore'?",
-    "options": ["El aumento de la velocidad de Internet", "La observación de que el número de transistores en un microchip se duplica aproximadamente cada dos años", "La disminución del coste del almacenamiento de datos", "El aumento de la resolución de las cámaras digitales"],
-    "answer": "La observación de que el número de transistores en un microchip se duplica aproximadamente cada dos años"
-  },
-  {
-    "question": "Si una inversión se duplica en 10 años, ¿cuál es su tasa de rendimiento anual aproximada, según la 'regla del 72'?",
-    "options": ["10%", "7.2%", "12%", "5%"],
-    "answer": "7.2%"
-  },
-  {
-    "question": "¿Qué es la 'computación cuántica'?",
-    "options": ["Usar ordenadores muy pequeños", "Un área de la informática que utiliza los principios de la mecánica cuántica", "Calcular la trayectoria de los planetas", "Encriptar datos usando algoritmos complejos"],
-    "answer": "Un área de la informática que utiliza los principios de la mecánica cuántica"
-  },
-  {
-    "question": "El 'efecto mariposa' es el concepto central de...",
-    "options": ["La teoría de la relatividad", "La teoría del caos", "La mecánica newtoniana", "La termodinámica"],
-    "answer": "La teoría del caos"
-  },
-  {
-    "question": "¿Qué es un 'anagrama'?",
-    "options": ["Una palabra que se lee igual al revés", "Una palabra formada reordenando las letras de otra", "Una figura retórica que exagera", "Una palabra con múltiples significados"],
-    "answer": "Una palabra formada reordenando las letras de otra"
-  },
-  {
-    "question": "¿Cuál es la paradoja del 'hotel infinito' de Hilbert?",
-    "options": ["Un hotel que nunca se puede construir", "Un hotel con un número infinito de habitaciones que siempre puede alojar a más huéspedes, incluso si está lleno", "Un hotel donde el tiempo pasa más despacio", "Un hotel que se pierde en el espacio"],
-    "answer": "Un hotel con un número infinito de habitaciones que siempre puede alojar a más huéspedes, incluso si está lleno"
-  },
-  {
-    "question": "La 'cromatografía' es una técnica de laboratorio utilizada para...",
-    "options": ["Medir el color de una sustancia", "Separar los componentes de una mezcla", "Observar células bajo un microscopio", "Sintetizar nuevos compuestos químicos"],
-    "answer": "Separar los componentes de una mezcla"
-  },
-  {
-    "question": "¿Cuál es el propósito del 'Gran Colisionador de Hadrones' (LHC)?",
-    "options": ["Generar energía nuclear limpia", "Estudiar las partículas fundamentales haciendo colisionar protones a alta velocidad", "Buscar vida extraterrestre", "Lanzar satélites a la órbita"],
-    "answer": "Estudiar las partículas fundamentales haciendo colisionar protones a alta velocidad"
-  },
-  {
-    "question": "¿Qué es la 'entropía negativa' o 'neguentropía'?",
-    "options": ["Un estado de desorden perfecto", "Un concepto que se refiere al aumento del orden en un sistema", "La energía requerida para enfriar un objeto", "Un tipo de antimateria"],
-    "answer": "Un concepto que se refiere al aumento del orden en un sistema"
-  },
-  {
-    "question": "¿Qué describe la 'Ley de Hubble' en cosmología?",
-    "options": ["La relación entre la distancia de una galaxia y su velocidad de recesión (expansión del universo)", "La forma en que la gravedad curva la luz", "El ciclo de vida de las estrellas", "La existencia de materia oscura"],
-    "answer": "La relación entre la distancia de una galaxia y su velocidad de recesión (expansión del universo)"
-  },
-  {
-    "question": "¿Cuál de estos es un ejemplo de 'software de código abierto' (open source)?",
-    "options": ["Microsoft Windows", "Adobe Photoshop", "Linux", "MacOS"],
-    "answer": "Linux"
-  },
-  {
-    "question": "En el 'dilema del tranvía', ¿cuál es el conflicto ético central?",
-    "options": ["Elegir entre dos bienes menores", "Sacrificar a una persona para salvar a un grupo más grande", "Mentir para proteger a alguien", "Robar para alimentar a tu familia"],
-    "answer": "Sacrificar a una persona para salvar a un grupo más grande"
-  },
-  {
-    "question": "¿Qué es un 'superconductor'?",
-    "options": ["Un material que conduce muy bien el calor", "Un material con resistencia eléctrica cero por debajo de una cierta temperatura", "Un cable que puede transportar voltajes extremadamente altos", "Un aislante perfecto"],
-    "answer": "Un material con resistencia eléctrica cero por debajo de una cierta temperatura"
-  },
-  {
-    "question": "La 'navaja de Ockham' es un principio filosófico que sugiere que...",
-    "options": ["Las teorías más complejas suelen ser las correctas", "La explicación más simple para un fenómeno suele ser la más probable", "Todas las teorías son igualmente válidas", "La verdad es subjetiva"],
-    "answer": "La explicación más simple para un fenómeno suele ser la más probable"
-  },
-  {
-    "question": "¿Qué es el 'albedo' de un planeta?",
-    "options": ["La fuerza de su campo magnético", "La medida de cuánta luz solar refleja su superficie", "La velocidad de su rotación", "La composición de su atmósfera"],
-    "answer": "La medida de cuánta luz solar refleja su superficie"
-  },
-  {
-    "question": "El 'grafeno' es una forma de carbono que consiste en una sola capa de átomos dispuestos en una red...",
-    "options": ["Cúbica", "Tetraédrica", "Hexagonal", "Amorfa"],
-    "answer": "Hexagonal"
-  },
-  {
-    "question": "¿Qué describe la 'conjetura de Poincaré', demostrada por Grigori Perelmán?",
-    "options": ["Una propiedad de los números primos", "Una característica fundamental de las esferas en tres dimensiones", "Un problema sobre la eficiencia de los algoritmos", "Una teoría sobre la forma del universo"],
-    "answer": "Una característica fundamental de las esferas en tres dimensiones"
-  },
-  {
-    "question": "¿Qué es la 'bioacumulación'?",
-    "options": ["La creación de nuevas especies", "El proceso por el cual las toxinas se concentran en los organismos a medida que ascienden en la cadena alimentaria", "La capacidad de un organismo para generar su propio alimento", "La descomposición de la materia orgánica"],
-    "answer": "El proceso por el cual las toxinas se concentran en los organismos a medida que ascienden en la cadena alimentaria"
-  },
-  {
-    "question": "¿Cuál es la 'paradoja del abuelo' en el contexto de los viajes en el tiempo?",
-    "options": ["La idea de que si viajas al pasado y matas a tu abuelo, nunca habrías nacido para hacerlo", "La dificultad de construir una máquina del tiempo", "El efecto del viaje en el tiempo en la memoria", "La imposibilidad de viajar más rápido que la luz"],
-    "answer": "La idea de que si viajas al pasado y matas a tu abuelo, nunca habrías nacido para hacerlo"
-  },
-  {
-    "question": "¿Qué es un 'exoplaneta'?",
-    "options": ["Un planeta dentro de nuestro Sistema Solar", "Un planeta que orbita una estrella fuera de nuestro Sistema Solar", "Una luna que orbita un planeta gaseoso", "Un planeta enano como Plutón"],
-    "answer": "Un planeta que orbita una estrella fuera de nuestro Sistema Solar"
-  },
-  {
-    "question": "En el modelo estándar de la física de partículas, ¿qué fuerza no está incluida?",
-    "options": ["La fuerza electromagnética", "La fuerza nuclear fuerte", "La fuerza nuclear débil", "La gravedad"],
-    "answer": "La gravedad"
-  },
-  {
-    "question": "Un 'líquido no newtoniano' es aquel cuya viscosidad cambia bajo...",
-    "options": ["Presión", "Temperatura", "Esfuerzo o tensión", "Exposición a la luz"],
-    "answer": "Esfuerzo o tensión"
-  },
-  {
-    "question": "¿Qué es el 'blockchain'?",
-    "options": ["Un tipo de base de datos distribuida y segura, famosa por su uso en criptomonedas", "Un algoritmo para buscar en Internet", "Un nuevo protocolo de correo electrónico", "Un cortafuegos para proteger redes"],
-    "answer": "Un tipo de base de datos distribuida y segura, famosa por su uso en criptomonedas"
-  },
-  {
-    "question": "¿Qué es la 'singularidad' en el contexto de un agujero negro?",
-    "options": ["El borde del agujero negro", "Un punto de densidad y gravedad infinitas en el centro", "La radiación que emite un agujero negro", "El momento en que se forma un agujero negro"],
-    "answer": "Un punto de densidad y gravedad infinitas en el centro"
-  },
-  {
-    "question": "¿Cuál es el 'efecto observador' en la mecánica cuántica?",
-    "options": ["El hecho de que observar un fenómeno lo altera inevitablemente", "La tendencia de los científicos a ver lo que esperan ver", "El cambio en la frecuencia de una onda debido al movimiento", "La distorsión de la luz por la gravedad"],
-    "answer": "El hecho de que observar un fenómeno lo altera inevitablemente"
-  },
-  {
-    "question": "¿Cuál es el 'problema de los tres cuerpos' en física?",
-    "options": ["El problema de determinar el movimiento de tres cuerpos celestes que interactúan gravitacionalmente, que no tiene una solución general exacta", "El desafío de dividir un ángulo en tres partes iguales", "La dificultad de encontrar tres números primos consecutivos", "El puzzle de cómo tres partículas pueden estar entrelazadas"],
-    "answer": "El problema de determinar el movimiento de tres cuerpos celestes que interactúan gravitacionalmente, que no tiene una solución general exacta"
-  },
-  {
-    "question": "¿Qué es la 'panspermia'?",
-    "options": ["La teoría de que la vida en la Tierra se originó a partir de microorganismos del espacio exterior", "La idea de que el universo es infinito y eterno", "El estudio de la vida en condiciones extremas", "La creencia de que todas las formas de vida comparten un ancestro común"],
-    "answer": "La teoría de que la vida en la Tierra se originó a partir de microorganismos del espacio exterior"
-  },
-  {
-    "question": "¿Qué es el 'fuego de San Telmo'?",
-    "options": ["Un tipo de incendio forestal", "Una descarga eléctrica luminosa causada por la ionización del aire durante una tormenta", "Una ilusión óptica en el desierto", "El nombre de una constelación"],
-    "answer": "Una descarga eléctrica luminosa causada por la ionización del aire durante una tormenta"
-  },
-  {
-    "question": "¿Qué es el 'aprendizaje automático' (machine learning)?",
-    "options": ["Un campo de la inteligencia artificial que permite a los ordenadores aprender sin ser explícitamente programados", "El proceso de enseñar a los robots a realizar tareas físicas", "La velocidad a la que un ordenador puede procesar información", "Un tipo de memoria de ordenador"],
-    "answer": "Un campo de la inteligencia artificial que permite a los ordenadores aprender sin ser explícitamente programados"
-  },
-  {
-    "question": "¿Qué es un 'polímero'?",
-    "options": ["Una molécula pequeña y simple", "Una macromolécula compuesta por la repetición de unidades más pequeñas llamadas monómeros", "Un compuesto que contiene solo carbono e hidrógeno", "Una mezcla de dos o más metales"],
-    "answer": "Una macromolécula compuesta por la repetición de unidades más pequeñas llamadas monómeros"
-  },
-  {
-    "question": "¿Qué es la 'tercera ley del movimiento' de Newton?",
-    "options": ["Un objeto en reposo permanece en reposo", "Fuerza es igual a masa por aceleración", "Por cada acción, hay una reacción igual y opuesta", "La gravedad afecta a todos los objetos por igual"],
-    "answer": "Por cada acción, hay una reacción igual y opuesta"
-  },
-  {
-    "question": "¿Qué es la 'sonoluminiscencia'?",
-    "options": ["La emisión de luz por el sonido", "La creación de sonido a partir de la luz", "La capacidad de algunos animales para ver el sonido", "La medición de la intensidad del sonido"],
-    "answer": "La emisión de luz por el sonido"
-  },
-  {
-    "question": "¿Qué es un 'número transfinito'?",
-    "options": ["Un número mayor que cualquier número finito, utilizado para describir el tamaño de conjuntos infinitos", "Un número que no se puede escribir como una fracción", "Un número imaginario", "Un número primo muy grande"],
-    "answer": "Un número mayor que cualquier número finito, utilizado para describir el tamaño de conjuntos infinitos"
-  },
-  {
-    "question": "¿Qué es la 'esfera de Dyson'?",
-    "options": ["Un tipo de nave espacial", "Una megaestructura hipotética que rodearía una estrella para capturar toda su energía", "Un arma teórica capaz de destruir planetas", "Un campo de fuerza para proteger una civilización"],
-    "answer": "Una megaestructura hipotética que rodearía una estrella para capturar toda su energía"
-  },
-  {
-    "question": "¿Qué es la 'homeostasis'?",
-    "options": ["La tendencia de un sistema a caer en el desorden", "La capacidad de un organismo para mantener un ambiente interno estable a pesar de los cambios externos", "El proceso de división celular", "La relación simbiótica entre dos especies"],
-    "answer": "La capacidad de un organismo para mantener un ambiente interno estable a pesar de los cambios externos"
-  },
-  {
-    "question": "¿Cuál es la 'paradoja de Fermi'?",
-    "options": ["La aparente contradicción entre la alta probabilidad de existencia de civilizaciones extraterrestres y la falta de evidencia de ellas", "La pregunta de si un barco sigue siendo el mismo si todas sus partes son reemplazadas", "La idea de que no se puede conocer simultáneamente la posición y el momento de una partícula", "El problema de cómo el universo pudo surgir de la nada"],
-    "answer": "La aparente contradicción entre la alta probabilidad de existencia de civilizaciones extraterrestres y la falta de evidencia de ellas"
-  },
-  {
-    "question": "¿Qué es el 'entrelazamiento cuántico'?",
-    "options": ["Un fenómeno en el que dos partículas están vinculadas de tal manera que el estado de una afecta instantáneamente a la otra, sin importar la distancia", "La tendencia de las partículas a formar pares", "La forma en que las partículas se unen para formar átomos", "Un tipo de enlace químico"],
-    "answer": "Un fenómeno en el que dos partículas están vinculadas de tal manera que el estado de una afecta instantáneamente a la otra, sin importar la distancia"
-  },
-  {
-    "question": "¿Qué es un 'meme' en el sentido original acuñado por Richard Dawkins?",
-    "options": ["Una imagen divertida en Internet", "Una unidad de transmisión cultural, como una idea o un comportamiento, que se propaga de persona a persona", "Un gen que ha mutado", "Un tipo de virus informático"],
-    "answer": "Una unidad de transmisión cultural, como una idea o un comportamiento, que se propaga de persona a persona"
-  },
-  {
-    "question": "En estadística, ¿qué es un 'error de tipo I'?",
-    "options": ["Aceptar una hipótesis nula cuando es falsa", "Rechazar una hipótesis nula cuando es verdadera (un falso positivo)", "Un error en el cálculo de la media", "Usar una muestra no representativa"],
-    "answer": "Rechazar una hipótesis nula cuando es verdadera (un falso positivo)"
-  },
-  {
-    "question": "¿Qué es la 'economía del comportamiento' (behavioral economics)?",
-    "options": ["Un campo que estudia los efectos de los factores psicológicos y sociales en las decisiones económicas de los individuos", "El estudio de la economía de los países en desarrollo", "Un modelo económico basado en la oferta y la demanda", "La política fiscal de un gobierno"],
-    "answer": "Un campo que estudia los efectos de los factores psicológicos y sociales en las decisiones económicas de los individuos"
-  },
-  {
-    "question": "¿Cuál es la 'constante de Avogadro'?",
-    "options": ["El número de átomos en 12 gramos de carbono-12, que define la unidad 'mol'", "La velocidad de la luz en el vacío", "La carga de un electrón", "La relación entre la circunferencia y el diámetro de un círculo"],
-    "answer": "El número de átomos en 12 gramos de carbono-12, que define la unidad 'mol'"
-  },
-  {
-    "question": "Un 'aperiódico' teselado, como el de Penrose, es un patrón que...",
-    "options": ["Cubre un plano sin superposiciones ni huecos, pero sin repetirse periódicamente", "Se repite en un patrón regular", "Solo se puede hacer con cuadrados", "Tiene un número infinito de colores"],
-    "answer": "Cubre un plano sin superposiciones ni huecos, pero sin repetirse periódicamente"
-  },
-  {
-    "question": "¿Qué es el 'Efecto Mandela'?",
-    "options": ["Un fenómeno de memoria colectiva en el que un gran número de personas recuerda algo que nunca ocurrió", "Una ley económica sobre la distribución de la riqueza", "Un principio de la física cuántica", "Una estrategia política para ganar elecciones"],
-    "answer": "Un fenómeno de memoria colectiva en el que un gran número de personas recuerda algo que nunca ocurrió"
-  },
-  {
-    "question": "¿Qué es la 'Radiación de Cherenkov'?",
-    "options": ["La radiación emitida por un cuerpo caliente", "La luz azulada emitida cuando una partícula cargada viaja a través de un medio dieléctrico más rápido que la velocidad de la luz en ese medio", "La radiación de fondo del universo", "Un tipo de rayo gamma"],
-    "answer": "La luz azulada emitida cuando una partícula cargada viaja a través de un medio dieléctrico más rápido que la velocidad de la luz en ese medio"
-  },
-  {
-    "question": "¿Qué es la 'epigenética'?",
-    "options": ["El estudio de los cambios hereditarios en la expresión de los genes que no implican cambios en la secuencia de ADN subyacente", "El estudio de los genes antiguos", "La creación de genes artificiales", "La terapia para corregir enfermedades genéticas"],
-    "answer": "El estudio de los cambios hereditarios en la expresión de los genes que no implican cambios en la secuencia de ADN subyacente"
-  },
-  {
-    "question": "¿Qué es un 'motor de iones'?",
-    "options": ["Un tipo de motor a reacción", "Un sistema de propulsión para naves espaciales que crea empuje acelerando iones", "Un motor que funciona con agua", "Un motor de combustión interna muy eficiente"],
-    "answer": "Un sistema de propulsión para naves espaciales que crea empuje acelerando iones"
-  },
-  {
-    "question": "En el contexto de la inteligencia artificial, ¿qué es una 'red neuronal convolucional' (CNN)?",
-    "options": ["Un tipo de red neuronal artificial diseñada específicamente para procesar datos de píxeles, como las imágenes", "Un algoritmo para ordenar listas de números", "Una base de datos para almacenar información de IA", "Un lenguaje de programación para IA"],
-    "answer": "Un tipo de red neuronal artificial diseñada específicamente para procesar datos de píxeles, como las imágenes"
-  },
-  {
-    "question": "La 'Luna de Miel' en astronomía se refiere a...",
-    "options": ["No es un término astronómico", "La primera órbita de un satélite alrededor de un planeta", "El período después de la formación de un planeta donde es bombardeado por asteroides", "Un tipo de eclipse lunar"],
-    "answer": "No es un término astronómico"
-  },
-  {
-    "question": "¿Qué es la 'Paradoja del Gato con Mantequilla'?",
-    "options": ["Un experimento mental humorístico que combina las creencias de que un gato siempre cae de pie y que una tostada con mantequilla siempre cae con la mantequilla hacia abajo", "Un problema de lógica sobre la alimentación de los gatos", "Una teoría sobre el comportamiento de los felinos", "Un principio de la veterinaria"],
-    "answer": "Un experimento mental humorístico que combina las creencias de que un gato siempre cae de pie y que una tostada con mantequilla siempre cae con la mantequilla hacia abajo"
-  },
-  {
-    "question": "El 'ascensor espacial' es un concepto teórico para transportar material desde la superficie de un planeta al espacio. ¿Cuál sería su componente principal?",
-    "options": ["Una serie de cohetes", "Un cable o cinta que se extiende desde la superficie hasta una órbita geoestacionaria", "Un tubo de vacío gigante", "Un sistema de teletransportación"],
-    "answer": "Un cable o cinta que se extiende desde la superficie hasta una órbita geoestacionaria"
-  },
-  {
-    "question": "¿Qué es el 'valle inquietante' (uncanny valley) en robótica y animación?",
-    "options": ["Una región geográfica donde los robots no funcionan bien", "La hipótesis de que cuando las réplicas humanas se parecen mucho a los humanos, causan una respuesta de rechazo", "El punto óptimo de eficiencia para un robot", "Un fallo de software común en la animación 3D"],
-    "answer": "La hipótesis de que cuando las réplicas humanas se parecen mucho a los humanos, causan una respuesta de rechazo"
-  },
-  {
-    "question": "¿Qué es un 'magnetar'?",
-    "options": ["Una estrella de neutrones con un campo magnético extremadamente fuerte", "Un tipo de agujero negro", "Un planeta con un núcleo de hierro magnético", "Una galaxia con un campo magnético galáctico"],
-    "answer": "Una estrella de neutrones con un campo magnético extremadamente fuerte"
-  },
-  {
-    "question": "El 'problema P versus NP' es un problema fundamental en ciencias de la computación. ¿Qué pregunta busca responder?",
-    "options": ["Si todo problema cuya solución puede ser verificada rápidamente por un ordenador también puede ser resuelto rápidamente por un ordenador", "Si los ordenadores cuánticos serán más rápidos que los clásicos", "Si la inteligencia artificial puede llegar a ser consciente", "Si es posible crear un programa de ordenador que nunca se bloquee"],
-    "answer": "Si todo problema cuya solución puede ser verificada rápidamente por un ordenador también puede ser resuelto rápidamente por un ordenador"
+    "question": "La 'Paradoja de Fermi' se resume en la pregunta 'Si el universo está lleno de vida, ¿dónde está todo el mundo?'. ¿A qué se refiere?",
+    "options": ["A la falta de amigos en redes sociales", "A la aparente contradicción entre la alta probabilidad de vida extraterrestre y la falta de pruebas de ella", "A la dificultad de encontrar aparcamiento", "A por qué no hemos encontrado el fin del universo"],
+    "answer": "A la aparente contradicción entre la alta probabilidad de vida extraterrestre y la falta de pruebas de ella",
+    "difficulty": "Difícil",
+    "topic": "Ciencia"
   }
 ]
+
