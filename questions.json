@@ -1,0 +1,992 @@
+[
+  {
+    "question": "¿Qué gas noble es el segundo más abundante en la atmósfera terrestre después del argón?",
+    "options": ["Neón", "Helio", "Kriptón", "Xenón"],
+    "answer": "Neón"
+  },
+  {
+    "question": "¿Quién fue el último emperador del Imperio Romano de Occidente?",
+    "options": ["Julio César", "Augusto", "Constantino", "Rómulo Augústulo"],
+    "answer": "Rómulo Augústulo"
+  },
+  {
+    "question": "En la mitología griega, ¿quién era el barquero que transportaba las almas al inframundo?",
+    "options": ["Hades", "Caronte", "Cerbero", "Tánatos"],
+    "answer": "Caronte"
+  },
+  {
+    "question": "¿Cuál es el nombre del compuesto químico cuya fórmula es H₂O₂?",
+    "options": ["Agua", "Dióxido de hidrógeno", "Peróxido de hidrógeno", "Hidróxido de dihidrógeno"],
+    "answer": "Peróxido de hidrógeno"
+  },
+  {
+    "question": "¿Qué pintor neerlandés es famoso por obras como 'La joven de la perla'?",
+    "options": ["Rembrandt", "Vincent van Gogh", "Johannes Vermeer", "Pieter Brueghel"],
+    "answer": "Johannes Vermeer"
+  },
+  {
+    "question": "¿Cuál es la capital de Australia?",
+    "options": ["Sídney", "Melbourne", "Canberra", "Perth"],
+    "answer": "Canberra"
+  },
+  {
+    "question": "¿Qué novela de George Orwell presenta un estado totalitario vigilado por el 'Gran Hermano'?",
+    "options": ["Rebelión en la granja", "1984", "Homenaje a Cataluña", "Sin blanca en París y Londres"],
+    "answer": "1984"
+  },
+  {
+    "question": "¿Cuál es el elemento químico con el número atómico 79?",
+    "options": ["Plata", "Platino", "Oro", "Mercurio"],
+    "answer": "Oro"
+  },
+  {
+    "question": "¿En qué batalla fue finalmente derrotado Napoleón Bonaparte en 1815?",
+    "options": ["Batalla de Austerlitz", "Batalla de Trafalgar", "Batalla de Waterloo", "Batalla de Leipzig"],
+    "answer": "Batalla de Waterloo"
+  },
+  {
+    "question": "¿Qué famoso físico desarrolló la teoría de la relatividad general?",
+    "options": ["Isaac Newton", "Niels Bohr", "Galileo Galilei", "Albert Einstein"],
+    "answer": "Albert Einstein"
+  },
+  {
+    "question": "¿Cuál es el desierto cálido más grande del mundo?",
+    "options": ["Desierto de Gobi", "Desierto de Kalahari", "Desierto de Arabia", "Desierto del Sahara"],
+    "answer": "Desierto del Sahara"
+  },
+  {
+    "question": "¿Quién escribió 'Cien años de soledad'?",
+    "options": ["Mario Vargas Llosa", "Julio Cortázar", "Gabriel García Márquez", "Jorge Luis Borges"],
+    "answer": "Gabriel García Márquez"
+  },
+  {
+    "question": "¿Qué significa el acrónimo 'láser'?",
+    "options": ["Light Absorption by Stimulated Emission of Radiation", "Light Amplification by Stimulated Emission of Radiation", "Light Amplification by Spontaneous Emission of Radiation", "Light Alteration by Stimulated Emission of Radiation"],
+    "answer": "Light Amplification by Stimulated Emission of Radiation"
+  },
+  {
+    "question": "¿Qué país tiene más husos horarios?",
+    "options": ["Rusia", "Estados Unidos", "China", "Francia"],
+    "answer": "Francia"
+  },
+  {
+    "question": "¿Cuál es el único mamífero capaz de volar?",
+    "options": ["Ardilla voladora", "Murciélago", "Colugo", "Petauro del azúcar"],
+    "answer": "Murciélago"
+  },
+  {
+    "question": "¿Qué emperador romano legalizó el cristianismo?",
+    "options": ["Nerón", "Calígula", "Constantino I", "Augusto"],
+    "answer": "Constantino I"
+  },
+  {
+    "question": "¿Cómo se llama el proceso por el cual una célula se divide en dos células hijas idénticas?",
+    "options": ["Meiosis", "Mitosis", "Fusión", "Gemación"],
+    "answer": "Mitosis"
+  },
+  {
+    "question": "¿Qué artista es conocido por sus 'ready-mades', como la 'Fuente' (un urinario)?",
+    "options": ["Pablo Picasso", "Salvador Dalí", "Andy Warhol", "Marcel Duchamp"],
+    "answer": "Marcel Duchamp"
+  },
+  {
+    "question": "¿Cuál es la fobia al miedo irracional a los payasos?",
+    "options": ["Agorafobia", "Acrofobia", "Coulrofobia", "Claustrofobia"],
+    "answer": "Coulrofobia"
+  },
+  {
+    "question": "¿En qué año se firmó la Declaración de Independencia de los Estados Unidos?",
+    "options": ["1776", "1789", "1812", "1492"],
+    "answer": "1776"
+  },
+  {
+    "question": "¿Cuál es el hueso más largo del cuerpo humano?",
+    "options": ["Tibia", "Fémur", "Húmero", "Peroné"],
+    "answer": "Fémur"
+  },
+  {
+    "question": "En el ajedrez, ¿qué pieza solo puede moverse en diagonal?",
+    "options": ["La torre", "El caballo", "El alfil", "El rey"],
+    "answer": "El alfil"
+  },
+  {
+    "question": "¿Cuál es el país más pequeño del mundo?",
+    "options": ["Mónaco", "Nauru", "San Marino", "Ciudad del Vaticano"],
+    "answer": "Ciudad del Vaticano"
+  },
+  {
+    "question": "¿Qué filósofo griego fue el maestro de Alejandro Magno?",
+    "options": ["Sócrates", "Platón", "Aristóteles", "Diógenes"],
+    "answer": "Aristóteles"
+  },
+  {
+    "question": "¿Cuál es la velocidad de la luz en el vacío (aproximadamente)?",
+    "options": ["300,000 km/s", "150,000 km/s", "500,000 km/s", "1,000,000 km/s"],
+    "answer": "300,000 km/s"
+  },
+  {
+    "question": "¿Qué instrumento se utiliza para medir la presión atmosférica?",
+    "options": ["Termómetro", "Anemómetro", "Barómetro", "Higrómetro"],
+    "answer": "Barómetro"
+  },
+  {
+    "question": "¿Quién es el autor de 'El origen de las especies'?",
+    "options": ["Gregor Mendel", "Charles Darwin", "Alfred Russel Wallace", "Jean-Baptiste Lamarck"],
+    "answer": "Charles Darwin"
+  },
+  {
+    "question": "¿Cuál es la moneda oficial de Suiza?",
+    "options": ["Euro", "Libra", "Franco suizo", "Corona"],
+    "answer": "Franco suizo"
+  },
+  {
+    "question": "¿En qué deporte se utiliza un 'puck'?",
+    "options": ["Béisbol", "Críquet", "Lacrosse", "Hockey sobre hielo"],
+    "answer": "Hockey sobre hielo"
+  },
+  {
+    "question": "¿Qué famoso director dirigió la película 'Pulp Fiction'?",
+    "options": ["Martin Scorsese", "Steven Spielberg", "Quentin Tarantino", "Francis Ford Coppola"],
+    "answer": "Quentin Tarantino"
+  },
+  {
+    "question": "¿Qué es la 'Pangea'?",
+    "options": ["Un tipo de dinosaurio", "Una antigua civilización", "El supercontinente que existió hace millones de años", "Una era geológica"],
+    "answer": "El supercontinente que existió hace millones de años"
+  },
+  {
+    "question": "¿Qué civilización construyó Machu Picchu?",
+    "options": ["Azteca", "Maya", "Inca", "Olmeca"],
+    "answer": "Inca"
+  },
+  {
+    "question": "¿Cuál de estos colores no está en el acrónimo 'ROYGBIV' (colores del arcoíris)?",
+    "options": ["Índigo", "Violeta", "Cian", "Naranja"],
+    "answer": "Cian"
+  },
+  {
+    "question": "¿Qué significa 'carpe diem'?",
+    "options": ["Aprovecha el momento", "El conocimiento es poder", "Pienso, luego existo", "El amor lo vence todo"],
+    "answer": "Aprovecha el momento"
+  },
+  {
+    "question": "¿Qué banda de rock británica lanzó el álbum 'The Dark Side of the Moon'?",
+    "options": ["The Beatles", "Led Zeppelin", "Pink Floyd", "The Rolling Stones"],
+    "answer": "Pink Floyd"
+  },
+  {
+    "question": "¿Cuántos corazones tiene un pulpo?",
+    "options": ["Uno", "Dos", "Tres", "Cuatro"],
+    "answer": "Tres"
+  },
+  {
+    "question": "¿Qué metal es líquido a temperatura ambiente?",
+    "options": ["Sodio", "Mercurio", "Galio", "Cesio"],
+    "answer": "Mercurio"
+  },
+  {
+    "question": "¿Cuál es el primer libro de la Biblia?",
+    "options": ["Éxodo", "Levítico", "Génesis", "Deuteronomio"],
+    "answer": "Génesis"
+  },
+  {
+    "question": "¿Cuál es el idioma más hablado en el mundo por número de hablantes nativos?",
+    "options": ["Inglés", "Español", "Chino mandarín", "Hindi"],
+    "answer": "Chino mandarín"
+  },
+  {
+    "question": "¿Quién fue la primera mujer en ganar un Premio Nobel?",
+    "options": ["Marie Curie", "Rosalind Franklin", "Dorothy Hodgkin", "Irène Joliot-Curie"],
+    "answer": "Marie Curie"
+  },
+  {
+    "question": "¿Cuál es el punto más profundo de los océanos?",
+    "options": ["La Fosa de Tonga", "La Fosa de las Marianas", "La Fosa de Puerto Rico", "La Fosa de Java"],
+    "answer": "La Fosa de las Marianas"
+  },
+  {
+    "question": "¿Qué famoso detective vive en el 221B de Baker Street?",
+    "options": ["Hércules Poirot", "Sherlock Holmes", "Philip Marlowe", "Sam Spade"],
+    "answer": "Sherlock Holmes"
+  },
+  {
+    "question": "¿Qué guerra duró de 1914 a 1918?",
+    "options": ["La Guerra de los Cien Años", "La Segunda Guerra Mundial", "La Primera Guerra Mundial", "La Guerra Fría"],
+    "answer": "La Primera Guerra Mundial"
+  },
+  {
+    "question": "¿Cuál de estos planetas es un gigante gaseoso?",
+    "options": ["Marte", "Venus", "Neptuno", "Mercurio"],
+    "answer": "Neptuno"
+  },
+  {
+    "question": "¿Qué artista cortó parte de su propia oreja?",
+    "options": ["Salvador Dalí", "Pablo Picasso", "Vincent van Gogh", "Claude Monet"],
+    "answer": "Vincent van Gogh"
+  },
+  {
+    "question": "¿Cuál es el principal ingrediente del guacamole?",
+    "options": ["Tomate", "Aguacate", "Cebolla", "Lima"],
+    "answer": "Aguacate"
+  },
+  {
+    "question": "¿Qué selección nacional ha ganado más Copas Mundiales de la FIFA?",
+    "options": ["Alemania", "Italia", "Argentina", "Brasil"],
+    "answer": "Brasil"
+  },
+  {
+    "question": "¿En qué ciudad se encuentra el famoso 'Muro de las Lamentaciones'?",
+    "options": ["Roma", "Estambul", "Jerusalén", "Atenas"],
+    "answer": "Jerusalén"
+  },
+  {
+    "question": "¿Qué tipo de animal es una orca?",
+    "options": ["Pez", "Tiburón", "Mamífero", "Anfibio"],
+    "answer": "Mamífero"
+  },
+  {
+    "question": "¿Quién escribió la 'Odisea'?",
+    "options": ["Sófocles", "Platón", "Homero", "Virgilio"],
+    "answer": "Homero"
+  },
+  {
+    "question": "¿Cuál es el ácido presente en los limones?",
+    "options": ["Ácido acético", "Ácido cítrico", "Ácido sulfúrico", "Ácido láctico"],
+    "answer": "Ácido cítrico"
+  },
+  {
+    "question": "¿Cómo se llama la galaxia más cercana a la Vía Láctea?",
+    "options": ["Galaxia del Sombrero", "Galaxia del Remolino", "Galaxia de Andrómeda", "Galaxia del Triángulo"],
+    "answer": "Galaxia de Andrómeda"
+  },
+  {
+    "question": "¿Quién fue el primer presidente de los Estados Unidos?",
+    "options": ["Abraham Lincoln", "Thomas Jefferson", "George Washington", "John Adams"],
+    "answer": "George Washington"
+  },
+  {
+    "question": "¿Qué enfermedad es causada por la deficiencia de vitamina C?",
+    "options": ["Raquitismo", "Beriberi", "Escorbuto", "Pelagra"],
+    "answer": "Escorbuto"
+  },
+  {
+    "question": "¿Qué famoso compositor se quedó sordo?",
+    "options": ["Mozart", "Bach", "Beethoven", "Chopin"],
+    "answer": "Beethoven"
+  },
+  {
+    "question": "¿Cuál es el animal terrestre más rápido?",
+    "options": ["León", "Guepardo", "Antílope", "Gacela"],
+    "answer": "Guepardo"
+  },
+  {
+    "question": "¿Qué país es conocido como la 'Tierra del Sol Naciente'?",
+    "options": ["China", "Corea del Sur", "Japón", "Tailandia"],
+    "answer": "Japón"
+  },
+  {
+    "question": "¿Quién es el autor de 'El Principito'?",
+    "options": ["J.K. Rowling", "Antoine de Saint-Exupéry", "C.S. Lewis", "Roald Dahl"],
+    "answer": "Antoine de Saint-Exupéry"
+  },
+  {
+    "question": "¿En qué año cayó el Muro de Berlín?",
+    "options": ["1985", "1989", "1991", "1993"],
+    "answer": "1989"
+  },
+  {
+    "question": "¿Cuántos dientes tiene un humano adulto típicamente?",
+    "options": ["28", "30", "32", "34"],
+    "answer": "32"
+  },
+  {
+    "question": "En informática, ¿qué significa 'CPU'?",
+    "options": ["Unidad Central de Procesamiento", "Unidad de Control de Potencia", "Unidad Central de Programación", "Unidad de Cómputo Principal"],
+    "answer": "Unidad Central de Procesamiento"
+  },
+  {
+    "question": "¿Cuál de estos no es un lenguaje de programación?",
+    "options": ["Python", "Java", "HTML", "C++"],
+    "answer": "HTML"
+  },
+  {
+    "question": "¿Cuál es la capital de Canadá?",
+    "options": ["Toronto", "Vancouver", "Montreal", "Ottawa"],
+    "answer": "Ottawa"
+  },
+  {
+    "question": "¿Qué elemento de la tabla periódica tiene el símbolo 'K'?",
+    "options": ["Sodio", "Potasio", "Calcio", "Kriptón"],
+    "answer": "Potasio"
+  },
+  {
+    "question": "¿Quién pintó 'El Grito'?",
+    "options": ["Claude Monet", "Edvard Munch", "Georges Seurat", "Pierre-Auguste Renoir"],
+    "answer": "Edvard Munch"
+  },
+  {
+    "question": "¿Qué dios griego era el mensajero de los dioses?",
+    "options": ["Apolo", "Hermes", "Ares", "Hefesto"],
+    "answer": "Hermes"
+  },
+  {
+    "question": "¿Cuál es el océano que rodea la Antártida?",
+    "options": ["Océano Pacífico", "Océano Atlántico", "Océano Índico", "Océano Austral"],
+    "answer": "Océano Austral"
+  },
+  {
+    "question": "En la saga de Harry Potter, ¿cuál es el nombre del director de Hogwarts al inicio de la serie?",
+    "options": ["Severus Snape", "Minerva McGonagall", "Albus Dumbledore", "Rubeus Hagrid"],
+    "answer": "Albus Dumbledore"
+  },
+  {
+    "question": "¿Cuál es el metal más abundante en la corteza terrestre?",
+    "options": ["Hierro", "Aluminio", "Cobre", "Silicio"],
+    "answer": "Aluminio"
+  },
+  {
+    "question": "¿Qué inventor es acreditado con la invención del teléfono?",
+    "options": ["Thomas Edison", "Nikola Tesla", "Alexander Graham Bell", "Guglielmo Marconi"],
+    "answer": "Alexander Graham Bell"
+  },
+  {
+    "question": "¿Qué es un 'tsunami'?",
+    "options": ["Un tipo de tifón", "Una ola gigante causada por terremotos o erupciones volcánicas", "Un viento fuerte y seco", "Una tormenta de arena"],
+    "answer": "Una ola gigante causada por terremotos o erupciones volcánicas"
+  },
+  {
+    "question": "¿Cuál es la rama de la biología que estudia los insectos?",
+    "options": ["Ornitología", "Herpetología", "Entomología", "Ictiología"],
+    "answer": "Entomología"
+  },
+  {
+    "question": "¿Qué imperio fue gobernado por Gengis Kan?",
+    "options": ["Imperio Otomano", "Imperio Persa", "Imperio Mongol", "Imperio Romano"],
+    "answer": "Imperio Mongol"
+  },
+  {
+    "question": "¿Cuál es el continente más frío, seco y ventoso?",
+    "options": ["Asia", "África", "Antártida", "Europa"],
+    "answer": "Antártida"
+  },
+  {
+    "question": "¿Qué dramaturgo inglés escribió 'Romeo y Julieta'?",
+    "options": ["Christopher Marlowe", "Ben Jonson", "William Shakespeare", "John Webster"],
+    "answer": "William Shakespeare"
+  },
+  {
+    "question": "¿En qué país se originó el postre 'tiramisú'?",
+    "options": ["Francia", "Grecia", "Italia", "España"],
+    "answer": "Italia"
+  },
+  {
+    "question": "¿Qué es la 'clorofila'?",
+    "options": ["Un tipo de célula sanguínea", "El pigmento verde en las plantas que absorbe la luz solar", "Una hormona humana", "Un componente del ADN"],
+    "answer": "El pigmento verde en las plantas que absorbe la luz solar"
+  },
+  {
+    "question": "¿Qué ciudad es famosa por sus canales, góndolas y máscaras de carnaval?",
+    "options": ["Ámsterdam", "Brujas", "Venecia", "Estocolmo"],
+    "answer": "Venecia"
+  },
+  {
+    "question": "¿Quién fue el líder del movimiento por los derechos civiles en Estados Unidos en la década de 1960?",
+    "options": ["Malcolm X", "Martin Luther King Jr.", "Rosa Parks", "W.E.B. Du Bois"],
+    "answer": "Martin Luther King Jr."
+  },
+  {
+    "question": "¿Cuál es el estudio científico de los hongos?",
+    "options": ["Botánica", "Micología", "Virología", "Zoología"],
+    "answer": "Micología"
+  },
+  {
+    "question": "¿Qué videojuego clásico involucra a un personaje amarillo que come puntos en un laberinto?",
+    "options": ["Donkey Kong", "Space Invaders", "Pac-Man", "Tetris"],
+    "answer": "Pac-Man"
+  },
+  {
+    "question": "¿Qué estructura en el ojo humano controla la cantidad de luz que entra?",
+    "options": ["La retina", "La córnea", "El iris", "El cristalino"],
+    "answer": "El iris"
+  },
+  {
+    "question": "¿Cuál es la capital de Argentina?",
+    "options": ["Santiago", "Lima", "Bogotá", "Buenos Aires"],
+    "answer": "Buenos Aires"
+  },
+  {
+    "question": "¿Qué instrumento mide la magnitud de los terremotos?",
+    "options": ["Sismógrafo", "Richterómetro", "Escala de Mercalli", "Acelerógrafo"],
+    "answer": "Sismógrafo"
+  },
+  {
+    "question": "En la saga 'Star Wars', ¿quién es el padre de Luke Skywalker?",
+    "options": ["Obi-Wan Kenobi", "Emperador Palpatine", "Darth Vader", "Han Solo"],
+    "answer": "Darth Vader"
+  },
+  {
+    "question": "¿Cuál es el 'talón de Aquiles'?",
+    "options": ["Un punto fuerte", "Una debilidad fatal", "Un arma legendaria", "Un juramento sagrado"],
+    "answer": "Una debilidad fatal"
+  },
+  {
+    "question": "¿Qué gas es el más abundante en la atmósfera de la Tierra?",
+    "options": ["Oxígeno", "Nitrógeno", "Argón", "Dióxido de carbono"],
+    "answer": "Nitrógeno"
+  },
+  {
+    "question": "¿Cuál es el libro sagrado del Islam?",
+    "options": ["La Torá", "La Biblia", "El Corán", "Los Vedas"],
+    "answer": "El Corán"
+  },
+  {
+    "question": "¿Qué arquitecto diseñó la Casa de la Ópera de Sídney?",
+    "options": ["Frank Lloyd Wright", "Le Corbusier", "Jørn Utzon", "Frank Gehry"],
+    "answer": "Jørn Utzon"
+  },
+  {
+    "question": "¿Cuántos jugadores hay en un equipo de voleibol en la cancha?",
+    "options": ["5", "6", "7", "11"],
+    "answer": "6"
+  },
+  {
+    "question": "¿Qué es la 'caja de Pandora'?",
+    "options": ["Una caja que contiene todos los tesoros del mundo", "Una caja que contiene todos los males del mundo", "Un dispositivo de teletransportación", "Una fuente de conocimiento infinito"],
+    "answer": "Una caja que contiene todos los males del mundo"
+  },
+  {
+    "question": "¿Qué país africano era anteriormente conocido como Abisinia?",
+    "options": ["Nigeria", "Kenia", "Ghana", "Etiopía"],
+    "answer": "Etiopía"
+  },
+  {
+    "question": "¿Cuál es la unidad básica de la vida?",
+    "options": ["El átomo", "La molécula", "La célula", "El tejido"],
+    "answer": "La célula"
+  },
+  {
+    "question": "¿En qué ciudad se encuentran los Jardines Colgantes, una de las Siete Maravillas del Mundo Antiguo?",
+    "options": ["Atenas", "Roma", "Babilonia", "Alejandría"],
+    "answer": "Babilonia"
+  },
+  {
+    "question": "¿Qué es el 'origami'?",
+    "options": ["Un tipo de caligrafía japonesa", "El arte japonés de doblar papel", "Un arte marcial japonés", "Una ceremonia del té japonesa"],
+    "answer": "El arte japonés de doblar papel"
+  },
+  {
+    "question": "¿Qué personaje de ficción es conocido por decir 'Elemental, mi querido Watson'?",
+    "options": ["Hércules Poirot", "Miss Marple", "Sherlock Holmes", "C. Auguste Dupin"],
+    "answer": "Sherlock Holmes"
+  },
+  {
+    "question": "¿Qué causa las mareas en la Tierra?",
+    "options": ["La rotación de la Tierra", "La atracción gravitacional de la Luna y el Sol", "Los vientos oceánicos", "La actividad volcánica submarina"],
+    "answer": "La atracción gravitacional de la Luna y el Sol"
+  },
+  {
+    "question": "¿Cuál es el estudio de las monedas y medallas?",
+    "options": ["Filatelia", "Numismática", "Cartografía", "Heráldica"],
+    "answer": "Numismática"
+  },
+  {
+    "question": "¿Quién fue el primer ser humano en viajar al espacio?",
+    "options": ["Neil Armstrong", "Buzz Aldrin", "Yuri Gagarin", "John Glenn"],
+    "answer": "Yuri Gagarin"
+  },
+  {
+    "question": "¿Cuál es el 'calypso'?",
+    "options": ["Un estilo de música caribeña", "Un tipo de baile latinoamericano", "Un plato de comida picante", "Una criatura mítica del mar"],
+    "answer": "Un estilo de música caribeña"
+  },
+  {
+    "question": "¿Qué vitamina se conoce como la 'vitamina del sol'?",
+    "options": ["Vitamina A", "Vitamina C", "Vitamina D", "Vitamina E"],
+    "answer": "Vitamina D"
+  },
+  {
+    "question": "¿Qué es la 'onomatopeya'?",
+    "options": ["Una figura retórica que exagera", "Una palabra que imita un sonido", "La repetición de un sonido inicial", "Una comparación usando 'como' o 'parece'"],
+    "answer": "Una palabra que imita un sonido"
+  },
+  {
+    "question": "¿Cuál de estos animales es un marsupial?",
+    "options": ["Oso perezoso", "Armadillo", "Canguro", "Lémur"],
+    "answer": "Canguro"
+  },
+  {
+    "question": "¿En qué país se encuentra el Monte Kilimanjaro?",
+    "options": ["Kenia", "Sudáfrica", "Tanzania", "Congo"],
+    "answer": "Tanzania"
+  },
+  {
+    "question": "¿Qué autor de ciencia ficción escribió 'Crónicas marcianas'?",
+    "options": ["Isaac Asimov", "Arthur C. Clarke", "Ray Bradbury", "Philip K. Dick"],
+    "answer": "Ray Bradbury"
+  },
+  {
+    "question": "¿Qué es la 'seda de araña'?",
+    "options": ["Una fibra vegetal", "Una fibra sintética", "Una fibra de proteína producida por las arañas", "Un tipo de hongo"],
+    "answer": "Una fibra de proteína producida por las arañas"
+  },
+  {
+    "question": "¿En qué película aparece el personaje 'Jack Sparrow'?",
+    "options": ["El Señor de los Anillos", "Harry Potter", "Piratas del Caribe", "Indiana Jones"],
+    "answer": "Piratas del Caribe"
+  },
+  {
+    "question": "¿Qué es la 'Gran Mancha Roja' de Júpiter?",
+    "options": ["Un volcán gigante", "Un océano de lava", "Una tormenta anticiclónica masiva", "Un cráter de impacto"],
+    "answer": "Una tormenta anticiclónica masiva"
+  },
+  {
+    "question": "¿Cuál es la capital de Nueva Zelanda?",
+    "options": ["Auckland", "Christchurch", "Wellington", "Queenstown"],
+    "answer": "Wellington"
+  },
+  {
+    "question": "¿Qué es la 'escala de pH'?",
+    "options": ["Una medida de la temperatura", "Una medida de la acidez o alcalinidad", "Una medida de la intensidad del sonido", "Una medida de la dureza de un mineral"],
+    "answer": "Una medida de la acidez o alcalinidad"
+  },
+  {
+    "question": "¿Quién fue el dios del vino en la mitología griega?",
+    "options": ["Apolo", "Zeus", "Dionisio", "Poseidón"],
+    "answer": "Dionisio"
+  },
+  {
+    "question": "¿Cuál de los siguientes no es un tipo de roca?",
+    "options": ["Ígnea", "Sedimentaria", "Metamórfica", "Cristalina"],
+    "answer": "Cristalina"
+  },
+  {
+    "question": "¿Qué evento deportivo se conoce como el 'Super Tazón'?",
+    "options": ["El campeonato de la NBA", "La final de la Copa del Mundo de Críquet", "El partido final de la temporada de la NFL", "La Serie Mundial de Béisbol"],
+    "answer": "El partido final de la temporada de la NFL"
+  },
+  {
+    "question": "¿Qué significa 'Déjà vu'?",
+    "options": ["Una visión del futuro", "Una sensación de haber experimentado algo antes", "Un recuerdo olvidado", "Un sueño lúcido"],
+    "answer": "Una sensación de haber experimentado algo antes"
+  },
+  {
+    "question": "¿Qué hito en la aviación lograron los hermanos Wright en 1903?",
+    "options": ["El primer vuelo en globo aerostático", "El primer vuelo controlado y sostenido de un avión a motor", "El primer vuelo supersónico", "El primer vuelo alrededor del mundo"],
+    "answer": "El primer vuelo controlado y sostenido de un avión a motor"
+  },
+  {
+    "question": "¿Qué es la 'aurora boreal'?",
+    "options": ["Un fenómeno meteorológico", "Un eclipse solar", "Un despliegue de luz natural en el cielo, usualmente observado en las regiones árticas", "Una ilusión óptica"],
+    "answer": "Un despliegue de luz natural en el cielo, usualmente observado en las regiones árticas"
+  },
+  {
+    "question": "¿Cuál es el río que atraviesa París?",
+    "options": ["El Támesis", "El Danubio", "El Sena", "El Tíber"],
+    "answer": "El Sena"
+  },
+  {
+    "question": "¿Qué es la 'doctrina del shock'?",
+    "options": ["Una teoría médica", "Una teoría económica de Milton Friedman", "Una estrategia militar", "Un concepto psicológico"],
+    "answer": "Una teoría económica de Milton Friedman"
+  },
+  {
+    "question": "¿Quién escribió 'El viejo y el mar'?",
+    "options": ["F. Scott Fitzgerald", "John Steinbeck", "Ernest Hemingway", "William Faulkner"],
+    "answer": "Ernest Hemingway"
+  },
+  {
+    "question": "¿Cuál es la película con mayor recaudación de todos los tiempos (sin ajustar por inflación)?",
+    "options": ["Titanic", "Avatar", "Avengers: Endgame", "Star Wars: El despertar de la Fuerza"],
+    "answer": "Avatar"
+  },
+  {
+    "question": "¿Qué es un 'haiku'?",
+    "options": ["Un tipo de poema japonés de tres versos", "Una espada samurái", "Un plato de sushi", "Un jardín zen"],
+    "answer": "Un tipo de poema japonés de tres versos"
+  },
+  {
+    "question": "¿Qué país regaló la Estatua de la Libertad a los Estados Unidos?",
+    "options": ["Reino Unido", "España", "Francia", "Italia"],
+    "answer": "Francia"
+  },
+  {
+    "question": "¿Qué es el 'bosón de Higgs'?",
+    "options": ["Un tipo de estrella", "Una partícula elemental en el Modelo Estándar de la física de partículas", "Una galaxia lejana", "Una teoría sobre los agujeros negros"],
+    "answer": "Una partícula elemental en el Modelo Estándar de la física de partículas"
+  },
+  {
+    "question": "¿Cuál es el órgano más grande del cuerpo humano?",
+    "options": ["El hígado", "El cerebro", "La piel", "El intestino grueso"],
+    "answer": "La piel"
+  },
+  {
+    "question": "¿Qué es la 'Ruta de la Seda'?",
+    "options": ["Una antigua red de rutas comerciales que conectaba Oriente y Occidente", "Un famoso sendero de senderismo en Asia", "Una ruta de migración de mariposas", "Un poema épico chino"],
+    "answer": "Una antigua red de rutas comerciales que conectaba Oriente y Occidente"
+  },
+  {
+    "question": "¿Qué banda es conocida como 'Los cuatro fabulosos' (The Fab Four)?",
+    "options": ["The Rolling Stones", "The Who", "The Beatles", "Queen"],
+    "answer": "The Beatles"
+  },
+  {
+    "question": "¿Cuál es la capital de Brasil?",
+    "options": ["Río de Janeiro", "São Paulo", "Brasilia", "Salvador"],
+    "answer": "Brasilia"
+  },
+  {
+    "question": "¿Qué es la 'fermentación'?",
+    "options": ["Un proceso de cocción", "Un proceso metabólico que convierte el azúcar en ácidos, gases o alcohol", "Un método de purificación de agua", "Un tipo de erosión"],
+    "answer": "Un proceso metabólico que convierte el azúcar en ácidos, gases o alcohol"
+  },
+  {
+    "question": "¿En qué continente se encuentra el desierto de Atacama?",
+    "options": ["África", "Asia", "Australia", "América del Sur"],
+    "answer": "América del Sur"
+  },
+  {
+    "question": "¿Cuál es el único planeta de nuestro sistema solar que gira en sentido horario?",
+    "options": ["Marte", "Júpiter", "Venus", "Urano"],
+    "answer": "Venus"
+  },
+  {
+    "question": "¿Quién es conocido como el 'Rey del Pop'?",
+    "options": ["Elvis Presley", "Michael Jackson", "James Brown", "Prince"],
+    "answer": "Michael Jackson"
+  },
+  {
+    "question": "¿Qué es el 'efecto invernadero'?",
+    "options": ["Un fenómeno que enfría la Tierra", "Un proceso por el cual la radiación de la atmósfera de un planeta calienta su superficie", "La construcción de invernaderos para la agricultura", "Un tipo de espejismo"],
+    "answer": "Un proceso por el cual la radiación de la atmósfera de un planeta calienta su superficie"
+  },
+  {
+    "question": "¿Qué civilización inventó la escritura cuneiforme?",
+    "options": ["Los egipcios", "Los griegos", "Los sumerios", "Los romanos"],
+    "answer": "Los sumerios"
+  },
+  {
+    "question": "¿Qué es el 'ADN'?",
+    "options": ["Una proteína", "Un tipo de azúcar", "Una molécula que contiene las instrucciones genéticas", "Una célula"],
+    "answer": "Una molécula que contiene las instrucciones genéticas"
+  },
+  {
+    "question": "¿Qué pintor español es famoso por su período cubista?",
+    "options": ["Francisco de Goya", "Diego Velázquez", "Salvador Dalí", "Pablo Picasso"],
+    "answer": "Pablo Picasso"
+  },
+  {
+    "question": "¿Cuál es el deporte nacional de Japón?",
+    "options": ["Judo", "Kárate", "Béisbol", "Sumo"],
+    "answer": "Sumo"
+  },
+  {
+    "question": "¿Qué es la 'teoría del Big Bang'?",
+    "options": ["Una explicación de cómo terminan las estrellas", "El modelo cosmológico predominante sobre el origen del universo", "Una teoría sobre la formación de los planetas", "Una serie de televisión"],
+    "answer": "El modelo cosmológico predominante sobre el origen del universo"
+  },
+  {
+    "question": "¿Cuál es la capital de Turquía?",
+    "options": ["Estambul", "Ankara", "Esmirna", "Antalya"],
+    "answer": "Ankara"
+  },
+  {
+    "question": "¿Quién fue el primer emperador de Roma?",
+    "options": ["Julio César", "Marco Antonio", "Augusto (Octavio)", "Tiberio"],
+    "answer": "Augusto (Octavio)"
+  },
+  {
+    "question": "¿Qué es un 'agujero negro'?",
+    "options": ["Una región del espacio con una gravedad tan fuerte que nada puede escapar", "Un planeta sin atmósfera", "Una estrella muerta", "Un túnel en el espacio-tiempo"],
+    "answer": "Una región del espacio con una gravedad tan fuerte que nada puede escapar"
+  },
+  {
+    "question": "¿En qué país se inventó el papel?",
+    "options": ["Egipto", "Grecia", "China", "India"],
+    "answer": "China"
+  },
+  {
+    "question": "¿Cuál es el ingrediente principal del 'sushi'?",
+    "options": ["Pescado crudo", "Algas", "Arroz avinagrado", "Salsa de soja"],
+    "answer": "Arroz avinagrado"
+  },
+  {
+    "question": "¿Qué es la 'fotosíntesis'?",
+    "options": ["El proceso por el cual los animales respiran", "El proceso por el cual las plantas usan la luz solar para sintetizar alimentos", "La descomposición de la materia orgánica", "La evaporación del agua de las hojas"],
+    "answer": "El proceso por el cual las plantas usan la luz solar para sintetizar alimentos"
+  },
+  {
+    "question": "¿Qué atleta ha ganado más medallas de oro olímpicas?",
+    "options": ["Usain Bolt", "Carl Lewis", "Michael Phelps", "Larisa Latynina"],
+    "answer": "Michael Phelps"
+  },
+  {
+    "question": "¿Qué es el 'Número de Avogadro'?",
+    "options": ["Una constante matemática como pi", "El número de partículas en un mol de una sustancia", "El número de planetas en la galaxia", "La velocidad máxima de un objeto"],
+    "answer": "El número de partículas en un mol de una sustancia"
+  },
+  {
+    "question": "¿Cuál es el animal nacional de Escocia?",
+    "options": ["El águila real", "El ciervo rojo", "El unicornio", "El gato montés escocés"],
+    "answer": "El unicornio"
+  },
+  {
+    "question": "¿Qué es el 'sudoku'?",
+    "options": ["Un tipo de arte marcial", "Un rompecabezas lógico basado en números", "Un plato de fideos japonés", "Una ceremonia tradicional japonesa"],
+    "answer": "Un rompecabezas lógico basado en números"
+  },
+  {
+    "question": "¿Qué famoso científico fue condenado por herejía por la Inquisición?",
+    "options": ["Copérnico", "Galileo Galilei", "Isaac Newton", "Giordano Bruno"],
+    "answer": "Galileo Galilei"
+  },
+  {
+    "question": "¿Cuál es el propósito de las plumas de un pavo real?",
+    "options": ["Volar", "Cortejo y exhibición", "Camuflaje", "Regulación de la temperatura"],
+    "answer": "Cortejo y exhibición"
+  },
+  {
+    "question": "¿Qué ciudad fue anfitriona de los primeros Juegos Olímpicos modernos en 1896?",
+    "options": ["París", "Londres", "Atenas", "Roma"],
+    "answer": "Atenas"
+  },
+  {
+    "question": "¿Qué es el 'código Morse'?",
+    "options": ["Un lenguaje de programación", "Un sistema de cifrado", "Un método de telecomunicación que utiliza puntos y rayas", "Un código de conducta para espías"],
+    "answer": "Un método de telecomunicación que utiliza puntos y rayas"
+  },
+  {
+    "question": "¿Cuál es el volcán activo más alto de Europa?",
+    "options": ["Monte Vesubio", "Monte Etna", "Estrómboli", "Teide"],
+    "answer": "Monte Etna"
+  },
+  {
+    "question": "¿Qué es la 'ley de la gravedad'?",
+    "options": ["Una ley sobre la seriedad", "La ley física que describe la atracción entre cuerpos con masa", "Una regulación del tráfico aéreo", "Una norma social"],
+    "answer": "La ley física que describe la atracción entre cuerpos con masa"
+  },
+  {
+    "question": "¿Qué explorador portugués fue el primero en circunnavegar África para llegar a la India?",
+    "options": ["Fernando de Magallanes", "Cristóbal Colón", "Vasco da Gama", "Américo Vespucio"],
+    "answer": "Vasco da Gama"
+  },
+  {
+    "question": "¿Qué es la 'capa de ozono'?",
+    "options": ["Una capa en la atmósfera que protege de la radiación ultravioleta", "La capa más externa de la Tierra", "Una capa de nubes tóxicas", "Un campo de fuerza invisible"],
+    "answer": "Una capa en la atmósfera que protege de la radiación ultravioleta"
+  },
+  {
+    "question": "¿Quién fue la última faraona del Antiguo Egipto?",
+    "options": ["Nefertiti", "Hatshepsut", "Cleopatra VII", "Nefertari"],
+    "answer": "Cleopatra VII"
+  },
+  {
+    "question": "¿Qué es un 'palíndromo'?",
+    "options": ["Una palabra o frase que se lee igual al revés", "Una figura geométrica", "Un tipo de dinosaurio", "Un instrumento musical antiguo"],
+    "answer": "Una palabra o frase que se lee igual al revés"
+  },
+  {
+    "question": "¿Cuál es el ingrediente psicoactivo del cannabis?",
+    "options": ["CBD", "THC", "Cafeína", "Nicotina"],
+    "answer": "THC"
+  },
+  {
+    "question": "¿Qué es la 'Estación Espacial Internacional'?",
+    "options": ["Una base lunar", "Un satélite artificial habitable en órbita terrestre baja", "Un telescopio espacial", "Una nave espacial para viajar a Marte"],
+    "answer": "Un satélite artificial habitable en órbita terrestre baja"
+  },
+  {
+    "question": "¿Qué es el 'Renacimiento'?",
+    "options": ["Un período de la historia europea que marca la transición de la Edad Media a la Modernidad", "Un estilo de música barroca", "Un movimiento religioso", "Una batalla famosa"],
+    "answer": "Un período de la historia europea que marca la transición de la Edad Media a la Modernidad"
+  },
+  {
+    "question": "¿Qué es un 'algoritmo'?",
+    "options": ["Un tipo de ritmo musical", "Un conjunto de reglas o instrucciones para resolver un problema", "Un patrón climático", "Una criatura mitológica"],
+    "answer": "Un conjunto de reglas o instrucciones para resolver un problema"
+  },
+  {
+    "question": "¿Cuál es el animal más grande del mundo?",
+    "options": ["El elefante africano", "La ballena azul", "El calamar gigante", "La jirafa"],
+    "answer": "La ballena azul"
+  },
+  {
+    "question": "¿Qué es el 'sistema braille'?",
+    "options": ["Un sistema de escritura para personas ciegas", "Un lenguaje de señas", "Un código de comunicación secreto", "Un tipo de taquigrafía"],
+    "answer": "Un sistema de escritura para personas ciegas"
+  },
+  {
+    "question": "¿Qué es la 'Vía Láctea'?",
+    "options": ["Una barra de chocolate", "La galaxia que contiene nuestro sistema solar", "Un cúmulo de estrellas", "Una nebulosa"],
+    "answer": "La galaxia que contiene nuestro sistema solar"
+  },
+  {
+    "question": "¿Cuál es la 'Guerra Fría'?",
+    "options": ["Una guerra librada en la Antártida", "Un estado de tensión geopolítica entre la Unión Soviética y los Estados Unidos", "Una batalla naval en el Ártico", "Una guerra sin víctimas"],
+    "answer": "Un estado de tensión geopolítica entre la Unión Soviética y los Estados Unidos"
+  },
+  {
+    "question": "¿Qué es la 'sopa primordial'?",
+    "options": ["Un plato popular en la Edad de Piedra", "La hipotética condición de la Tierra antes de la aparición de la vida", "El primer plato servido en un banquete real", "Un tipo de caldo volcánico"],
+    "answer": "La hipotética condición de la Tierra antes de la aparición de la vida"
+  },
+  {
+    "question": "¿Qué es la 'inteligencia artificial'?",
+    "options": ["La inteligencia demostrada por las máquinas, en contraste con la inteligencia natural", "Un tipo de memoria humana superior", "La capacidad de comunicarse con los animales", "Una forma de telepatía"],
+    "answer": "La inteligencia demostrada por las máquinas, en contraste con la inteligencia natural"
+  },
+  {
+    "question": "¿Qué es la 'penicilina'?",
+    "options": ["Un analgésico", "Un antibiótico descubierto por Alexander Fleming", "Una vitamina", "Una hormona sintética"],
+    "answer": "Un antibiótico descubierto por Alexander Fleming"
+  },
+  {
+    "question": "¿En qué se mide la frecuencia del sonido?",
+    "options": ["Decibelios", "Hercios", "Vatios", "Lúmenes"],
+    "answer": "Hercios"
+  },
+  {
+    "question": "¿Qué es el 'k-pop'?",
+    "options": ["Un género musical originario de Corea del Sur", "Un plato tradicional coreano", "Un estilo de moda japonés", "Un tipo de arte marcial filipino"],
+    "answer": "Un género musical originario de Corea del Sur"
+  },
+  {
+    "question": "¿Qué es el 'Brexit'?",
+    "options": ["Un tratado comercial europeo", "La retirada del Reino Unido de la Unión Europea", "Un festival de música británico", "Una nueva marca de té inglés"],
+    "answer": "La retirada del Reino Unido de la Unión Europea"
+  },
+  {
+    "question": "¿Qué es un 'NFT' (Token No Fungible)?",
+    "options": ["Una nueva criptomoneda", "Un activo digital único que representa la propiedad de un artículo", "Un tipo de archivo de imagen comprimido", "Un protocolo de seguridad de internet"],
+    "answer": "Un activo digital único que representa la propiedad de un artículo"
+  },
+  {
+    "question": "¿Qué es 'Machu Picchu'?",
+    "options": ["Una ciudad perdida en el Amazonas", "Una ciudadela inca en los Andes de Perú", "Un templo maya en México", "Una fortaleza azteca"],
+    "answer": "Una ciudadela inca en los Andes de Perú"
+  },
+  {
+    "question": "¿Qué es la 'Guerra de los Cien Años'?",
+    "options": ["Una guerra que duró exactamente 100 años", "Una serie de conflictos entre Inglaterra y Francia que duró 116 años", "Una guerra mundial", "Una guerra civil en China"],
+    "answer": "Una serie de conflictos entre Inglaterra y Francia que duró 116 años"
+  },
+  {
+    "question": "¿Quién es el autor de 'El Señor de los Anillos'?",
+    "options": ["George R.R. Martin", "C.S. Lewis", "J.R.R. Tolkien", "J.K. Rowling"],
+    "answer": "J.R.R. Tolkien"
+  },
+  {
+    "question": "¿Qué es la 'Piedra Rosetta'?",
+    "options": ["Una joya de la corona británica", "Un artefacto que fue clave para descifrar los jeroglíficos egipcios", "Una roca lunar traída por el Apolo 11", "Una herramienta prehistórica"],
+    "answer": "Un artefacto que fue clave para descifrar los jeroglíficos egipcios"
+  },
+  {
+    "question": "¿Cuál es el animal que más humanos mata al año?",
+    "options": ["Tiburón", "Serpiente", "Hipopótamo", "Mosquito"],
+    "answer": "Mosquito"
+  },
+  {
+    "question": "¿Qué es el 'efecto placebo'?",
+    "options": ["Un efecto secundario de un medicamento", "Un efecto terapéutico producido por una sustancia inerte", "Una reacción alérgica grave", "Un fenómeno óptico"],
+    "answer": "Un efecto terapéutico producido por una sustancia inerte"
+  },
+  {
+    "question": "¿En qué país se encuentra el Angkor Wat?",
+    "options": ["Tailandia", "Vietnam", "Camboya", "Indonesia"],
+    "answer": "Camboya"
+  },
+  {
+    "question": "¿Qué es la 'Fórmula 1'?",
+    "options": ["Una fórmula matemática", "La máxima categoría de competición de automovilismo", "Un tipo de combustible para cohetes", "Una vitamina"],
+    "answer": "La máxima categoría de competición de automovilismo"
+  },
+  {
+    "question": "¿Qué es la 'materia oscura'?",
+    "options": ["Polvo cósmico", "Un tipo de materia que no emite ni refleja luz", "Agujeros negros pequeños", "La sustancia dentro de las estrellas de neutrones"],
+    "answer": "Un tipo de materia que no emite ni refleja luz"
+  },
+  {
+    "question": "¿Qué es el 'Everest'?",
+    "options": ["El punto más profundo del océano", "La montaña más alta de la Tierra sobre el nivel del mar", "Un desierto en África", "Un río en América del Sur"],
+    "answer": "La montaña más alta de la Tierra sobre el nivel del mar"
+  },
+  {
+    "question": "¿Qué es el 'glaciar'?",
+    "options": ["Un río de agua salada", "Una gran masa de hielo que se mueve lentamente", "Una roca volcánica", "Un tipo de nube"],
+    "answer": "Una gran masa de hielo que se mueve lentamente"
+  },
+  {
+    "question": "¿Qué es un 'átomo'?",
+    "options": ["La partícula más pequeña de la materia viva", "La unidad constituyente más pequeña de la materia ordinaria", "Una molécula de agua", "Una célula"],
+    "answer": "La unidad constituyente más pequeña de la materia ordinaria"
+  },
+  {
+    "question": "¿Qué es la 'filosofía'?",
+    "options": ["El estudio de la historia antigua", "El amor por la sabiduría y el estudio de problemas fundamentales", "El arte de la persuasión", "La ciencia de la clasificación"],
+    "answer": "El amor por la sabiduría y el estudio de problemas fundamentales"
+  },
+  {
+    "question": "¿Qué es un 'tsar' (zar)?",
+    "options": ["Un título para los emperadores de Rusia", "Un tipo de especia", "Un general del ejército romano", "Un sacerdote del antiguo Egipto"],
+    "answer": "Un título para los emperadores de Rusia"
+  },
+  {
+    "question": "¿Quién fue Leonardo da Vinci?",
+    "options": ["Un pintor, escultor y arquitecto italiano", "Un polímata del Renacimiento italiano: pintor, anatomista, arquitecto, etc.", "Un filósofo griego", "Un compositor austriaco"],
+    "answer": "Un polímata del Renacimiento italiano: pintor, anatomista, arquitecto, etc."
+  },
+  {
+    "question": "¿Qué es un 'ecosistema'?",
+    "options": ["Un sistema biológico constituido por una comunidad de organismos vivos y su medio físico", "Un tipo de sistema informático", "Una teoría económica", "Una estructura social"],
+    "answer": "Un sistema biológico constituido por una comunidad de organismos vivos y su medio físico"
+  },
+  {
+    "question": "¿Qué es la 'Corte Penal Internacional'?",
+    "options": ["Un tribunal que juzga disputas comerciales", "Un tribunal de justicia permanente para juzgar a individuos por genocidio, crímenes de guerra y crímenes de lesa humanidad", "El tribunal supremo de la Unión Europea", "Un programa de televisión"],
+    "answer": "Un tribunal de justicia permanente para juzgar a individuos por genocidio, crímenes de guerra y crímenes de lesa humanidad"
+  },
+  {
+    "question": "¿Qué es un 'samurái'?",
+    "options": ["Un monje budista", "Un guerrero del Japón preindustrial", "Un emperador chino", "Un tipo de kimono"],
+    "answer": "Un guerrero del Japón preindustrial"
+  },
+  {
+    "question": "¿Qué es un 'gurú'?",
+    "options": ["Un animal exótico", "Un maestro espiritual en el hinduismo", "Un plato de curry picante", "Un tipo de sombrero"],
+    "answer": "Un maestro espiritual en el hinduismo"
+  },
+  {
+    "question": "¿Qué es la 'Acrópolis' de Atenas?",
+    "options": ["Un mercado antiguo", "Una ciudadela en la cima de una colina que contiene templos antiguos, incluido el Partenón", "Un teatro romano", "El palacio del emperador"],
+    "answer": "Una ciudadela en la cima de una colina que contiene templos antiguos, incluido el Partenón"
+  },
+  {
+    "question": "¿Qué es el 'feng shui'?",
+    "options": ["Un sistema filosófico chino de armonización del entorno", "Un tipo de arte marcial", "Un plato de fideos chino", "Un festival tradicional chino"],
+    "answer": "Un sistema filosófico chino de armonización del entorno"
+  },
+  {
+    "question": "¿Qué es un 'vikingo'?",
+    "options": ["Un tipo de barco", "Guerreros y comerciantes nórdicos que asaltaron y colonizaron partes de Europa", "Un rey de Suecia", "Un dios de la mitología nórdica"],
+    "answer": "Guerreros y comerciantes nórdicos que asaltaron y colonizaron partes de Europa"
+  },
+  {
+    "question": "¿Qué es la 'Revolución Industrial'?",
+    "options": ["Una revuelta política en Francia", "La transición a nuevos procesos de fabricación en Europa y Estados Unidos", "El desarrollo de la imprenta", "Una guerra por la independencia"],
+    "answer": "La transición a nuevos procesos de fabricación en Europa y Estados Unidos"
+  },
+  {
+    "question": "¿Qué es el 'Coliseo' Romano?",
+    "options": ["Un palacio para el emperador", "Un anfiteatro en el centro de Roma utilizado para concursos de gladiadores y espectáculos públicos", "Un templo para los dioses romanos", "El senado romano"],
+    "answer": "Un anfiteatro en el centro de Roma utilizado para concursos de gladiadores y espectáculos públicos"
+  },
+  {
+    "question": "¿Qué es un 'jeroglífico'?",
+    "options": ["Un tipo de pirámide", "Un carácter del antiguo sistema de escritura egipcio", "Un gobernante del antiguo Egipto", "Un sarcófago"],
+    "answer": "Un carácter del antiguo sistema de escritura egipcio"
+  },
+  {
+    "question": "¿Qué es la 'OPEP'?",
+    "options": ["Una organización de países exportadores de petróleo", "Una alianza militar europea", "Una agencia de las Naciones Unidas para la salud", "Una asociación de comercio de Asia"],
+    "answer": "Una organización de países exportadores de petróleo"
+  }
+]
