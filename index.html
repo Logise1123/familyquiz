@@ -259,12 +259,22 @@
         };
         
         const fetchQuestions = async () => {
-            const votingQuestions = [
-              { "type": "voting", "question": "¿Quién duraría más en una isla desierta?", "topic": "Votacion" },
-              { "type": "voting", "question": "¿Quién tiene más probabilidades de convertirse en millonario?", "topic": "Votacion" },
-              { "type": "voting", "question": "¿Quién es el más propenso a tropezar con su propia sombra?", "topic": "Votacion" },
-              { "type": "voting", "question": "¿Quién daría el discurso más raro en una boda?", "topic": "Votacion" },
-              { "type": "voting", "question": "Si formaran una banda, ¿quién sería el cantante principal?", "topic": "Votacion" }
+             const votingQuestions = [
+                { "type": "voting", "question": "¿Quién duraría más en una isla desierta?", "topic": "Votacion" },
+                { "type": "voting", "question": "¿Quién tiene más probabilidades de convertirse en millonario?", "topic": "Votacion" },
+                { "type": "voting", "question": "¿Quién es el más propenso a tropezar con su propia sombra?", "topic": "Votacion" },
+                { "type": "voting", "question": "¿Quién daría el discurso más raro en una boda?", "topic": "Votacion" },
+                { "type": "voting", "question": "Si formaran una banda, ¿quién sería el cantante principal?", "topic": "Votacion" },
+                { "type": "voting", "question": "¿Quién sobreviviría a un apocalipsis zombie?", "topic": "Votacion" },
+                { "type": "voting", "question": "¿Quién es más probable que se ría en un momento serio?", "topic": "Votacion" },
+                { "type": "voting", "question": "¿Quién es el mejor para guardar un secreto?", "topic": "Votacion" },
+                { "type": "voting", "question": "¿Quién tiene el sentido del humor más extraño?", "topic": "Votacion" },
+                { "type": "voting", "question": "¿Quién se perdería con un mapa en la mano?", "topic": "Votacion" },
+                { "type": "voting", "question": "¿Quién es más probable que hable con los animales?", "topic": "Votacion" },
+                { "type": "voting", "question": "¿Quién ganaría un concurso de comer perritos calientes?", "topic": "Votacion" },
+                { "type": "voting", "question": "¿Quién es más probable que se una a un circo?", "topic": "Votacion" },
+                { "type": "voting", "question": "¿Quién es el más dramático del grupo?", "topic": "Votacion" },
+                { "type": "voting", "question": "¿Quién ordenaría pizza de piña sin remordimientos?", "topic": "Votacion" }
             ];
 
             const url = 'https://raw.githubusercontent.com/Logise1123/familyquiz/main/questions.json';
@@ -272,13 +282,23 @@
                 const response = await fetch(url);
                 if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
                 const triviaQuestions = await response.json();
-                // Mix in 2 voting questions for a 15-question game
-                return triviaQuestions.slice(0, 13).concat(votingQuestions.sort(() => 0.5 - Math.random()).slice(0, 2)).sort(() => 0.5 - Math.random());
-            } catch (error) {
+                
+                // Shuffle both arrays
+                const shuffledTrivia = triviaQuestions.sort(() => 0.5 - Math.random());
+                const shuffledVoting = votingQuestions.sort(() => 0.5 - Math.random());
+                
+                // Take 11 trivia and 4 voting questions
+                const finalQuestions = shuffledTrivia.slice(0, 11).concat(shuffledVoting.slice(0, 4));
+                
+                // Shuffle the final mix
+                return finalQuestions.sort(() => 0.5 - Math.random());
+
+            } catch (error)
+            {
                 console.error("No se pudieron cargar las preguntas desde GitHub:", error);
                 showAlert("Error al cargar preguntas. Se usarán preguntas de respaldo.");
                 const trivia = [{ question: "¿Cuál es la capital de España?", options: ["Barcelona", "Lisboa", "Madrid", "París"], answer: "Madrid", difficulty: "Fácil", topic: "Cultura General" }];
-                return trivia.concat(votingQuestions.slice(0,1));
+                return trivia.concat(votingQuestions.slice(0,4));
             }
         };
 
@@ -610,7 +630,6 @@
             const updates = { gameState: 'roundResult' };
             const question = gameData.questions[gameData.currentQuestionIndex];
             
-            // Calculate points based on question type
             if (question.type === 'voting') {
                 const voteCounts = {};
                 Object.keys(gameData.players).forEach(pId => voteCounts[pId] = 0);
@@ -620,21 +639,34 @@
                     }
                 });
 
-                const sortedVotes = Object.entries(voteCounts).sort(([,a],[,b]) => b-a);
-                const firstPlaceVotes = sortedVotes[0] ? sortedVotes[0][1] : 0;
-                const secondPlaceVotes = sortedVotes[1] ? sortedVotes[1][1] : 0;
+                const sortedVotes = Object.entries(voteCounts).sort(([, a], [, b]) => b - a);
                 
-                Object.keys(gameData.players).forEach(playerId => {
-                    let points = 0;
-                    if (voteCounts[playerId] === firstPlaceVotes && firstPlaceVotes > 0) {
-                        points = 100;
-                    } else if (voteCounts[playerId] === secondPlaceVotes && secondPlaceVotes > 0 && firstPlaceVotes > secondPlaceVotes) {
-                        points = 50;
+                if (sortedVotes.length > 0) {
+                    const firstPlaceVotes = sortedVotes[0][1];
+                    const winners = sortedVotes.filter(([, votes]) => votes === firstPlaceVotes && firstPlaceVotes > 0);
+
+                    winners.forEach(([playerId]) => {
+                        updates[`/players/${playerId}/lastRoundPoints`] = 100;
+                        updates[`/players/${playerId}/score`] = gameData.players[playerId].score + 100;
+                    });
+                    
+                    if (winners.length === 1 && sortedVotes.length > 1) {
+                        const secondPlaceVotes = sortedVotes[1][1];
+                         const secondPlaceWinners = sortedVotes.filter(([, votes]) => votes === secondPlaceVotes && secondPlaceVotes > 0);
+                         secondPlaceWinners.forEach(([playerId]) => {
+                            updates[`/players/${playerId}/lastRoundPoints`] = 50;
+                            updates[`/players/${playerId}/score`] = gameData.players[playerId].score + 50;
+                        });
                     }
-                    updates[`/players/${playerId}/lastRoundPoints`] = points;
-                    if (points > 0) updates[`/players/${playerId}/score`] = gameData.players[playerId].score + points;
+                }
+
+                Object.keys(gameData.players).forEach(playerId => {
+                    if (updates[`/players/${playerId}/lastRoundPoints`] === undefined) {
+                         updates[`/players/${playerId}/lastRoundPoints`] = 0;
+                    }
                     updates[`/players/${playerId}/readyForNext`] = false;
                 });
+
             } else { // Trivia question
                 const correctAnswer = question.answer;
                 Object.keys(gameData.players).forEach(playerId => {
