@@ -640,29 +640,26 @@
                 });
 
                 const sortedVotes = Object.entries(voteCounts).sort(([, a], [, b]) => b - a);
-                
-                if (sortedVotes.length > 0) {
-                    const firstPlaceVotes = sortedVotes[0][1];
-                    const winners = sortedVotes.filter(([, votes]) => votes === firstPlaceVotes && firstPlaceVotes > 0);
+                let winnerIds = [];
 
-                    winners.forEach(([playerId]) => {
-                        updates[`/players/${playerId}/lastRoundPoints`] = 100;
-                        updates[`/players/${playerId}/score`] = gameData.players[playerId].score + 100;
-                    });
-                    
-                    if (winners.length === 1 && sortedVotes.length > 1) {
-                        const secondPlaceVotes = sortedVotes[1][1];
-                         const secondPlaceWinners = sortedVotes.filter(([, votes]) => votes === secondPlaceVotes && secondPlaceVotes > 0);
-                         secondPlaceWinners.forEach(([playerId]) => {
-                            updates[`/players/${playerId}/lastRoundPoints`] = 50;
-                            updates[`/players/${playerId}/score`] = gameData.players[playerId].score + 50;
-                        });
-                    }
+                if (sortedVotes.length > 0 && sortedVotes[0][1] > 0) {
+                    const firstPlaceVotes = sortedVotes[0][1];
+                    winnerIds = sortedVotes
+                        .filter(([, votes]) => votes === firstPlaceVotes)
+                        .map(([playerId]) => playerId);
                 }
 
+                // Award points to players who voted for a winner
                 Object.keys(gameData.players).forEach(playerId => {
-                    if (updates[`/players/${playerId}/lastRoundPoints`] === undefined) {
-                         updates[`/players/${playerId}/lastRoundPoints`] = 0;
+                    const player = gameData.players[playerId];
+                    let points = 0;
+                    if (winnerIds.length > 0 && player.currentVote && winnerIds.includes(player.currentVote)) {
+                        points = 100; // Points for voting for the winner
+                    }
+                    
+                    updates[`/players/${playerId}/lastRoundPoints`] = points;
+                    if (points > 0) {
+                        updates[`/players/${playerId}/score`] = player.score + points;
                     }
                     updates[`/players/${playerId}/readyForNext`] = false;
                 });
