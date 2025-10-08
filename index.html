@@ -331,12 +331,9 @@
                 }
                 currentGameId = gameIdToJoin;
                 gameRef = joinRef;
-                // --- FIX STARTS HERE ---
-                // The key is to provide a path to the new player, not to replace the whole 'players' object.
                 await update(gameRef, {
                     [`/players/${localPlayerId}`]: { name: playerNameInput.value.trim(), score: 0 }
                 });
-                // --- FIX ENDS HERE ---
                 onDisconnect(ref(database, `games/${currentGameId}/players/${localPlayerId}`)).remove();
                 subscribeToGameChanges();
             } catch (error) {
@@ -360,13 +357,42 @@
                 showAlert("Has sido desconectado."); resetGame(); return;
             }
             switch (gameData.gameState) {
-                case 'lobby': renderLobby(); break;
-                case 'interstitial': renderInterstitial(); break;
-                case 'drawing': renderDrawingScreen(); break;
-                case 'guessing': renderGuessingScreen(); break;
-                case 'question': renderQuestionScreen(); break;
-                case 'roundResult': renderRoundResult(); break;
-                case 'gameOver': renderGameOver(); break;
+                case 'lobby': 
+                    renderLobby(); 
+                    break;
+                case 'interstitial': 
+                    renderInterstitial(); 
+                    break;
+                case 'drawing': 
+                    renderDrawingScreen(); 
+                    // El anfitrión comprueba si todos los jugadores han enviado su dibujo
+                    if (gameData.hostId === localPlayerId) {
+                        const allPlayersSubmitted = Object.values(gameData.players).every(p => p.drawingData);
+                        if (allPlayersSubmitted) {
+                            // Un pequeño retraso para evitar cambios de estado rápidos y asegurar que todos los datos se asienten.
+                            setTimeout(() => {
+                                // Volvemos a obtener la referencia para asegurarnos de que el estado del juego no ha cambiado ya.
+                                get(gameRef).then(snapshot => {
+                                    if (snapshot.exists() && snapshot.val().gameState === 'drawing') {
+                                        update(gameRef, { gameState: 'guessing' });
+                                    }
+                                });
+                            }, 1000);
+                        }
+                    }
+                    break;
+                case 'guessing': 
+                    renderGuessingScreen(); 
+                    break;
+                case 'question': 
+                    renderQuestionScreen(); 
+                    break;
+                case 'roundResult': 
+                    renderRoundResult(); 
+                    break;
+                case 'gameOver': 
+                    renderGameOver(); 
+                    break;
             }
         };
         
@@ -727,24 +753,9 @@
             clearInterval(timerInterval);
             const dataUrl = canvas.toDataURL();
             document.getElementById('drawing-screen').querySelectorAll('button').forEach(b => b.disabled = true);
-            update(gameRef, { [`/players/${localPlayerId}/drawingData`]: dataUrl }).then(() => {
-                if(gameData.hostId === localPlayerId) {
-                    // Check if all players have submitted
-                    const allDrawn = Object.values(gameData.players).every(p => p.drawingData);
-                    if(allDrawn) update(gameRef, { gameState: 'guessing' });
-                }
-            });
+            update(gameRef, { [`/players/${localPlayerId}/drawingData`]: dataUrl });
         }
         
-        onValue(ref(database, `games/${currentGameId}/players`), (snapshot) => {
-            if(gameData?.hostId === localPlayerId && gameData?.gameState === 'drawing') {
-                const players = snapshot.val() || {};
-                if(Object.values(players).every(p => p.drawingData)) {
-                    update(gameRef, { gameState: 'guessing' });
-                }
-            }
-        });
-
         createGameBtn.addEventListener('click', createGame);
         joinGameBtn.addEventListener('click', () => { initialOptions.classList.add('hidden'); joinOptions.classList.remove('hidden'); });
         confirmJoinBtn.addEventListener('click', joinGame);
