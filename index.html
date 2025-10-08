@@ -331,7 +331,12 @@
                 }
                 currentGameId = gameIdToJoin;
                 gameRef = joinRef;
-                await update(gameRef, { [`/players/${localPlayerId}`]: { name: playerNameInput.value.trim(), score: 0 } });
+                // --- FIX STARTS HERE ---
+                // The key is to provide a path to the new player, not to replace the whole 'players' object.
+                await update(gameRef, {
+                    [`/players/${localPlayerId}`]: { name: playerNameInput.value.trim(), score: 0 }
+                });
+                // --- FIX ENDS HERE ---
                 onDisconnect(ref(database, `games/${currentGameId}/players/${localPlayerId}`)).remove();
                 subscribeToGameChanges();
             } catch (error) {
@@ -450,13 +455,13 @@
 
             const myAnswer = gameData.players[localPlayerId]?.currentAnswer || gameData.players[localPlayerId]?.currentVote;
              if (myAnswer) {
-                document.querySelectorAll('.option-btn').forEach(btn => {
-                    btn.disabled = true;
-                    const expectedText = question.type === 'voting' ? gameData.players[myAnswer]?.name : myAnswer;
-                    if(btn.innerText === expectedText) btn.classList.add('selected');
-                });
-                document.getElementById('waiting-for-players').classList.remove('hidden');
-            }
+                 document.querySelectorAll('.option-btn').forEach(btn => {
+                     btn.disabled = true;
+                     const expectedText = question.type === 'voting' ? gameData.players[myAnswer]?.name : myAnswer;
+                     if(btn.innerText === expectedText) btn.classList.add('selected');
+                 });
+                 document.getElementById('waiting-for-players').classList.remove('hidden');
+             }
 
             const startTime = gameData.questionStartTime;
             const timerBar = document.getElementById('timer-bar'), timerDisplay = document.getElementById('timer');
@@ -493,19 +498,19 @@
             } else {
                  const options = [drawer.secretWord, ...drawer.decoys].sort(() => 0.5 - Math.random());
                  options.forEach(word => {
-                    const button = document.createElement('button');
-                    button.className = "option-btn btn w-full text-gray-800 font-semibold py-3 px-4 rounded-lg text-xl md:text-2xl";
-                    button.innerText = word;
-                    button.onclick = () => selectGuess(drawerId, word);
-                    optionsContainer.appendChild(button);
+                     const button = document.createElement('button');
+                     button.className = "option-btn btn w-full text-gray-800 font-semibold py-3 px-4 rounded-lg text-xl md:text-2xl";
+                     button.innerText = word;
+                     button.onclick = () => selectGuess(drawerId, word);
+                     optionsContainer.appendChild(button);
                  });
                  const myGuess = gameData.players[localPlayerId].guesses?.[drawerId];
                  if(myGuess) {
-                     document.querySelectorAll('.option-btn').forEach(btn => {
-                        btn.disabled = true;
-                        if(btn.innerText === myGuess) btn.classList.add('selected');
-                    });
-                    document.getElementById('waiting-for-players').classList.remove('hidden');
+                      document.querySelectorAll('.option-btn').forEach(btn => {
+                           btn.disabled = true;
+                           if(btn.innerText === myGuess) btn.classList.add('selected');
+                      });
+                      document.getElementById('waiting-for-players').classList.remove('hidden');
                  }
             }
 
@@ -582,7 +587,7 @@
             primaryBtn.innerText = gameData.players[localPlayerId]?.readyForNext ? "Esperando..." : (isLastQuestion ? "Ver Resultados Finales" : "¡Listo!");
 
             if (gameData.hostId === localPlayerId && Object.values(gameData.players).every(p => p.readyForNext)) {
-                 isLastQuestion ? update(gameRef, { gameState: 'gameOver' }) : moveToNextQuestionWithDelay();
+                isLastQuestion ? update(gameRef, { gameState: 'gameOver' }) : moveToNextQuestionWithDelay();
             }
         };
 
