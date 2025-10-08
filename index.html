@@ -405,8 +405,9 @@
                 }
                 currentGameId = gameIdToJoin;
                 gameRef = joinRef;
-                await update(gameRef, { [`players/${localPlayerId}`]: { name: playerNameInput.value.trim(), score: 0 } });
-                onDisconnect(ref(database, `games/${currentGameId}/players/${localPlayerId}`)).remove();
+                const playerRef = ref(database, `games/${currentGameId}/players/${localPlayerId}`);
+                await set(playerRef, { name: playerNameInput.value.trim(), score: 0 });
+                onDisconnect(playerRef).remove();
                 subscribeToGameChanges();
             } catch (error) {
                 console.error("Error al unirse:", error);
