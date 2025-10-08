@@ -7,7 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://css.gg/css?=|copy|check-o|close-o" rel="stylesheet">
+    <link href="https://css.gg/css?=|copy|check-o|close-o|trash" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         body {
@@ -55,17 +55,6 @@
             transform: scale(1.05);
             background-color: #fffbeb;
         }
-        .option-btn.correct {
-            background-color: #22c55e !important;
-            color: white !important;
-            border-color: #16a34a;
-        }
-        .option-btn.incorrect {
-            background-color: #ef4444 !important;
-            color: white !important;
-            border-color: #dc2626;
-            opacity: 0.7;
-        }
         .timer-bar {
             transition: width 1s linear;
         }
@@ -85,14 +74,17 @@
             padding: 2rem;
         }
         /* Topic colors */
-        .topic-ciencia { color: #2563eb; } /* Blue */
-        .topic-tecnologia { color: #4f46e5; } /* Indigo */
-        .topic-cultura-general { color: #db2777; } /* Pink */
-        .topic-arte-y-literatura { color: #ca8a04; } /* Amber */
-        .topic-logica-y-matematicas { color: #16a34a; } /* Green */
+        .topic-ciencia, .topic-cultura-general, .topic-arte-y-literatura, .topic-logica-y-matematicas, .topic-tecnologia { color: #db2777; }
         .topic-votacion { color: #9333ea; } /* Purple */
+        .topic-dibujo { color: #2563eb; } /* Blue */
         
-        /* Custom Toast Notification */
+        #drawing-canvas {
+            border: 2px solid #ccc;
+            border-radius: 0.5rem;
+            touch-action: none;
+            background-color: #fff;
+        }
+
         #toast {
             position: fixed;
             top: -100px;
@@ -110,22 +102,49 @@
         #toast.show {
             top: 20px;
         }
+        
+        label:has(input:checked) {
+            border-color: #4f46e5; /* Indigo */
+            background-color: #eef2ff; /* Indigo 50 */
+        }
+        input[type="checkbox"]:checked + span {
+            font-weight: 700;
+        }
     </style>
 </head>
 <body class="w-screen h-screen flex items-center justify-center p-4">
 
-    <!-- Toast Notification -->
     <div id="toast"></div>
 
-    <!-- Pantalla de Inicio / Lobby -->
     <div id="lobby-screen" class="screen active w-full max-w-lg mx-auto flex-col items-center justify-center text-center">
         <div class="card w-full">
             <h1 class="text-6xl font-bold mb-4 handwriting">Quiz Familiar</h1>
             <p class="mb-8 text-2xl text-gray-600 handwriting">¡Demuestra quién sabe más!</p>
             <div id="initial-options" class="w-full">
                 <input id="player-name-input" type="text" placeholder="Escribe tu nombre" class="w-full px-4 py-3 mb-4 rounded-lg text-gray-800 text-center text-lg border-2 border-gray-300 focus:border-indigo-500 focus:ring-indigo-500">
-                <button id="create-game-btn" class="btn w-full bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-3 px-4 rounded-lg text-2xl mb-3">Crear Partida</button>
+                <button id="show-create-menu-btn" class="btn w-full bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-3 px-4 rounded-lg text-2xl mb-3">Crear Partida</button>
                 <button id="join-game-btn" class="btn w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-4 rounded-lg text-2xl">Unirse a Partida</button>
+            </div>
+            <div id="create-menu" class="w-full hidden">
+                 <div id="game-modes" class="my-6 text-left">
+                    <h3 class="text-2xl font-semibold mb-3 text-center handwriting">Elige los tipos de pregunta:</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <label for="mode-quiz" class="flex items-center justify-center p-3 border-2 rounded-lg cursor-pointer transition-colors duration-200">
+                            <input type="checkbox" id="mode-quiz" class="hidden peer" value="quiz" checked>
+                            <span class="text-xl font-semibold peer-checked:text-pink-500">🧠 Quiz</span>
+                        </label>
+                        <label for="mode-voting" class="flex items-center justify-center p-3 border-2 rounded-lg cursor-pointer transition-colors duration-200">
+                            <input type="checkbox" id="mode-voting" class="hidden peer" value="voting" checked>
+                            <span class="text-xl font-semibold peer-checked:text-purple-500">🗳️ Votación</span>
+                        </label>
+                        <label for="mode-drawing" class="flex items-center justify-center p-3 border-2 rounded-lg cursor-pointer transition-colors duration-200">
+                            <input type="checkbox" id="mode-drawing" class="hidden peer" value="drawing" checked>
+                            <span class="text-xl font-semibold peer-checked:text-blue-500">🎨 Dibujo</span>
+                        </label>
+                    </div>
+                </div>
+                <button id="create-game-btn" class="btn w-full bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-3 px-4 rounded-lg text-2xl mb-3">Confirmar y Crear</button>
+                <button id="back-from-create-btn" class="btn w-full bg-gray-400 hover:bg-gray-500 text-white font-bold py-2 px-4 rounded-lg text-xl">Volver</button>
             </div>
             <div id="join-options" class="w-full hidden">
                 <input id="game-id-input" type="text" placeholder="Código de la partida" class="w-full px-4 py-3 mb-4 rounded-lg text-gray-800 text-center text-lg border-2 border-gray-300 focus:border-green-500 focus:ring-green-500" maxlength="5">
@@ -143,7 +162,6 @@
         </div>
     </div>
 
-    <!-- Pantalla Intermedia -->
     <div id="interstitial-screen" class="screen w-full max-w-3xl mx-auto flex-col items-center justify-center text-center">
         <div class="card w-full fade-in">
              <h2 class="text-5xl text-gray-600 handwriting">Pregunta <span id="interstitial-difficulty"></span></h2>
@@ -151,26 +169,40 @@
         </div>
     </div>
 
-    <!-- Pantalla del Quiz -->
     <div id="quiz-screen" class="screen w-full max-w-4xl mx-auto flex-col items-center">
         <div class="card w-full">
             <div class="w-full flex justify-between items-center mb-4">
-                <div class="text-3xl font-bold">Pregunta <span id="question-number">1</span>/<span id="question-total">15</span></div>
-                <div class="text-3xl font-bold flex items-center">
-                    <span id="timer">20</span>s
-                </div>
+                <div id="quiz-header-text" class="text-3xl font-bold">Pregunta <span id="question-number">1</span>/<span id="question-total">20</span></div>
+                <div class="text-3xl font-bold flex items-center"><span id="timer">20</span>s</div>
             </div>
             <div class="w-full bg-gray-200 rounded-lg mb-4 h-3">
                 <div id="timer-bar" class="timer-bar h-3 bg-amber-400 rounded-lg" style="width: 100%;"></div>
             </div>
-            <h2 id="question-text" class="text-3xl font-bold text-center mb-6 p-2 min-h-[100px]">Cargando pregunta...</h2>
-            <div id="options-container" class="w-full grid grid-cols-1 md:grid-cols-2 gap-4">
-            </div>
-            <div id="waiting-for-players" class="mt-8 text-2xl text-gray-500 hidden text-center">¡Respuesta enviada! Esperando a los demás...</div>
+            <img id="drawing-display-img" class="hidden mx-auto mb-4 border-2 border-gray-400 rounded-lg bg-white" style="max-width: 90%; height: auto; max-height: 300px;">
+            <h2 id="question-text" class="text-3xl font-bold text-center mb-6 p-2 min-h-[60px]">Cargando...</h2>
+            <div id="options-container" class="w-full grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+            <div id="waiting-for-players" class="mt-8 text-2xl text-gray-500 hidden text-center">¡Listo! Esperando a los demás...</div>
         </div>
     </div>
 
-    <!-- Pantalla de Resultados de Ronda -->
+    <div id="drawing-screen" class="screen w-full max-w-2xl mx-auto flex-col items-center justify-center">
+        <div class="card w-full">
+             <div class="w-full flex justify-between items-center mb-2">
+                <div class="text-3xl font-bold">¡A dibujar!</div>
+                <div class="text-3xl font-bold flex items-center"><span id="drawing-timer">30</span>s</div>
+            </div>
+            <div class="w-full bg-gray-200 rounded-lg mb-4 h-3">
+                <div id="drawing-timer-bar" class="timer-bar h-3 bg-amber-400 rounded-lg" style="width: 100%;"></div>
+            </div>
+            <h2 class="text-3xl font-bold text-center mb-4">Tu palabra es: <span id="word-to-draw" class="text-indigo-600"></span></h2>
+            <canvas id="drawing-canvas" width="500" height="300"></canvas>
+            <div class="flex justify-center gap-4 mt-4">
+                <button id="clear-canvas-btn" class="btn bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-lg text-xl flex items-center gap-2"><i class="gg-trash"></i> Borrar</button>
+                <button id="submit-drawing-btn" class="btn bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-5 rounded-lg text-xl">¡Listo!</button>
+            </div>
+        </div>
+    </div>
+
     <div id="round-results-screen" class="screen w-full max-w-3xl mx-auto flex-col items-center text-center">
         <div class="card w-full">
             <h2 id="result-title" class="text-5xl font-bold mb-4 handwriting">¡Tiempo!</h2>
@@ -179,59 +211,56 @@
                 <h4 class="font-bold text-center mb-2">Así habéis votado:</h4>
                 <ul id="vote-details-list"></ul>
             </div>
+             <div id="drawing-results-reveal" class="w-full hidden mb-6 p-4 rounded-lg">
+                <h3 class="text-3xl font-semibold mb-4 handwriting">Repaso de los Dibujos</h3>
+                <div id="drawing-results-grid" class="grid grid-cols-2 md:grid-cols-3 gap-4"></div>
+             </div>
             <div class="w-full bg-gray-50 p-4 rounded-lg">
                 <h3 class="text-3xl font-semibold mb-4 handwriting">Resultados de la Ronda</h3>
-                <div id="round-player-results" class="space-y-3">
-                </div>
+                <div id="round-player-results" class="space-y-3"></div>
             </div>
             <button id="next-question-btn" class="btn w-full max-w-xs bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-3 px-4 rounded-lg text-2xl mt-8 hidden">¡Listo!</button>
             <button id="show-final-results-btn" class="btn w-full max-w-xs bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-4 rounded-lg text-2xl mt-8 hidden">Ver Resultados Finales</button>
         </div>
     </div>
 
-    <!-- Pantalla Final -->
     <div id="game-over-screen" class="screen w-full max-w-3xl mx-auto flex-col items-center text-center">
         <div class="card w-full">
             <h2 class="text-6xl font-bold mb-4 handwriting">¡Fin del Juego!</h2>
             <div id="winner-announcement" class="text-4xl mb-8"></div>
             <div class="w-full bg-gray-50 p-6 rounded-lg">
                 <h3 class="text-4xl font-semibold mb-4 handwriting">Puntuación Final</h3>
-                <div id="final-scores" class="space-y-3">
-                </div>
+                <div id="final-scores" class="space-y-3"></div>
             </div>
             <button id="play-again-btn" class="btn w-full max-w-xs bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-4 rounded-lg text-2xl mt-8">Jugar Otra Vez</button>
         </div>
     </div>
 
-
     <script type="module">
-        // Import Realtime Database functions
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
         import { getDatabase, ref, onValue, set, update, get, serverTimestamp, onDisconnect, remove } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
 
-        // --- Firebase Configuration ---
         const firebaseConfig = { databaseURL: "https://webmc-46fab-default-rtdb.europe-west1.firebasedatabase.app/" };
         const app = initializeApp(firebaseConfig);
         const database = getDatabase(app);
         
-        // --- Global State ---
         let localPlayerId = sessionStorage.getItem('quizPlayerId') || `player_${Date.now()}_${Math.random().toString(36).substr(2, 5)}`;
         sessionStorage.setItem('quizPlayerId', localPlayerId);
         
-        let currentGameId = null;
-        let gameRef = null;
-        let gameData = null; // Local copy of game state
-        let timerInterval = null;
-        let isMovingToNext = false;
+        let currentGameId = null, gameRef = null, gameData = null;
+        let timerInterval = null, isMovingToNext = false;
+        let isDrawing = false, canvas, ctx, lastPos;
 
-        // --- UI Elements ---
-        const screens = { lobby: document.getElementById('lobby-screen'), interstitial: document.getElementById('interstitial-screen'), quiz: document.getElementById('quiz-screen'), roundResults: document.getElementById('round-results-screen'), gameOver: document.getElementById('game-over-screen') };
+        const screens = { lobby: document.getElementById('lobby-screen'), interstitial: document.getElementById('interstitial-screen'), quiz: document.getElementById('quiz-screen'), drawing: document.getElementById('drawing-screen'), roundResults: document.getElementById('round-results-screen'), gameOver: document.getElementById('game-over-screen') };
         const playerNameInput = document.getElementById('player-name-input');
         const createGameBtn = document.getElementById('create-game-btn');
         const joinGameBtn = document.getElementById('join-game-btn');
         const gameIdInput = document.getElementById('game-id-input');
         const confirmJoinBtn = document.getElementById('confirm-join-btn');
         const initialOptions = document.getElementById('initial-options');
+        const createMenu = document.getElementById('create-menu');
+        const showCreateMenuBtn = document.getElementById('show-create-menu-btn');
+        const backFromCreateBtn = document.getElementById('back-from-create-btn');
         const joinOptions = document.getElementById('join-options');
         const waitingRoom = document.getElementById('waiting-room');
         const gameIdDisplay = document.getElementById('game-id-display');
@@ -244,22 +273,10 @@
         const toastEl = document.getElementById('toast');
         const voteRevealEl = document.getElementById('vote-reveal');
         const answerRevealEl = document.getElementById('answer-reveal');
-        
-        // --- Utility Functions ---
-        const showAlert = (message) => {
-            console.warn("ALERT:", message);
-            toastEl.innerText = message;
-            toastEl.classList.add('show');
-            setTimeout(() => { toastEl.classList.remove('show'); }, 3000);
-        };
+        const drawingResultsRevealEl = document.getElementById('drawing-results-reveal');
 
-        const switchScreen = (screenName) => {
-            Object.values(screens).forEach(screen => screen.classList.remove('active'));
-            if (screens[screenName]) screens[screenName].classList.add('active');
-        };
-        
-        const fetchQuestions = async () => {
-             const votingQuestions = [
+        const fetchQuestions = async (modes) => {
+            const allVotingQuestions = [
                 { "type": "voting", "question": "¿Quién duraría más en una isla desierta?", "topic": "Votacion" },
                 { "type": "voting", "question": "¿Quién tiene más probabilidades de convertirse en millonario?", "topic": "Votacion" },
                 { "type": "voting", "question": "¿Quién es el más propenso a tropezar con su propia sombra?", "topic": "Votacion" },
@@ -278,99 +295,117 @@
             ];
 
             const url = 'https://raw.githubusercontent.com/Logise1123/familyquiz/main/questions.json';
+            let triviaQuestions = [];
             try {
                 const response = await fetch(url);
                 if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-                const triviaQuestions = await response.json();
-                
-                // Shuffle both arrays
-                const shuffledTrivia = triviaQuestions.sort(() => 0.5 - Math.random());
-                const shuffledVoting = votingQuestions.sort(() => 0.5 - Math.random());
-                
-                // Take 11 trivia and 4 voting questions
-                const finalQuestions = shuffledTrivia.slice(0, 11).concat(shuffledVoting.slice(0, 4));
-                
-                // Shuffle the final mix
-                return finalQuestions.sort(() => 0.5 - Math.random());
-
-            } catch (error)
-            {
-                console.error("No se pudieron cargar las preguntas desde GitHub:", error);
-                showAlert("Error al cargar preguntas. Se usarán preguntas de respaldo.");
-                const trivia = [{ question: "¿Cuál es la capital de España?", options: ["Barcelona", "Lisboa", "Madrid", "París"], answer: "Madrid", difficulty: "Fácil", topic: "Cultura General" }];
-                return trivia.concat(votingQuestions.slice(0,4));
+                triviaQuestions = await response.json();
+            } catch (error) {
+                console.error("No se pudieron cargar las preguntas de trivia:", error);
+                showAlert("Error al cargar preguntas de trivia.");
+                // Return empty if trivia fails but was requested
+                if(modes.quiz) return [];
             }
+            
+            let finalQuestions = [];
+            const selectedCount = Object.values(modes).filter(Boolean).length;
+
+            if (selectedCount === 3) {
+                finalQuestions = triviaQuestions.sort(() => 0.5 - Math.random()).slice(0, 10)
+                    .concat(allVotingQuestions.sort(() => 0.5 - Math.random()).slice(0, 5))
+                    .concat(Array(5).fill({ "type": "drawing", "topic": "Dibujo" }));
+            } else if (selectedCount === 2) {
+                if (modes.quiz && modes.voting) {
+                    finalQuestions = triviaQuestions.sort(() => 0.5 - Math.random()).slice(0, 10)
+                        .concat(allVotingQuestions.sort(() => 0.5 - Math.random()).slice(0, 10));
+                } else if (modes.quiz && modes.drawing) {
+                    finalQuestions = triviaQuestions.sort(() => 0.5 - Math.random()).slice(0, 10)
+                        .concat(Array(10).fill({ "type": "drawing", "topic": "Dibujo" }));
+                } else if (modes.voting && modes.drawing) {
+                    finalQuestions = allVotingQuestions.sort(() => 0.5 - Math.random()).slice(0, 10)
+                        .concat(Array(10).fill({ "type": "drawing", "topic": "Dibujo" }));
+                }
+            } else if (selectedCount === 1) {
+                if (modes.quiz) {
+                    finalQuestions = triviaQuestions.sort(() => 0.5 - Math.random()).slice(0, 20);
+                } else if (modes.voting) {
+                    finalQuestions = allVotingQuestions.sort(() => 0.5 - Math.random()).slice(0, 20);
+                } else if (modes.drawing) {
+                    finalQuestions = Array(20).fill({ "type": "drawing", "topic": "Dibujo" });
+                }
+            }
+            
+            return finalQuestions.sort(() => 0.5 - Math.random());
         };
 
-        // --- Game Logic ---
+        const drawingWords = ["Casa", "Sol", "Coche", "Árbol", "Perro", "Gato", "Flor", "Barco", "Avión", "Pelota", "Corazón", "Estrella", "Luna", "Montaña", "Río", "Puente", "Libro", "Silla", "Mesa", "Teléfono", "Guitarra", "Reloj", "Llave", "Gafas", "Manzana", "Plátano", "Pizza", "Hamburguesa", "Helado", "Sombrero"];
+
+        const showAlert = (message) => {
+            toastEl.innerText = message;
+            toastEl.classList.add('show');
+            setTimeout(() => { toastEl.classList.remove('show'); }, 3000);
+        };
+
+        const switchScreen = (screenName) => {
+            Object.values(screens).forEach(screen => screen.classList.remove('active'));
+            if (screens[screenName]) screens[screenName].classList.add('active');
+        };
+
         const createGame = async () => {
             if (!playerNameInput.value.trim()) { showAlert("Por favor, introduce tu nombre."); return; }
-            createGameBtn.disabled = true; joinGameBtn.disabled = true; createGameBtn.innerText = "Cargando...";
+            
+            const selectedModes = {
+                quiz: document.getElementById('mode-quiz').checked,
+                voting: document.getElementById('mode-voting').checked,
+                drawing: document.getElementById('mode-drawing').checked,
+            };
 
+            if (Object.values(selectedModes).filter(Boolean).length === 0) {
+                showAlert("Debes seleccionar al menos un tipo de pregunta.");
+                return;
+            }
+
+            createGameBtn.disabled = true; joinGameBtn.disabled = true;
             try {
-                const gameQuestions = await fetchQuestions();
-                if (!gameQuestions || gameQuestions.length === 0) throw new Error("Failed to fetch questions.");
-                
+                const gameQuestions = await fetchQuestions(selectedModes);
+                if (!gameQuestions || gameQuestions.length === 0) {
+                    showAlert("No se pudieron generar preguntas para los modos seleccionados.");
+                    throw new Error("Question generation failed");
+                }
                 currentGameId = Math.random().toString(36).substr(2, 5).toUpperCase();
                 gameRef = ref(database, `games/${currentGameId}`);
-                
                 await set(gameRef, {
-                    hostId: localPlayerId,
-                    gameState: 'lobby',
-                    currentQuestionIndex: -1,
-                    questions: gameQuestions,
+                    hostId: localPlayerId, gameState: 'lobby', currentQuestionIndex: -1, questions: gameQuestions,
                     players: { [localPlayerId]: { name: playerNameInput.value.trim(), score: 0 } }
                 });
-                
-                const playerRef = ref(database, `games/${currentGameId}/players/${localPlayerId}`);
-                onDisconnect(playerRef).remove();
+                onDisconnect(ref(database, `games/${currentGameId}/players/${localPlayerId}`)).remove();
                 subscribeToGameChanges();
             } catch (error) {
                 console.error("Error al crear la partida:", error);
-                showAlert("Hubo un problema al crear la partida.");
-                createGameBtn.disabled = false; joinGameBtn.disabled = false; createGameBtn.innerText = "Crear Partida";
+                createGameBtn.disabled = false; joinGameBtn.disabled = false;
             }
         };
 
         const joinGame = async () => {
             if (!playerNameInput.value.trim()) { showAlert("Por favor, introduce tu nombre."); return; }
-            confirmJoinBtn.disabled = true; confirmJoinBtn.innerText = "Uniéndose...";
-            
             const gameIdToJoin = gameIdInput.value.trim().toUpperCase();
-            if (!gameIdToJoin) {
-                showAlert("Por favor, introduce un código de partida.");
-                confirmJoinBtn.disabled = false; confirmJoinBtn.innerText = "Confirmar y Unirse";
-                return;
-            }
-            
+            if (!gameIdToJoin) { showAlert("Por favor, introduce un código de partida."); return; }
+            confirmJoinBtn.disabled = true;
             try {
                 const joinRef = ref(database, `games/${gameIdToJoin}`);
                 const snapshot = await get(joinRef);
-                if (!snapshot.exists()) {
-                    showAlert("Partida no encontrada.");
-                    throw new Error("Game not found");
+                if (!snapshot.exists() || snapshot.val().gameState !== 'lobby') {
+                    showAlert("Partida no encontrada o ya comenzada.");
+                    throw new Error("Game not found or started");
                 }
-                
-                const gameDataTemp = snapshot.val();
-                if (gameDataTemp.gameState !== 'lobby') {
-                    showAlert("Esta partida ya ha comenzado.");
-                    throw new Error("Game already started");
-                }
-
                 currentGameId = gameIdToJoin;
                 gameRef = joinRef;
-                
-                const newPlayerData = { name: playerNameInput.value.trim(), score: 0 };
-                const updates = {};
-                updates[`/players/${localPlayerId}`] = newPlayerData;
-                await update(gameRef, updates);
-
-                const playerRef = ref(database, `games/${currentGameId}/players/${localPlayerId}`);
-                onDisconnect(playerRef).remove();
+                await update(gameRef, { [`/players/${localPlayerId}`]: { name: playerNameInput.value.trim(), score: 0 } });
+                onDisconnect(ref(database, `games/${currentGameId}/players/${localPlayerId}`)).remove();
                 subscribeToGameChanges();
-            } catch(error) {
-                console.error("Error al unirse a la partida:", error);
-                confirmJoinBtn.disabled = false; confirmJoinBtn.innerText = "Confirmar y Unirse";
+            } catch (error) {
+                console.error("Error al unirse:", error);
+                confirmJoinBtn.disabled = false;
             }
         };
         
@@ -378,26 +413,21 @@
             if (!gameRef) return;
             onValue(gameRef, (snapshot) => {
                 gameData = snapshot.val();
-                if (gameData) {
-                    renderGame();
-                } else {
-                    showAlert("La partida ha terminado o ya no existe.");
-                    resetGame();
-                }
+                if (gameData) renderGame();
+                else { showAlert("La partida ha terminado."); resetGame(); }
             });
         };
 
         const renderGame = () => {
             if (!gameData || !gameData.players) return;
             if (!gameData.players[localPlayerId] && gameData.gameState !== 'lobby') {
-                showAlert("Has sido desconectado de la partida.");
-                resetGame();
-                return;
+                showAlert("Has sido desconectado."); resetGame(); return;
             }
-
             switch (gameData.gameState) {
                 case 'lobby': renderLobby(); break;
                 case 'interstitial': renderInterstitial(); break;
+                case 'drawing': renderDrawingScreen(); break;
+                case 'guessing': renderGuessingScreen(); break;
                 case 'question': renderQuestionScreen(); break;
                 case 'roundResult': renderRoundResult(); break;
                 case 'gameOver': renderGameOver(); break;
@@ -406,121 +436,170 @@
         
         const renderLobby = () => {
             switchScreen('lobby');
-            initialOptions.classList.add('hidden');
+            initialOptions.classList.add('hidden'); 
             joinOptions.classList.add('hidden');
             waitingRoom.classList.remove('hidden');
             gameIdDisplay.innerHTML = `${currentGameId} <i class="gg-copy text-gray-500"></i>`;
-            
-            playerList.innerHTML = Object.entries(gameData.players).map(([id, p]) => `
-                <li class="p-1 flex items-center gap-2">
-                    <span class="text-2xl">${gameData.hostId === id ? '👑' : '👤'}</span> 
-                    ${p.name}
-                </li>`).join('');
-            
+            if(gameData.players) {
+              playerList.innerHTML = Object.entries(gameData.players).map(([id, p]) => `<li class="p-1 flex items-center gap-2"><span class="text-2xl">${gameData.hostId === id ? '👑' : '👤'}</span> ${p.name}</li>`).join('');
+            }
             if (gameData.hostId === localPlayerId) startGameBtn.classList.remove('hidden');
         };
 
         const renderInterstitial = () => {
             switchScreen('interstitial');
+            waitingRoom.classList.add('hidden');
+            initialOptions.classList.add('hidden');
             const question = gameData.questions[gameData.currentQuestionIndex];
             if (!question) return;
-
             document.getElementById('interstitial-difficulty').innerText = question.difficulty || '';
             const topicEl = document.getElementById('interstitial-topic');
             topicEl.innerText = question.topic;
-
             topicEl.className = 'text-8xl font-bold mt-4 break-words handwriting'; 
-            const topicClass = 'topic-' + question.topic.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, '-');
-            topicEl.classList.add(topicClass);
-
+            topicEl.classList.add('topic-' + question.topic.toLowerCase().replace(/\s+/g, '-'));
             if (gameData.hostId === localPlayerId) {
                 setTimeout(() => {
-                    update(gameRef, { 
-                        gameState: 'question', 
-                        questionStartTime: serverTimestamp() 
-                    });
+                    const nextState = question.type === 'drawing' ? 'drawing' : 'question';
+                    const updates = { gameState: nextState };
+                    if(question.type === 'drawing') {
+                        const shuffledWords = drawingWords.sort(() => 0.5 - Math.random());
+                        const playerIds = Object.keys(gameData.players);
+                        updates.playerOrder = playerIds.sort(() => 0.5 - Math.random());
+                        updates.guessingIndex = 0;
+                        playerIds.forEach((id, i) => {
+                            updates[`/players/${id}/secretWord`] = shuffledWords[i];
+                            const decoys = shuffledWords.slice(i + 1).concat(shuffledWords.slice(0, i)).slice(0, 3);
+                            updates[`/players/${id}/decoys`] = decoys;
+                        });
+                    } else {
+                        updates.questionStartTime = serverTimestamp();
+                    }
+                    update(gameRef, updates);
                 }, 4000); 
             }
         };
         
+        const renderDrawingScreen = () => {
+            switchScreen('drawing');
+            document.getElementById('word-to-draw').innerText = gameData.players[localPlayerId].secretWord;
+            setupCanvas();
+            document.getElementById('drawing-screen').querySelectorAll('button').forEach(b => b.disabled = false);
+            
+            clearInterval(timerInterval);
+            const timerBar = document.getElementById('drawing-timer-bar'), timerDisplay = document.getElementById('drawing-timer');
+            let timeLeft = 30;
+            timerBar.style.width = '100%';
+            timerDisplay.innerText = 30;
+            timerInterval = setInterval(() => {
+                timeLeft--;
+                timerBar.style.width = `${(timeLeft / 30) * 100}%`;
+                timerDisplay.innerText = timeLeft;
+                if (timeLeft <= 0) {
+                    clearInterval(timerInterval);
+                    submitDrawing();
+                }
+            }, 1000);
+        };
+
         const renderQuestionScreen = () => {
-            const question = gameData.questions[gameData.currentQuestionIndex];
-            if (question.type === 'voting') {
-                renderVotingQuestion(question);
-            } else {
-                renderTriviaQuestion(question);
-            }
-        }
-
-        const renderTriviaQuestion = (question) => {
-            setupQuestionUI(question);
-            const optionsContainer = document.getElementById('options-container');
-            optionsContainer.innerHTML = '';
-            question.options.forEach(option => {
-                const button = document.createElement('button');
-                button.className = "option-btn btn w-full text-gray-800 font-semibold py-3 px-4 rounded-lg text-xl md:text-2xl";
-                button.innerText = option;
-                button.onclick = () => selectAnswer(option);
-                optionsContainer.appendChild(button);
-            });
-            // Re-check answered status
-            if (gameData.players[localPlayerId]?.currentAnswer) {
-                document.querySelectorAll('.option-btn').forEach(btn => {
-                    btn.disabled = true;
-                    if(btn.innerText === gameData.players[localPlayerId].currentAnswer) btn.classList.add('selected');
-                });
-                document.getElementById('waiting-for-players').classList.remove('hidden');
-            }
-        };
-
-        const renderVotingQuestion = (question) => {
-            setupQuestionUI(question);
-            const optionsContainer = document.getElementById('options-container');
-            optionsContainer.innerHTML = '';
-            Object.entries(gameData.players).forEach(([playerId, player]) => {
-                const button = document.createElement('button');
-                button.className = "option-btn btn w-full text-gray-800 font-semibold py-3 px-4 rounded-lg text-xl md:text-2xl";
-                button.innerText = player.name;
-                button.onclick = () => selectVote(playerId);
-                optionsContainer.appendChild(button);
-            });
-            // Re-check voted status
-            if (gameData.players[localPlayerId]?.currentVote) {
-                document.querySelectorAll('.option-btn').forEach(btn => {
-                    btn.disabled = true;
-                    if(btn.innerText === gameData.players[gameData.players[localPlayerId].currentVote].name) btn.classList.add('selected');
-                });
-                document.getElementById('waiting-for-players').classList.remove('hidden');
-            }
-        };
-
-        const setupQuestionUI = (question) => {
             switchScreen('quiz');
+            document.getElementById('drawing-display-img').classList.add('hidden');
+            document.getElementById('quiz-header-text').innerHTML = `Pregunta <span id="question-number">${gameData.currentQuestionIndex + 1}</span>/<span id="question-total">${gameData.questions.length}</span>`;
+            
             clearInterval(timerInterval);
             document.getElementById('waiting-for-players').classList.add('hidden');
-            
-            const index = gameData.currentQuestionIndex;
-            document.getElementById('question-number').innerText = index + 1;
-            document.getElementById('question-total').innerText = gameData.questions.length;
+            const question = gameData.questions[gameData.currentQuestionIndex];
             document.getElementById('question-text').innerText = question.question;
+            const optionsContainer = document.getElementById('options-container');
+            optionsContainer.innerHTML = '';
+
+            const options = question.type === 'voting'
+                ? Object.entries(gameData.players)
+                : question.options.map(opt => [opt, opt]);
+
+            options.forEach(([id, data]) => {
+                const button = document.createElement('button');
+                button.className = "option-btn btn w-full text-gray-800 font-semibold py-3 px-4 rounded-lg text-xl md:text-2xl";
+                button.innerText = question.type === 'voting' ? data.name : data;
+                button.onclick = () => question.type === 'voting' ? selectVote(id) : selectAnswer(id);
+                optionsContainer.appendChild(button);
+            });
+
+            const myAnswer = gameData.players[localPlayerId]?.currentAnswer || gameData.players[localPlayerId]?.currentVote;
+             if (myAnswer) {
+                document.querySelectorAll('.option-btn').forEach(btn => {
+                    btn.disabled = true;
+                    const expectedText = question.type === 'voting' ? gameData.players[myAnswer]?.name : myAnswer;
+                    if(btn.innerText === expectedText) btn.classList.add('selected');
+                });
+                document.getElementById('waiting-for-players').classList.remove('hidden');
+            }
 
             const startTime = gameData.questionStartTime;
             const timerBar = document.getElementById('timer-bar'), timerDisplay = document.getElementById('timer');
-            
             timerInterval = setInterval(() => {
                 const elapsed = (Date.now() - startTime) / 1000;
                 const remaining = Math.max(0, 20 - elapsed);
                 timerBar.style.width = `${(remaining / 20) * 100}%`;
                 timerDisplay.innerText = Math.ceil(remaining);
-
                 const allAnswered = Object.values(gameData.players).every(p => p.currentAnswer || p.currentVote);
-
                 if ((remaining <= 0 || allAnswered) && gameData.hostId === localPlayerId) {
-                    clearInterval(timerInterval);
-                    showRoundResults();
+                    clearInterval(timerInterval); showRoundResults();
                 }
             }, 100);
-        }
+        };
+
+        const renderGuessingScreen = () => {
+            switchScreen('quiz');
+            document.getElementById('waiting-for-players').classList.add('hidden');
+            const guessingIndex = gameData.guessingIndex;
+            const drawerId = gameData.playerOrder[guessingIndex];
+            const drawer = gameData.players[drawerId];
+            
+            document.getElementById('quiz-header-text').innerText = `Dibujo ${guessingIndex + 1}/${gameData.playerOrder.length}`;
+            document.getElementById('question-text').innerText = `¿Qué ha dibujado ${drawer.name}?`;
+            
+            const img = document.getElementById('drawing-display-img');
+            img.src = drawer.drawingData || 'https://placehold.co/500x300/eee/ccc?text=No+ha+dibujado+nada';
+            img.classList.remove('hidden');
+            
+            const optionsContainer = document.getElementById('options-container');
+            optionsContainer.innerHTML = '';
+
+            if (drawerId === localPlayerId) {
+                optionsContainer.innerHTML = '<p class="text-center text-2xl col-span-2">¡Están adivinando tu obra de arte!</p>';
+            } else {
+                 const options = [drawer.secretWord, ...drawer.decoys].sort(() => 0.5 - Math.random());
+                 options.forEach(word => {
+                    const button = document.createElement('button');
+                    button.className = "option-btn btn w-full text-gray-800 font-semibold py-3 px-4 rounded-lg text-xl md:text-2xl";
+                    button.innerText = word;
+                    button.onclick = () => selectGuess(drawerId, word);
+                    optionsContainer.appendChild(button);
+                 });
+                 const myGuess = gameData.players[localPlayerId].guesses?.[drawerId];
+                 if(myGuess) {
+                     document.querySelectorAll('.option-btn').forEach(btn => {
+                        btn.disabled = true;
+                        if(btn.innerText === myGuess) btn.classList.add('selected');
+                    });
+                    document.getElementById('waiting-for-players').classList.remove('hidden');
+                 }
+            }
+
+            if(gameData.hostId === localPlayerId) {
+                const nonDrawers = Object.keys(gameData.players).filter(id => id !== drawerId);
+                const allGuessed = nonDrawers.every(id => gameData.players[id].guesses?.[drawerId]);
+                if(allGuessed) {
+                    const nextGuessingIndex = guessingIndex + 1;
+                    if (nextGuessingIndex >= gameData.playerOrder.length) {
+                        setTimeout(showRoundResults, 1000);
+                    } else {
+                        setTimeout(() => update(gameRef, { guessingIndex: nextGuessingIndex }), 1000);
+                    }
+                }
+            }
+        };
 
         const renderRoundResult = () => {
             switchScreen('roundResults');
@@ -528,57 +607,60 @@
             isMovingToNext = false;
             
             const question = gameData.questions[gameData.currentQuestionIndex];
+            answerRevealEl.classList.add('hidden');
+            voteRevealEl.classList.add('hidden');
+            drawingResultsRevealEl.classList.add('hidden');
 
-            if (question.type === 'voting') {
-                answerRevealEl.classList.add('hidden');
+            if (question.type === 'drawing') {
+                drawingResultsRevealEl.classList.remove('hidden');
+                document.getElementById('result-title').innerText = "Resultados del Dibujo";
+                const grid = document.getElementById('drawing-results-grid');
+                grid.innerHTML = '';
+                gameData.playerOrder.forEach(pId => {
+                    const player = gameData.players[pId];
+                    const correctGuesses = Object.values(gameData.players).filter(p => p.guesses?.[pId] === player.secretWord).length;
+                    grid.innerHTML += `
+                        <div class="p-2 bg-white rounded-lg shadow">
+                            <img src="${player.drawingData}" class="w-full h-auto object-contain rounded-md bg-white border">
+                            <p class="mt-2 font-bold text-center">${player.name}</p>
+                            <p class="text-center text-sm text-indigo-600">"${player.secretWord}"</p>
+                            <p class="text-center text-sm">${correctGuesses} acierto(s)</p>
+                        </div>`;
+                });
+
+            } else if (question.type === 'voting') {
                 voteRevealEl.classList.remove('hidden');
                 document.getElementById('result-title').innerText = "Resultados de la Votación";
-                
-                const voteDetailsList = document.getElementById('vote-details-list');
-                voteDetailsList.innerHTML = '';
-                Object.entries(gameData.players).forEach(([voterId, voterData]) => {
-                    const votedPlayerId = voterData.currentVote;
-                    if (votedPlayerId && gameData.players[votedPlayerId]) {
-                        const votedPlayerName = gameData.players[votedPlayerId].name;
-                        const li = document.createElement('li');
-                        li.innerHTML = `<strong>${voterData.name}</strong> votó por <strong>${votedPlayerName}</strong>`;
-                        voteDetailsList.appendChild(li);
-                    }
-                });
+                document.getElementById('vote-details-list').innerHTML = Object.values(gameData.players)
+                    .map(p => p.currentVote ? `<li><strong>${p.name}</strong> votó por <strong>${gameData.players[p.currentVote]?.name || '?'}</strong></li>` : '')
+                    .join('');
             } else {
                 answerRevealEl.classList.remove('hidden');
-                voteRevealEl.classList.add('hidden');
                 document.getElementById('result-title').innerText = "Resultados de la Ronda";
                 document.getElementById('correct-answer-text').innerText = question.answer;
             }
 
-            const resultsContainer = document.getElementById('round-player-results');
-            resultsContainer.innerHTML = '';
+            document.getElementById('round-player-results').innerHTML = Object.values(gameData.players)
+                .sort((a,b) => b.score - a.score)
+                .map(player => {
+                    const answerIcon = player.currentAnswer ? (player.currentAnswer === question.answer ? '✅' : '❌') : (question.type === 'voting' ? '🗳️' : (question.type === 'drawing' ? '🎨' : '🤔'));
+                    const pointsGained = player.lastRoundPoints > 0 ? `+${player.lastRoundPoints}` : '';
+                    const readyCheck = player.readyForNext ? '<i class="gg-check-o text-green-500"></i>' : '';
+                    return `<div class="flex justify-between items-center bg-white p-3 rounded-lg fade-in text-xl">
+                        <div class="flex items-center gap-3"><span class="w-6">${readyCheck}</span>${answerIcon} ${player.name}</div>
+                        <div class="text-right"><span class="font-bold">${player.score} pts</span><span class="text-sm text-green-600 ml-2 font-bold">${pointsGained}</span></div>
+                    </div>`;
+                }).join('');
             
-            Object.values(gameData.players).sort((a,b) => b.score - a.score).forEach(player => {
-                const playerResultDiv = document.createElement('div');
-                playerResultDiv.className = 'flex justify-between items-center bg-white p-3 rounded-lg fade-in text-xl';
-                const answerIcon = player.currentAnswer ? (player.currentAnswer === question.answer ? '✅' : '❌') : (question.type === 'voting' ? '🗳️' : '🤔');
-                const pointsGained = player.lastRoundPoints > 0 ? `+${player.lastRoundPoints}` : '';
-                const readyCheck = player.readyForNext ? '<i class="gg-check-o text-green-500"></i>' : '';
-
-                playerResultDiv.innerHTML = `
-                    <div class="flex items-center gap-3"><span class="w-6">${readyCheck}</span>${answerIcon} ${player.name}</div>
-                    <div class="text-right"><span class="font-bold">${player.score} pts</span><span class="text-sm text-green-600 ml-2 font-bold">${pointsGained}</span></div>`;
-                resultsContainer.appendChild(playerResultDiv);
-            });
-
             const isLastQuestion = gameData.currentQuestionIndex >= gameData.questions.length - 1;
-            const localPlayer = gameData.players[localPlayerId];
             const primaryBtn = isLastQuestion ? showFinalResultsBtn : nextQuestionBtn;
             primaryBtn.classList.remove('hidden');
             (isLastQuestion ? nextQuestionBtn : showFinalResultsBtn).classList.add('hidden');
-            primaryBtn.disabled = !!localPlayer?.readyForNext;
-            primaryBtn.innerText = localPlayer?.readyForNext ? "Esperando..." : (isLastQuestion ? "Ver Resultados Finales" : "¡Listo!");
+            primaryBtn.disabled = !!gameData.players[localPlayerId]?.readyForNext;
+            primaryBtn.innerText = gameData.players[localPlayerId]?.readyForNext ? "Esperando..." : (isLastQuestion ? "Ver Resultados Finales" : "¡Listo!");
 
-            const allPlayersReady = Object.values(gameData.players).every(p => p.readyForNext);
-            if (allPlayersReady && gameData.hostId === localPlayerId) {
-                 isLastQuestion ? handleShowFinalResults() : moveToNextQuestionWithDelay();
+            if (gameData.hostId === localPlayerId && Object.values(gameData.players).every(p => p.readyForNext)) {
+                 isLastQuestion ? update(gameRef, { gameState: 'gameOver' }) : moveToNextQuestionWithDelay();
             }
         };
 
@@ -586,154 +668,184 @@
             switchScreen('gameOver');
             const players = Object.values(gameData.players).sort((a, b) => b.score - a.score);
             document.getElementById('winner-announcement').innerHTML = `🏆 ¡El ganador es <strong class="text-amber-500">${players[0].name}</strong>! 🏆`;
-            const finalScoresContainer = document.getElementById('final-scores');
-            finalScoresContainer.innerHTML = '';
-            
-            players.forEach((player, index) => {
+            document.getElementById('final-scores').innerHTML = players.map((player, index) => {
                 const rankIcon = ['🥇', '🥈', '🥉'][index] || `#${index+1}`;
-                finalScoresContainer.innerHTML += `
-                    <div class="flex justify-between items-center bg-white p-3 rounded-lg fade-in text-xl">
-                        <div>${rankIcon} ${player.name}</div>
-                        <div class="font-bold">${player.score} pts</div>
-                    </div>`;
-            });
+                return `<div class="flex justify-between items-center bg-white p-3 rounded-lg fade-in text-xl">
+                    <div>${rankIcon} ${player.name}</div><div class="font-bold">${player.score} pts</div>
+                </div>`;
+            }).join('');
         };
         
-        const handleStartGame = () => {
-            if (gameData.hostId !== localPlayerId) return;
-            update(gameRef, { gameState: 'interstitial', currentQuestionIndex: 0 });
-        };
-        
-        const selectAnswer = (answer) => {
-            document.querySelectorAll('.option-btn').forEach(btn => {
-                btn.disabled = true;
-                if(btn.innerText === answer) btn.classList.add('selected');
-            });
-            document.getElementById('waiting-for-players').classList.remove('hidden');
-            const elapsed = (Date.now() - gameData.questionStartTime) / 1000;
-            const remainingTime = Math.max(0, 20 - elapsed);
-            update(gameRef, { [`/players/${localPlayerId}/currentAnswer`]: answer, [`/players/${localPlayerId}/answerTime`]: remainingTime });
-        };
-
-        const selectVote = (votedPlayerId) => {
-             document.querySelectorAll('.option-btn').forEach(btn => {
-                btn.disabled = true;
-                if(btn.innerText === gameData.players[votedPlayerId].name) btn.classList.add('selected');
-            });
-            document.getElementById('waiting-for-players').classList.remove('hidden');
-            update(gameRef, { [`/players/${localPlayerId}/currentVote`]: votedPlayerId });
-        };
+        const handleStartGame = () => update(gameRef, { gameState: 'interstitial', currentQuestionIndex: 0 });
+        const selectAnswer = (answer) => update(gameRef, { [`/players/${localPlayerId}/currentAnswer`]: answer, [`/players/${localPlayerId}/answerTime`]: 20 - parseInt(document.getElementById('timer').innerText) });
+        const selectVote = (votedPlayerId) => update(gameRef, { [`/players/${localPlayerId}/currentVote`]: votedPlayerId });
+        const selectGuess = (drawerId, word) => update(gameRef, { [`/players/${localPlayerId}/guesses/${drawerId}`]: word });
         
         const showRoundResults = () => {
-            if (!gameData || !gameData.players || gameData.gameState !== 'question') return;
-            
+            if (gameData.gameState === 'roundResult' || gameData.hostId !== localPlayerId) return;
             const updates = { gameState: 'roundResult' };
             const question = gameData.questions[gameData.currentQuestionIndex];
             
-            if (question.type === 'voting') {
+            if (question.type === 'drawing') {
+                const correctGuessCounts = {};
+                gameData.playerOrder.forEach(pId => correctGuessCounts[pId] = 0);
+                Object.values(gameData.players).forEach(player => {
+                    if(player.guesses) {
+                        Object.entries(player.guesses).forEach(([drawerId, guess]) => {
+                            if (gameData.players[drawerId]?.secretWord === guess) {
+                                correctGuessCounts[drawerId]++;
+                            }
+                        });
+                    }
+                });
+                const maxGuesses = Math.max(0, ...Object.values(correctGuessCounts));
+                gameData.playerOrder.forEach(pId => {
+                    const points = (correctGuessCounts[pId] === maxGuesses && maxGuesses > 0) ? 100 : 0;
+                    updates[`/players/${pId}/lastRoundPoints`] = points;
+                    if(points > 0) updates[`/players/${pId}/score`] = gameData.players[pId].score + points;
+                });
+
+            } else if (question.type === 'voting') {
                 const voteCounts = {};
                 Object.keys(gameData.players).forEach(pId => voteCounts[pId] = 0);
-                Object.values(gameData.players).forEach(p => {
-                    if (p.currentVote && voteCounts[p.currentVote] !== undefined) {
-                        voteCounts[p.currentVote]++;
-                    }
+                Object.values(gameData.players).forEach(p => { if (p.currentVote) voteCounts[p.currentVote]++; });
+                const sortedVotes = Object.entries(voteCounts).sort(([,a],[,b]) => b-a);
+                const winnerIds = (sortedVotes.length > 0 && sortedVotes[0][1] > 0) ? sortedVotes.filter(v => v[1] === sortedVotes[0][1]).map(v => v[0]) : [];
+                Object.keys(gameData.players).forEach(pId => {
+                    const points = (winnerIds.length > 0 && gameData.players[pId].currentVote && winnerIds.includes(gameData.players[pId].currentVote)) ? 100 : 0;
+                    updates[`/players/${pId}/lastRoundPoints`] = points;
+                    if(points > 0) updates[`/players/${pId}/score`] = gameData.players[pId].score + points;
                 });
-
-                const sortedVotes = Object.entries(voteCounts).sort(([, a], [, b]) => b - a);
-                let winnerIds = [];
-
-                if (sortedVotes.length > 0 && sortedVotes[0][1] > 0) {
-                    const firstPlaceVotes = sortedVotes[0][1];
-                    winnerIds = sortedVotes
-                        .filter(([, votes]) => votes === firstPlaceVotes)
-                        .map(([playerId]) => playerId);
-                }
-
-                // Award points to players who voted for a winner
-                Object.keys(gameData.players).forEach(playerId => {
-                    const player = gameData.players[playerId];
-                    let points = 0;
-                    if (winnerIds.length > 0 && player.currentVote && winnerIds.includes(player.currentVote)) {
-                        points = 100; // Points for voting for the winner
-                    }
-                    
-                    updates[`/players/${playerId}/lastRoundPoints`] = points;
-                    if (points > 0) {
-                        updates[`/players/${playerId}/score`] = player.score + points;
-                    }
-                    updates[`/players/${playerId}/readyForNext`] = false;
-                });
-
-            } else { // Trivia question
+            } else {
                 const correctAnswer = question.answer;
                 Object.keys(gameData.players).forEach(playerId => {
-                    const player = gameData.players[playerId];
-                    const points = (player.currentAnswer === correctAnswer && player.answerTime) ? (50 + Math.ceil(player.answerTime * 5)) : 0;
-                    if (points > 0) updates[`/players/${playerId}/score`] = player.score + points;
+                    const p = gameData.players[playerId];
+                    const points = (p.currentAnswer === correctAnswer && p.answerTime) ? (50 + Math.ceil(p.answerTime * 2.5)) : 0;
                     updates[`/players/${playerId}/lastRoundPoints`] = points;
-                    updates[`/players/${playerId}/readyForNext`] = false;
+                    if(points > 0) updates[`/players/${playerId}/score`] = p.score + points;
                 });
             }
+             Object.keys(gameData.players).forEach(pId => updates[`/players/${pId}/readyForNext`] = false);
             update(gameRef, updates);
         };
         
-        const handlePlayerReady = () => {
-            update(gameRef, { [`/players/${localPlayerId}/readyForNext`]: true });
-        };
+        const handlePlayerReady = () => update(gameRef, { [`/players/${localPlayerId}/readyForNext`]: true });
         
         const moveToNextQuestionWithDelay = () => {
             if (isMovingToNext) return;
             isMovingToNext = true;
-            
             let countdown = 3;
             document.getElementById('result-title').innerText = `Siguiente en ${countdown}...`;
             const countdownInterval = setInterval(() => {
                 countdown--;
-                if (countdown > 0) {
-                    document.getElementById('result-title').innerText = `Siguiente en ${countdown}...`;
-                } else {
+                if (countdown > 0) document.getElementById('result-title').innerText = `Siguiente en ${countdown}...`;
+                else {
                     clearInterval(countdownInterval);
-                    const nextIndex = gameData.currentQuestionIndex + 1;
-                    
-                    const updates = { gameState: 'interstitial', currentQuestionIndex: nextIndex };
+                    const updates = { gameState: 'interstitial', currentQuestionIndex: gameData.currentQuestionIndex + 1 };
                     Object.keys(gameData.players).forEach(pId => {
                         updates[`/players/${pId}/currentAnswer`] = null;
                         updates[`/players/${pId}/answerTime`] = null;
                         updates[`/players/${pId}/currentVote`] = null;
                         updates[`/players/${pId}/readyForNext`] = false;
                         updates[`/players/${pId}/lastRoundPoints`] = 0;
+                        updates[`/players/${pId}/secretWord`] = null;
+                        updates[`/players/${pId}/decoys`] = null;
+                        updates[`/players/${pId}/drawingData`] = null;
+                        updates[`/players/${pId}/guesses`] = null;
                     });
                     update(gameRef, updates);
                 }
             }, 1000);
         };
-
-        const handleShowFinalResults = () => { 
-            update(gameRef, { gameState: 'gameOver' }); 
-        };
         
         const resetGame = () => {
-            if (gameData && gameData.hostId === localPlayerId) {
-                remove(gameRef);
-            }
+            if (gameData && gameData.hostId === localPlayerId) remove(gameRef);
             sessionStorage.removeItem('quizPlayerId');
             window.location.reload();
         };
 
-        // --- Event Listeners ---
+        const getPointerPos = (e) => {
+            const rect = canvas.getBoundingClientRect();
+            const clientX = e.clientX || e.touches[0].clientX;
+            const clientY = e.clientY || e.touches[0].clientY;
+            return { x: clientX - rect.left, y: clientY - rect.top };
+        }
+        const startDrawing = (e) => { isDrawing = true; lastPos = getPointerPos(e); }
+        const stopDrawing = () => { isDrawing = false; }
+        const draw = (e) => {
+            if (!isDrawing) return;
+            e.preventDefault();
+            const pos = getPointerPos(e);
+            ctx.beginPath();
+            ctx.moveTo(lastPos.x, lastPos.y);
+            ctx.lineTo(pos.x, pos.y);
+            ctx.stroke();
+            lastPos = pos;
+        }
+
+        const setupCanvas = () => {
+            canvas = document.getElementById('drawing-canvas');
+            ctx = canvas.getContext('2d');
+            ctx.strokeStyle = '#000';
+            ctx.lineWidth = 3;
+            ctx.lineCap = 'round';
+            ctx.lineJoin = 'round';
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ['mousedown', 'touchstart'].forEach(evt => canvas.addEventListener(evt, startDrawing));
+            ['mouseup', 'touchend', 'mouseleave'].forEach(evt => canvas.addEventListener(evt, stopDrawing));
+            ['mousemove', 'touchmove'].forEach(evt => canvas.addEventListener(evt, draw));
+        }
+
+        const submitDrawing = () => {
+            clearInterval(timerInterval);
+            const dataUrl = canvas.toDataURL();
+            document.getElementById('drawing-screen').querySelectorAll('button').forEach(b => b.disabled = true);
+            update(gameRef, { [`/players/${localPlayerId}/drawingData`]: dataUrl }).then(() => {
+                if(gameData.hostId === localPlayerId) {
+                    const players = gameData.players;
+                    if(Object.values(players).every(p => p.drawingData)) {
+                        update(gameRef, { gameState: 'guessing' });
+                    }
+                }
+            });
+        }
+        
+        onValue(ref(database, `games/${currentGameId}/players`), (snapshot) => {
+            if(gameData?.hostId === localPlayerId && gameData?.gameState === 'drawing') {
+                const players = snapshot.val() || {};
+                if(Object.values(players).every(p => p.drawingData)) {
+                    update(gameRef, { gameState: 'guessing' });
+                }
+            }
+        });
+
+        showCreateMenuBtn.addEventListener('click', () => {
+            initialOptions.classList.add('hidden');
+            createMenu.classList.remove('hidden');
+        });
+        
+        backFromCreateBtn.addEventListener('click', () => {
+            createMenu.classList.add('hidden');
+            initialOptions.classList.remove('hidden');
+        });
+
         createGameBtn.addEventListener('click', createGame);
-        joinGameBtn.addEventListener('click', () => { initialOptions.classList.add('hidden'); joinOptions.classList.remove('hidden'); });
+        joinGameBtn.addEventListener('click', () => { 
+            initialOptions.classList.add('hidden'); 
+            joinOptions.classList.remove('hidden'); 
+        });
         confirmJoinBtn.addEventListener('click', joinGame);
-        backToLobbyBtn.addEventListener('click', () => { joinOptions.classList.add('hidden'); initialOptions.classList.remove('hidden'); })
+        backToLobbyBtn.addEventListener('click', () => { 
+            joinOptions.classList.add('hidden'); 
+            initialOptions.classList.remove('hidden'); 
+        })
         startGameBtn.addEventListener('click', handleStartGame);
         nextQuestionBtn.addEventListener('click', handlePlayerReady);
         showFinalResultsBtn.addEventListener('click', handlePlayerReady);
         playAgainBtn.addEventListener('click', resetGame);
-        gameIdDisplay.addEventListener('click', () => {
-            if (navigator.clipboard && currentGameId) {
-                navigator.clipboard.writeText(currentGameId).then(() => showAlert('¡Código copiado!'));
-            }
-        });
+        gameIdDisplay.addEventListener('click', () => { if (navigator.clipboard) navigator.clipboard.writeText(currentGameId).then(() => showAlert('¡Código copiado!')); });
+        document.getElementById('clear-canvas-btn').addEventListener('click', () => ctx.clearRect(0, 0, canvas.width, canvas.height));
+        document.getElementById('submit-drawing-btn').addEventListener('click', submitDrawing);
 
     </script>
 </body>
