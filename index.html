@@ -309,7 +309,6 @@
             } catch (error) {
                 console.error("No se pudieron cargar las preguntas de trivia:", error);
                 showAlert("Error al cargar preguntas de trivia.");
-                // Return empty if trivia fails but was requested
                 if(modes.quiz) return [];
             }
             
@@ -371,7 +370,7 @@
                 return;
             }
 
-            createGameBtn.disabled = true; joinGameBtn.disabled = true;
+            createGameBtn.disabled = true;
             try {
                 const gameQuestions = await fetchQuestions(selectedModes);
                 if (!gameQuestions || gameQuestions.length === 0) {
@@ -388,7 +387,7 @@
                 subscribeToGameChanges();
             } catch (error) {
                 console.error("Error al crear la partida:", error);
-                createGameBtn.disabled = false; joinGameBtn.disabled = false;
+                createGameBtn.disabled = false;
             }
         };
 
@@ -406,7 +405,7 @@
                 }
                 currentGameId = gameIdToJoin;
                 gameRef = joinRef;
-                await update(gameRef, { [`/players/${localPlayerId}`]: { name: playerNameInput.value.trim(), score: 0 } });
+                await update(gameRef, { [`players/${localPlayerId}`]: { name: playerNameInput.value.trim(), score: 0 } });
                 onDisconnect(ref(database, `games/${currentGameId}/players/${localPlayerId}`)).remove();
                 subscribeToGameChanges();
             } catch (error) {
@@ -443,13 +442,12 @@
         const renderLobby = () => {
             switchScreen('lobby');
             
-            // Logic to show correct view in lobby
-            if (currentGameId) { // Game created or joined
+            if (currentGameId) {
                 initialOptions.classList.add('hidden'); 
                 createMenu.classList.add('hidden');
                 joinOptions.classList.add('hidden');
                 waitingRoom.classList.remove('hidden');
-            } else { // Initial state
+            } else {
                 initialOptions.classList.remove('hidden'); 
                 createMenu.classList.add('hidden');
                 joinOptions.classList.add('hidden');
@@ -482,9 +480,9 @@
                         updates.playerOrder = playerIds.sort(() => 0.5 - Math.random());
                         updates.guessingIndex = 0;
                         playerIds.forEach((id, i) => {
-                            updates[`/players/${id}/secretWord`] = shuffledWords[i % shuffledWords.length];
+                            updates[`players/${id}/secretWord`] = shuffledWords[i % shuffledWords.length];
                             const decoys = shuffledWords.filter(w => w !== shuffledWords[i % shuffledWords.length]).sort(() => 0.5 - Math.random()).slice(0, 3);
-                            updates[`/players/${id}/decoys`] = decoys;
+                            updates[`players/${id}/decoys`] = decoys;
                         });
                     } else {
                         updates.questionStartTime = serverTimestamp();
@@ -500,6 +498,7 @@
             
             document.getElementById('drawing-ui').classList.remove('hidden');
             document.getElementById('waiting-for-drawings').classList.add('hidden');
+            document.getElementById('drawing-screen').querySelectorAll('button').forEach(b => b.disabled = false);
 
             setupCanvas();
             
@@ -695,9 +694,9 @@
         };
         
         const handleStartGame = () => update(gameRef, { gameState: 'interstitial', currentQuestionIndex: 0 });
-        const selectAnswer = (answer) => update(gameRef, { [`/players/${localPlayerId}/currentAnswer`]: answer, [`/players/${localPlayerId}/answerTime`]: 20 - parseInt(document.getElementById('timer').innerText) });
-        const selectVote = (votedPlayerId) => update(gameRef, { [`/players/${localPlayerId}/currentVote`]: votedPlayerId });
-        const selectGuess = (drawerId, word) => update(gameRef, { [`/players/${localPlayerId}/guesses/${drawerId}`]: word });
+        const selectAnswer = (answer) => update(gameRef, { [`players/${localPlayerId}/currentAnswer`]: answer, [`players/${localPlayerId}/answerTime`]: 20 - parseInt(document.getElementById('timer').innerText) });
+        const selectVote = (votedPlayerId) => update(gameRef, { [`players/${localPlayerId}/currentVote`]: votedPlayerId });
+        const selectGuess = (drawerId, word) => update(gameRef, { [`players/${localPlayerId}/guesses/${drawerId}`]: word });
         
         const showRoundResults = () => {
             if (gameData.gameState === 'roundResult' || gameData.hostId !== localPlayerId) return;
@@ -719,8 +718,8 @@
                 const maxGuesses = Math.max(0, ...Object.values(correctGuessCounts));
                 gameData.playerOrder.forEach(pId => {
                     const points = (correctGuessCounts[pId] === maxGuesses && maxGuesses > 0) ? 100 : 0;
-                    updates[`/players/${pId}/lastRoundPoints`] = points;
-                    if(points > 0) updates[`/players/${pId}/score`] = gameData.players[pId].score + points;
+                    updates[`players/${pId}/lastRoundPoints`] = points;
+                    if(points > 0) updates[`players/${pId}/score`] = gameData.players[pId].score + points;
                 });
 
             } else if (question.type === 'voting') {
@@ -731,28 +730,28 @@
                 const winnerIds = (sortedVotes.length > 0 && sortedVotes[0][1] > 0) ? sortedVotes.filter(v => v[1] === sortedVotes[0][1]).map(v => v[0]) : [];
                 Object.keys(gameData.players).forEach(pId => {
                     const points = (winnerIds.length > 0 && gameData.players[pId].currentVote && winnerIds.includes(gameData.players[pId].currentVote)) ? 100 : 0;
-                    updates[`/players/${pId}/lastRoundPoints`] = points;
-                    if(points > 0) updates[`/players/${pId}/score`] = gameData.players[pId].score + points;
+                    updates[`players/${pId}/lastRoundPoints`] = points;
+                    if(points > 0) updates[`players/${pId}/score`] = gameData.players[pId].score + points;
                 });
             } else {
                 const correctAnswer = question.answer;
                 Object.keys(gameData.players).forEach(playerId => {
                     const p = gameData.players[playerId];
                     const points = (p.currentAnswer === correctAnswer && p.answerTime) ? (50 + Math.ceil(p.answerTime * 2.5)) : 0;
-                    updates[`/players/${playerId}/lastRoundPoints`] = points;
-                    if(points > 0) updates[`/players/${playerId}/score`] = p.score + points;
+                    updates[`players/${playerId}/lastRoundPoints`] = points;
+                    if(points > 0) updates[`players/${playerId}/score`] = p.score + points;
                 });
             }
              Object.keys(gameData.players).forEach(pId => {
-                if(updates[`/players/${pId}/lastRoundPoints`] === undefined) {
-                    updates[`/players/${pId}/lastRoundPoints`] = 0;
+                if(updates[`players/${pId}/lastRoundPoints`] === undefined) {
+                    updates[`players/${pId}/lastRoundPoints`] = 0;
                 }
-                updates[`/players/${pId}/readyForNext`] = false
+                updates[`players/${pId}/readyForNext`] = false
             });
             update(gameRef, updates);
         };
         
-        const handlePlayerReady = () => update(gameRef, { [`/players/${localPlayerId}/readyForNext`]: true });
+        const handlePlayerReady = () => update(gameRef, { [`players/${localPlayerId}/readyForNext`]: true });
         
         const moveToNextQuestionWithDelay = () => {
             if (isMovingToNext) return;
@@ -766,15 +765,15 @@
                     clearInterval(countdownInterval);
                     const updates = { gameState: 'interstitial', currentQuestionIndex: gameData.currentQuestionIndex + 1 };
                     Object.keys(gameData.players).forEach(pId => {
-                        updates[`/players/${pId}/currentAnswer`] = null;
-                        updates[`/players/${pId}/answerTime`] = null;
-                        updates[`/players/${pId}/currentVote`] = null;
-                        updates[`/players/${pId}/readyForNext`] = false;
-                        updates[`/players/${pId}/lastRoundPoints`] = 0;
-                        updates[`/players/${pId}/secretWord`] = null;
-                        updates[`/players/${pId}/decoys`] = null;
-                        updates[`/players/${pId}/drawingData`] = null;
-                        updates[`/players/${pId}/guesses`] = null;
+                        updates[`players/${pId}/currentAnswer`] = null;
+                        updates[`players/${pId}/answerTime`] = null;
+                        updates[`players/${pId}/currentVote`] = null;
+                        updates[`players/${pId}/readyForNext`] = false;
+                        updates[`players/${pId}/lastRoundPoints`] = 0;
+                        updates[`players/${pId}/secretWord`] = null;
+                        updates[`players/${pId}/decoys`] = null;
+                        updates[`players/${pId}/drawingData`] = null;
+                        updates[`players/${pId}/guesses`] = null;
                     });
                     update(gameRef, updates);
                 }
@@ -824,7 +823,7 @@
             const dataUrl = canvas.toDataURL();
             document.getElementById('drawing-ui').classList.add('hidden');
             document.getElementById('waiting-for-drawings').classList.remove('hidden');
-            update(gameRef, { [`/players/${localPlayerId}/drawingData`]: dataUrl });
+            update(gameRef, { [`players/${localPlayerId}/drawingData`]: dataUrl });
         }
         
         onValue(ref(database, `games/${currentGameId}/players`), (snapshot) => {
