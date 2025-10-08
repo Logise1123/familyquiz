@@ -194,11 +194,17 @@
             <div class="w-full bg-gray-200 rounded-lg mb-4 h-3">
                 <div id="drawing-timer-bar" class="timer-bar h-3 bg-amber-400 rounded-lg" style="width: 100%;"></div>
             </div>
-            <h2 class="text-3xl font-bold text-center mb-4">Tu palabra es: <span id="word-to-draw" class="text-indigo-600"></span></h2>
-            <canvas id="drawing-canvas" width="500" height="300"></canvas>
-            <div class="flex justify-center gap-4 mt-4">
-                <button id="clear-canvas-btn" class="btn bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-lg text-xl flex items-center gap-2"><i class="gg-trash"></i> Borrar</button>
-                <button id="submit-drawing-btn" class="btn bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-5 rounded-lg text-xl">¡Listo!</button>
+            <div id="drawing-ui">
+                <h2 class="text-3xl font-bold text-center mb-4">Tu palabra es: <span id="word-to-draw" class="text-indigo-600"></span></h2>
+                <canvas id="drawing-canvas" width="500" height="300"></canvas>
+                <div class="flex justify-center gap-4 mt-4">
+                    <button id="clear-canvas-btn" class="btn bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-lg text-xl flex items-center gap-2"><i class="gg-trash"></i> Borrar</button>
+                    <button id="submit-drawing-btn" class="btn bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-5 rounded-lg text-xl">¡Listo!</button>
+                </div>
+            </div>
+            <div id="waiting-for-drawings" class="hidden text-center py-24">
+                <h2 class="text-3xl font-bold text-gray-600">¡Dibujo enviado!</h2>
+                <p class="text-2xl text-gray-500 mt-2">Esperando a los demás jugadores...</p>
             </div>
         </div>
     </div>
@@ -436,10 +442,21 @@
         
         const renderLobby = () => {
             switchScreen('lobby');
-            initialOptions.classList.add('hidden'); 
-            joinOptions.classList.add('hidden');
-            waitingRoom.classList.remove('hidden');
-            gameIdDisplay.innerHTML = `${currentGameId} <i class="gg-copy text-gray-500"></i>`;
+            
+            // Logic to show correct view in lobby
+            if (currentGameId) { // Game created or joined
+                initialOptions.classList.add('hidden'); 
+                createMenu.classList.add('hidden');
+                joinOptions.classList.add('hidden');
+                waitingRoom.classList.remove('hidden');
+            } else { // Initial state
+                initialOptions.classList.remove('hidden'); 
+                createMenu.classList.add('hidden');
+                joinOptions.classList.add('hidden');
+                waitingRoom.classList.add('hidden');
+            }
+
+            gameIdDisplay.innerHTML = `${currentGameId || '...'} <i class="gg-copy text-gray-500"></i>`;
             if(gameData.players) {
               playerList.innerHTML = Object.entries(gameData.players).map(([id, p]) => `<li class="p-1 flex items-center gap-2"><span class="text-2xl">${gameData.hostId === id ? '👑' : '👤'}</span> ${p.name}</li>`).join('');
             }
@@ -448,8 +465,6 @@
 
         const renderInterstitial = () => {
             switchScreen('interstitial');
-            waitingRoom.classList.add('hidden');
-            initialOptions.classList.add('hidden');
             const question = gameData.questions[gameData.currentQuestionIndex];
             if (!question) return;
             document.getElementById('interstitial-difficulty').innerText = question.difficulty || '';
@@ -467,8 +482,8 @@
                         updates.playerOrder = playerIds.sort(() => 0.5 - Math.random());
                         updates.guessingIndex = 0;
                         playerIds.forEach((id, i) => {
-                            updates[`/players/${id}/secretWord`] = shuffledWords[i];
-                            const decoys = shuffledWords.slice(i + 1).concat(shuffledWords.slice(0, i)).slice(0, 3);
+                            updates[`/players/${id}/secretWord`] = shuffledWords[i % shuffledWords.length];
+                            const decoys = shuffledWords.filter(w => w !== shuffledWords[i % shuffledWords.length]).sort(() => 0.5 - Math.random()).slice(0, 3);
                             updates[`/players/${id}/decoys`] = decoys;
                         });
                     } else {
@@ -482,8 +497,11 @@
         const renderDrawingScreen = () => {
             switchScreen('drawing');
             document.getElementById('word-to-draw').innerText = gameData.players[localPlayerId].secretWord;
+            
+            document.getElementById('drawing-ui').classList.remove('hidden');
+            document.getElementById('waiting-for-drawings').classList.add('hidden');
+
             setupCanvas();
-            document.getElementById('drawing-screen').querySelectorAll('button').forEach(b => b.disabled = false);
             
             clearInterval(timerInterval);
             const timerBar = document.getElementById('drawing-timer-bar'), timerDisplay = document.getElementById('drawing-timer');
@@ -725,7 +743,12 @@
                     if(points > 0) updates[`/players/${playerId}/score`] = p.score + points;
                 });
             }
-             Object.keys(gameData.players).forEach(pId => updates[`/players/${pId}/readyForNext`] = false);
+             Object.keys(gameData.players).forEach(pId => {
+                if(updates[`/players/${pId}/lastRoundPoints`] === undefined) {
+                    updates[`/players/${pId}/lastRoundPoints`] = 0;
+                }
+                updates[`/players/${pId}/readyForNext`] = false
+            });
             update(gameRef, updates);
         };
         
@@ -799,15 +822,9 @@
         const submitDrawing = () => {
             clearInterval(timerInterval);
             const dataUrl = canvas.toDataURL();
-            document.getElementById('drawing-screen').querySelectorAll('button').forEach(b => b.disabled = true);
-            update(gameRef, { [`/players/${localPlayerId}/drawingData`]: dataUrl }).then(() => {
-                if(gameData.hostId === localPlayerId) {
-                    const players = gameData.players;
-                    if(Object.values(players).every(p => p.drawingData)) {
-                        update(gameRef, { gameState: 'guessing' });
-                    }
-                }
-            });
+            document.getElementById('drawing-ui').classList.add('hidden');
+            document.getElementById('waiting-for-drawings').classList.remove('hidden');
+            update(gameRef, { [`/players/${localPlayerId}/drawingData`]: dataUrl });
         }
         
         onValue(ref(database, `games/${currentGameId}/players`), (snapshot) => {
