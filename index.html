@@ -48,7 +48,7 @@
             background-color: #ffffff;
         }
         .option-btn:hover:not(:disabled) {
-           background-color: #f0f0f0;
+          background-color: #f0f0f0;
         }
         .option-btn.selected {
             border-color: #f59e0b;
@@ -419,8 +419,21 @@
             if (!gameRef) return;
             onValue(gameRef, (snapshot) => {
                 gameData = snapshot.val();
-                if (gameData) renderGame();
-                else { showAlert("La partida ha terminado."); resetGame(); }
+                if (gameData) {
+                    // Host-only logic for automatic state transitions
+                    if (gameData.hostId === localPlayerId) {
+                        // Check if all players have submitted their drawing to move to guessing
+                        if (gameData.gameState === 'drawing' && gameData.players && Object.values(gameData.players).every(p => p.drawingData)) {
+                            update(gameRef, { gameState: 'guessing' });
+                            // Return early to prevent rendering the old state while the new one is propagating
+                            return;
+                        }
+                    }
+                    renderGame();
+                } else {
+                    showAlert("La partida ha terminado.");
+                    resetGame();
+                }
             });
         };
 
@@ -545,12 +558,12 @@
 
             const myAnswer = gameData.players[localPlayerId]?.currentAnswer || gameData.players[localPlayerId]?.currentVote;
              if (myAnswer) {
-                document.querySelectorAll('.option-btn').forEach(btn => {
-                    btn.disabled = true;
-                    const expectedText = question.type === 'voting' ? gameData.players[myAnswer]?.name : myAnswer;
-                    if(btn.innerText === expectedText) btn.classList.add('selected');
-                });
-                document.getElementById('waiting-for-players').classList.remove('hidden');
+                 document.querySelectorAll('.option-btn').forEach(btn => {
+                     btn.disabled = true;
+                     const expectedText = question.type === 'voting' ? gameData.players[myAnswer]?.name : myAnswer;
+                     if(btn.innerText === expectedText) btn.classList.add('selected');
+                 });
+                 document.getElementById('waiting-for-players').classList.remove('hidden');
             }
 
             const startTime = gameData.questionStartTime;
@@ -589,19 +602,19 @@
             } else {
                  const options = [drawer.secretWord, ...drawer.decoys].sort(() => 0.5 - Math.random());
                  options.forEach(word => {
-                    const button = document.createElement('button');
-                    button.className = "option-btn btn w-full text-gray-800 font-semibold py-3 px-4 rounded-lg text-xl md:text-2xl";
-                    button.innerText = word;
-                    button.onclick = () => selectGuess(drawerId, word);
-                    optionsContainer.appendChild(button);
+                     const button = document.createElement('button');
+                     button.className = "option-btn btn w-full text-gray-800 font-semibold py-3 px-4 rounded-lg text-xl md:text-2xl";
+                     button.innerText = word;
+                     button.onclick = () => selectGuess(drawerId, word);
+                     optionsContainer.appendChild(button);
                  });
                  const myGuess = gameData.players[localPlayerId].guesses?.[drawerId];
                  if(myGuess) {
-                     document.querySelectorAll('.option-btn').forEach(btn => {
-                        btn.disabled = true;
-                        if(btn.innerText === myGuess) btn.classList.add('selected');
-                    });
-                    document.getElementById('waiting-for-players').classList.remove('hidden');
+                      document.querySelectorAll('.option-btn').forEach(btn => {
+                           btn.disabled = true;
+                           if(btn.innerText === myGuess) btn.classList.add('selected');
+                     });
+                     document.getElementById('waiting-for-players').classList.remove('hidden');
                  }
             }
 
@@ -678,7 +691,7 @@
             primaryBtn.innerText = gameData.players[localPlayerId]?.readyForNext ? "Esperando..." : (isLastQuestion ? "Ver Resultados Finales" : "¡Listo!");
 
             if (gameData.hostId === localPlayerId && Object.values(gameData.players).every(p => p.readyForNext)) {
-                 isLastQuestion ? update(gameRef, { gameState: 'gameOver' }) : moveToNextQuestionWithDelay();
+                isLastQuestion ? update(gameRef, { gameState: 'gameOver' }) : moveToNextQuestionWithDelay();
             }
         };
 
@@ -827,15 +840,6 @@
             update(gameRef, { [`players/${localPlayerId}/drawingData`]: dataUrl });
         }
         
-        onValue(ref(database, `games/${currentGameId}/players`), (snapshot) => {
-            if(gameData?.hostId === localPlayerId && gameData?.gameState === 'drawing') {
-                const players = snapshot.val() || {};
-                if(Object.values(players).every(p => p.drawingData)) {
-                    update(gameRef, { gameState: 'guessing' });
-                }
-            }
-        });
-
         showCreateMenuBtn.addEventListener('click', () => {
             initialOptions.classList.add('hidden');
             createMenu.classList.remove('hidden');
