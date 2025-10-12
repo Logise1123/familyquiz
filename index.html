@@ -73,6 +73,17 @@
             box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
             padding: 2rem;
         }
+        #round-results-screen .card {
+            display: flex;
+            flex-direction: column;
+            max-height: 95vh;
+            padding: 0;
+        }
+        #results-content-wrapper {
+            flex-grow: 1;
+            overflow-y: auto;
+            padding: 2rem;
+        }
         /* Topic colors */
         .topic-ciencia, .topic-cultura-general, .topic-arte-y-literatura, .topic-logica-y-matematicas, .topic-tecnologia { color: #db2777; }
         .topic-votacion { color: #9333ea; } /* Purple */
@@ -211,22 +222,26 @@
 
     <div id="round-results-screen" class="screen w-full max-w-3xl mx-auto flex-col items-center text-center">
         <div class="card w-full">
-            <h2 id="result-title" class="text-5xl font-bold mb-4 handwriting">¡Tiempo!</h2>
-            <div id="answer-reveal" class="text-2xl mb-6">La respuesta correcta era: <strong id="correct-answer-text" class="text-green-600 font-bold"></strong></div>
-            <div id="vote-reveal" class="w-full text-left text-xl hidden mb-6 bg-gray-100 p-4 rounded-lg">
-                <h4 class="font-bold text-center mb-2">Así habéis votado:</h4>
-                <ul id="vote-details-list"></ul>
+            <div id="results-content-wrapper">
+                <h2 id="result-title" class="text-5xl font-bold mb-4 handwriting">¡Tiempo!</h2>
+                <div id="answer-reveal" class="text-2xl mb-6">La respuesta correcta era: <strong id="correct-answer-text" class="text-green-600 font-bold"></strong></div>
+                <div id="vote-reveal" class="w-full text-left text-xl hidden mb-6 bg-gray-100 p-4 rounded-lg">
+                    <h4 class="font-bold text-center mb-2">Así habéis votado:</h4>
+                    <ul id="vote-details-list"></ul>
+                </div>
+                 <div id="drawing-results-reveal" class="w-full hidden mb-6 p-4 rounded-lg">
+                    <h3 class="text-3xl font-semibold mb-4 handwriting">Repaso de los Dibujos</h3>
+                    <div id="drawing-results-grid" class="grid grid-cols-2 md:grid-cols-3 gap-4"></div>
+                 </div>
+                <div class="w-full bg-gray-50 p-4 rounded-lg">
+                    <h3 class="text-3xl font-semibold mb-4 handwriting">Resultados de la Ronda</h3>
+                    <div id="round-player-results" class="space-y-3"></div>
+                </div>
             </div>
-             <div id="drawing-results-reveal" class="w-full hidden mb-6 p-4 rounded-lg">
-                <h3 class="text-3xl font-semibold mb-4 handwriting">Repaso de los Dibujos</h3>
-                <div id="drawing-results-grid" class="grid grid-cols-2 md:grid-cols-3 gap-4"></div>
-             </div>
-            <div class="w-full bg-gray-50 p-4 rounded-lg">
-                <h3 class="text-3xl font-semibold mb-4 handwriting">Resultados de la Ronda</h3>
-                <div id="round-player-results" class="space-y-3"></div>
+            <div class="px-8 pb-8 pt-4">
+                <button id="next-question-btn" class="btn w-full max-w-xs mx-auto bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-3 px-4 rounded-lg text-2xl hidden">¡Listo!</button>
+                <button id="show-final-results-btn" class="btn w-full max-w-xs mx-auto bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-4 rounded-lg text-2xl hidden">Ver Resultados Finales</button>
             </div>
-            <button id="next-question-btn" class="btn w-full max-w-xs bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-3 px-4 rounded-lg text-2xl mt-8 hidden">¡Listo!</button>
-            <button id="show-final-results-btn" class="btn w-full max-w-xs bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-4 rounded-lg text-2xl mt-8 hidden">Ver Resultados Finales</button>
         </div>
     </div>
 
@@ -417,39 +432,50 @@
         
         const subscribeToGameChanges = () => {
             if (!gameRef) return;
+            let oldGameState = null;
             onValue(gameRef, (snapshot) => {
                 gameData = snapshot.val();
                 if (gameData) {
-                    // Host-only logic for automatic state transitions
-                    if (gameData.hostId === localPlayerId) {
-                        // Check if all players have submitted their drawing to move to guessing
+                    renderGame(oldGameState);
+                    oldGameState = gameData.gameState; // Update old state after rendering
+                     if (gameData.hostId === localPlayerId) {
                         if (gameData.gameState === 'drawing' && gameData.players && Object.values(gameData.players).every(p => p.drawingData)) {
-                            update(gameRef, { gameState: 'guessing' });
-                            // Return early to prevent rendering the old state while the new one is propagating
-                            return;
+                           update(gameRef, { gameState: 'guessing' });
                         }
                     }
-                    renderGame();
-                } else {
-                    showAlert("La partida ha terminado.");
-                    resetGame();
                 }
+                else { showAlert("La partida ha terminado."); resetGame(); }
             });
         };
 
-        const renderGame = () => {
+        const renderGame = (oldGameState) => {
             if (!gameData || !gameData.players) return;
             if (!gameData.players[localPlayerId] && gameData.gameState !== 'lobby') {
                 showAlert("Has sido desconectado."); resetGame(); return;
             }
-            switch (gameData.gameState) {
-                case 'lobby': renderLobby(); break;
-                case 'interstitial': renderInterstitial(); break;
-                case 'drawing': renderDrawingScreen(); break;
-                case 'guessing': renderGuessingScreen(); break;
-                case 'question': renderQuestionScreen(); break;
-                case 'roundResult': renderRoundResult(); break;
-                case 'gameOver': renderGameOver(); break;
+            
+            const hasStateChanged = gameData.gameState !== oldGameState;
+
+            if (hasStateChanged) {
+                // Full screen transition
+                switch (gameData.gameState) {
+                    case 'lobby': renderLobby(); break;
+                    case 'interstitial': renderInterstitial(); break;
+                    case 'drawing': renderDrawingScreen(); break;
+                    case 'guessing': renderGuessingScreen(); break;
+                    case 'question': renderQuestionScreen(); break;
+                    case 'roundResult': renderRoundResult(true); break; // Full render
+                    case 'gameOver': renderGameOver(); break;
+                }
+            } else {
+                // Same state, but data inside it might have changed.
+                if (gameData.gameState === 'lobby') {
+                    renderLobby();
+                } else if (gameData.gameState === 'guessing') {
+                    renderGuessingScreen();
+                } else if (gameData.gameState === 'roundResult') {
+                    renderRoundResult(false);
+                }
             }
         };
         
@@ -526,8 +552,7 @@
                 timerBar.style.width = `${(timeLeft / 30) * 100}%`;
                 timerDisplay.innerText = timeLeft;
                 if (timeLeft <= 0) {
-                    clearInterval(timerInterval);
-                    submitDrawing();
+                    if(!gameData.players[localPlayerId].drawingData) submitDrawing();
                 }
             }, 1000);
         };
@@ -632,68 +657,81 @@
             }
         };
 
-        const renderRoundResult = () => {
-            switchScreen('roundResults');
-            clearInterval(timerInterval);
-            isMovingToNext = false;
-            
-            const question = gameData.questions[gameData.currentQuestionIndex];
-            answerRevealEl.classList.add('hidden');
-            voteRevealEl.classList.add('hidden');
-            drawingResultsRevealEl.classList.add('hidden');
+        const renderRoundResult = (isFullRender) => {
+            if (isFullRender) {
+                switchScreen('roundResults');
+                clearInterval(timerInterval);
+                isMovingToNext = false;
+                
+                const question = gameData.questions[gameData.currentQuestionIndex];
+                
+                answerRevealEl.classList.toggle('hidden', question.type === 'voting' || question.type === 'drawing');
+                voteRevealEl.classList.toggle('hidden', question.type !== 'voting');
+                drawingResultsRevealEl.classList.toggle('hidden', question.type !== 'drawing');
 
-            if (question.type === 'drawing') {
-                drawingResultsRevealEl.classList.remove('hidden');
-                document.getElementById('result-title').innerText = "Resultados del Dibujo";
-                const grid = document.getElementById('drawing-results-grid');
-                grid.innerHTML = '';
-                gameData.playerOrder.forEach(pId => {
-                    const player = gameData.players[pId];
-                    const correctGuesses = Object.values(gameData.players).filter(p => p.guesses?.[pId] === player.secretWord).length;
-                    grid.innerHTML += `
-                        <div class="p-2 bg-white rounded-lg shadow">
-                            <img src="${player.drawingData}" class="w-full h-auto object-contain rounded-md bg-white border">
-                            <p class="mt-2 font-bold text-center">${player.name}</p>
-                            <p class="text-center text-sm text-indigo-600">"${player.secretWord}"</p>
-                            <p class="text-center text-sm">${correctGuesses} acierto(s)</p>
+                if (question.type === 'drawing') {
+                    document.getElementById('result-title').innerText = "Resultados del Dibujo";
+                    const grid = document.getElementById('drawing-results-grid');
+                    grid.innerHTML = gameData.playerOrder.map(pId => {
+                        const player = gameData.players[pId];
+                        const correctGuesses = Object.values(gameData.players).filter(p => p.guesses?.[pId] === player.secretWord).length;
+                        return `
+                            <div class="p-2 bg-white rounded-lg shadow">
+                                <img src="${player.drawingData || ''}" class="w-full h-auto object-contain rounded-md bg-white border">
+                                <p class="mt-2 font-bold text-center">${player.name}</p>
+                                <p class="text-center text-sm text-indigo-600">"${player.secretWord}"</p>
+                                <p class="text-center text-sm">${correctGuesses} acierto(s)</p>
+                            </div>`;
+                    }).join('');
+                } else if (question.type === 'voting') {
+                    document.getElementById('result-title').innerText = "Resultados de la Votación";
+                    document.getElementById('vote-details-list').innerHTML = Object.values(gameData.players)
+                        .map(p => p.currentVote ? `<li><strong>${p.name}</strong> votó por <strong>${gameData.players[p.currentVote]?.name || '?'}</strong></li>` : '')
+                        .join('');
+                } else {
+                    document.getElementById('result-title').innerText = "Resultados de la Ronda";
+                    document.getElementById('correct-answer-text').innerText = question.answer;
+                }
+
+                const playerResultsContainer = document.getElementById('round-player-results');
+                playerResultsContainer.innerHTML = Object.entries(gameData.players)
+                    .sort(([, a], [, b]) => b.score - a.score)
+                    .map(([playerId, player]) => {
+                        const pointsGained = player.lastRoundPoints > 0 ? `+${player.lastRoundPoints}` : '';
+                        const answerIcon = player.currentAnswer ? (player.currentAnswer === question.answer ? '✅' : '❌') : (question.type === 'voting' ? '🗳️' : (question.type === 'drawing' ? '🎨' : '🤔'));
+                        return `<div class="flex justify-between items-center bg-white p-3 rounded-lg text-xl">
+                            <div class="flex items-center gap-3">
+                                <span id="ready-check-${playerId}" class="w-6"></span>
+                                ${answerIcon} ${player.name}
+                            </div>
+                            <div class="text-right">
+                                <span class="font-bold">${player.score} pts</span>
+                                <span class="text-sm text-green-600 ml-2 font-bold">${pointsGained}</span>
+                            </div>
                         </div>`;
-                });
-
-            } else if (question.type === 'voting') {
-                voteRevealEl.classList.remove('hidden');
-                document.getElementById('result-title').innerText = "Resultados de la Votación";
-                document.getElementById('vote-details-list').innerHTML = Object.values(gameData.players)
-                    .map(p => p.currentVote ? `<li><strong>${p.name}</strong> votó por <strong>${gameData.players[p.currentVote]?.name || '?'}</strong></li>` : '')
-                    .join('');
-            } else {
-                answerRevealEl.classList.remove('hidden');
-                document.getElementById('result-title').innerText = "Resultados de la Ronda";
-                document.getElementById('correct-answer-text').innerText = question.answer;
+                    }).join('');
             }
 
-            document.getElementById('round-player-results').innerHTML = Object.values(gameData.players)
-                .sort((a,b) => b.score - a.score)
-                .map(player => {
-                    const answerIcon = player.currentAnswer ? (player.currentAnswer === question.answer ? '✅' : '❌') : (question.type === 'voting' ? '🗳️' : (question.type === 'drawing' ? '🎨' : '🤔'));
-                    const pointsGained = player.lastRoundPoints > 0 ? `+${player.lastRoundPoints}` : '';
-                    const readyCheck = player.readyForNext ? '<i class="gg-check-o text-green-500"></i>' : '';
-                    return `<div class="flex justify-between items-center bg-white p-3 rounded-lg fade-in text-xl">
-                        <div class="flex items-center gap-3"><span class="w-6">${readyCheck}</span>${answerIcon} ${player.name}</div>
-                        <div class="text-right"><span class="font-bold">${player.score} pts</span><span class="text-sm text-green-600 ml-2 font-bold">${pointsGained}</span></div>
-                    </div>`;
-                }).join('');
+            // This part runs for both full render and partial updates
+            Object.entries(gameData.players).forEach(([playerId, player]) => {
+                const readyCheckEl = document.getElementById(`ready-check-${playerId}`);
+                if (readyCheckEl) {
+                    readyCheckEl.innerHTML = player.readyForNext ? '<i class="gg-check-o text-green-500"></i>' : '';
+                }
+            });
             
             const isLastQuestion = gameData.currentQuestionIndex >= gameData.questions.length - 1;
             const primaryBtn = isLastQuestion ? showFinalResultsBtn : nextQuestionBtn;
             primaryBtn.classList.remove('hidden');
             (isLastQuestion ? nextQuestionBtn : showFinalResultsBtn).classList.add('hidden');
             primaryBtn.disabled = !!gameData.players[localPlayerId]?.readyForNext;
-            primaryBtn.innerText = gameData.players[localPlayerId]?.readyForNext ? "Esperando..." : (isLastQuestion ? "Ver Resultados Finales" : "¡Listo!");
+            primaryBtn.innerText = gameData.players[localPlayerId]?.readyForNext ? "Esperando al resto..." : (isLastQuestion ? "Ver Resultados Finales" : "¡Listo!");
 
             if (gameData.hostId === localPlayerId && Object.values(gameData.players).every(p => p.readyForNext)) {
                 isLastQuestion ? update(gameRef, { gameState: 'gameOver' }) : moveToNextQuestionWithDelay();
             }
         };
+
 
         const renderGameOver = () => {
             switchScreen('gameOver');
@@ -784,9 +822,6 @@
                         updates[`players/${pId}/currentVote`] = null;
                         updates[`players/${pId}/readyForNext`] = false;
                         updates[`players/${pId}/lastRoundPoints`] = 0;
-                        updates[`players/${pId}/secretWord`] = null;
-                        updates[`players/${pId}/decoys`] = null;
-                        updates[`players/${pId}/drawingData`] = null;
                         updates[`players/${pId}/guesses`] = null;
                     });
                     update(gameRef, updates);
@@ -839,7 +874,7 @@
             document.getElementById('waiting-for-drawings').classList.remove('hidden');
             update(gameRef, { [`players/${localPlayerId}/drawingData`]: dataUrl });
         }
-        
+
         showCreateMenuBtn.addEventListener('click', () => {
             initialOptions.classList.add('hidden');
             createMenu.classList.remove('hidden');
